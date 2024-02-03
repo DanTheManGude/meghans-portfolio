@@ -105,7 +105,7 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Image src={logo} alt="logo" width={50} height={50} />
+            <Image src={logo} alt="logo" width={45} height={45} />
           </Box>
         </Toolbar>
       </Container>
