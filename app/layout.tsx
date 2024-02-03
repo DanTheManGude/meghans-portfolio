@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import localFont from "next/font/local";
+
+const OpenSans = localFont({ src: "./OpenSans-Regular.ttf" });
 
 export const metadata: Metadata = {
   title: "Gude Designs",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={OpenSans.className}>{children}</body>
     </html>
   );
 }
