@@ -15,7 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 import logo from "../app/icon.png";
 
@@ -31,6 +31,7 @@ const pages: { [key in (typeof pagesKeys)[number]]: string } = {
 
 function ResponsiveAppBar() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -135,7 +136,14 @@ function ResponsiveAppBar() {
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <Link href={`/${pageKey}`}>
-                  <Typography color={"primary.contrastText"}>
+                  <Typography
+                    color={"primary.contrastText"}
+                    sx={{
+                      textDecoration:
+                        pathname === `/${pageKey}` ? "underline" : "none",
+                      textDecorationStyle: "dotted",
+                    }}
+                  >
                     {pages[pageKey]}
                   </Typography>
                 </Link>
