@@ -8,7 +8,7 @@ import "./globals.css";
 import NavBar from "../components/NavBar";
 
 export const metadata: Metadata = {
-  title: "Gude Designs",
+  title: "Meghan's Portfolio",
   description: "Graphic Design Portfolio",
 };
 

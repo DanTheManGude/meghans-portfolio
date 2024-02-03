@@ -51,7 +51,7 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            Gude Designs
+            Meghan's Portfolio
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -103,7 +103,7 @@ function ResponsiveAppBar() {
               flexGrow: 1,
             }}
           >
-            Gude Designs
+            Meghan's Portfolio
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pagesKeys.map((pageKey) => (
