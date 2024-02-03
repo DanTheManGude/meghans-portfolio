@@ -19,12 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <AppRouterCacheProvider>
-        <ThemeProvider theme={theme}>
-          <NavBar />
-          {children}
-        </ThemeProvider>
-      </AppRouterCacheProvider>
+      <body>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <NavBar />
+            {children}
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
