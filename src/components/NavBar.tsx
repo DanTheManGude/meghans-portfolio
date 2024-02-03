@@ -14,8 +14,10 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import Image from "next/image";
-import logo from "../app/icon.png";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+import logo from "../app/icon.png";
 
 const pagesKeys = ["allWorks", "print", "packaging", "digital", "web"] as const;
 
@@ -28,6 +30,8 @@ const pages: { [key in (typeof pagesKeys)[number]]: string } = {
 };
 
 function ResponsiveAppBar() {
+  const router = useRouter();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -49,7 +53,9 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
+              cursor: "pointer",
             }}
+            onClick={() => router.push("/")}
           >
             {`Meghan's Portfolio`}
           </Typography>
@@ -101,7 +107,9 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
+              cursor: "pointer",
             }}
+            onClick={() => router.push("/")}
           >
             {`Meghan's Portfolio`}
           </Typography>
@@ -122,7 +130,9 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Image src={logo} alt="logo" width={45} height={45} />
+            <Link href={"/"}>
+              <Image src={logo} alt="logo" width={45} height={45} />
+            </Link>
           </Box>
         </Toolbar>
       </Container>
