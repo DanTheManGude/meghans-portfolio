@@ -75,28 +75,37 @@ function ResponsiveAppBar() {
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
               keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              marginThreshold={0}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
+              slotProps={{
+                paper: {
+                  sx: {
+                    width: "100%",
+                    maxWidth: "100%",
+                    left: "0px",
+                    right: "0px",
+                  },
+                },
+              }}
             >
               {pagesKeys.map((pageKey) => (
-                <MenuItem key={pageKey} onClick={handleCloseNavMenu}>
-                  <Link href={`/${pageKey}`}>
+                <MenuItem
+                  key={pageKey}
+                  onClick={() => {
+                    handleCloseNavMenu();
+                    router.push(`/${pageKey}`);
+                  }}
+                >
+                  <Box sx={{ width: "100%", alignItems: "center" }}>
                     <Typography textAlign="center" color={"primary"}>
                       {pages[pageKey]}
                     </Typography>
-                  </Link>
+                  </Box>
                 </MenuItem>
               ))}
             </Menu>
