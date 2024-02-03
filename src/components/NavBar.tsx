@@ -5,30 +5,16 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import Image from "next/image";
 import logo from "../app/icon.png";
-
-function ElevationScroll({ children }: { children: React.ReactElement }) {
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
 
 function ResponsiveAppBar() {
   const pages = ["Print", "Digital", "Web"];
@@ -46,7 +32,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar>
+    <AppBar elevation={4}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -119,13 +105,7 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Image
-              src={logo}
-              alt="logo"
-              width={50}
-              height={50}
-              placeholder="blur"
-            />
+            <Image src={logo} alt="logo" width={50} height={50} />
           </Box>
         </Toolbar>
       </Container>
@@ -136,9 +116,7 @@ function ResponsiveAppBar() {
 export default function ElevateAppBar() {
   return (
     <React.Fragment>
-      <ElevationScroll>
-        <ResponsiveAppBar />
-      </ElevationScroll>
+      <ResponsiveAppBar />
       <Toolbar />
     </React.Fragment>
   );
