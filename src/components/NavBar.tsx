@@ -15,10 +15,19 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import Image from "next/image";
 import logo from "../app/icon.png";
+import Link from "next/link";
+
+const pagesKeys = ["allWorks", "print", "packaging", "digital", "web"] as const;
+
+const pages: { [key in (typeof pagesKeys)[number]]: string } = {
+  allWorks: "All Works",
+  print: "Print",
+  packaging: "Packaging",
+  digital: "Digital",
+  web: "Web",
+};
 
 function ResponsiveAppBar() {
-  const pages = ["Print", "Digital", "Web"];
-
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -74,9 +83,13 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pagesKeys.map((pageKey) => (
+                <MenuItem key={pageKey} onClick={handleCloseNavMenu}>
+                  <Link href={`/${pageKey}`}>
+                    <Typography textAlign="center" color={"primary"}>
+                      {pages[pageKey]}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -93,13 +106,17 @@ function ResponsiveAppBar() {
             Gude Designs
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pagesKeys.map((pageKey) => (
               <Button
-                key={page}
+                key={pageKey}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link href={`/${pageKey}`}>
+                  <Typography color={"primary.contrastText"}>
+                    {pages[pageKey]}
+                  </Typography>
+                </Link>
               </Button>
             ))}
           </Box>
