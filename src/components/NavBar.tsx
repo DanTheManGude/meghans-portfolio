@@ -13,8 +13,10 @@ import Menu from "@mui/material/Menu";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-
 import MenuIcon from "@mui/icons-material/Menu";
+
+import Image from "next/image";
+import logo from "../app/icon.png";
 
 function ElevationScroll({ children }: { children: React.ReactElement }) {
   const trigger = useScrollTrigger({
@@ -117,9 +119,13 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </IconButton>
+            <Image
+              src={logo}
+              alt="logo"
+              width={50}
+              height={50}
+              placeholder="blur"
+            />
           </Box>
         </Toolbar>
       </Container>
