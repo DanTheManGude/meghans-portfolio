@@ -102,7 +102,11 @@ function ResponsiveAppBar() {
                   }}
                 >
                   <Box sx={{ width: "100%", alignItems: "center" }}>
-                    <Typography textAlign="center" color={"primary"}>
+                    <Typography
+                      textAlign="center"
+                      color={"primary"}
+                      fontSize={32}
+                    >
                       {pages[pageKey]}
                     </Typography>
                   </Box>
