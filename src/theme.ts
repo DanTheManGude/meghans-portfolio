@@ -1,14 +1,24 @@
 "use client";
 
+import { Open_Sans, Raleway } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 
-import localFont from "next/font/local";
+const OpenSansFont = Open_Sans({
+  weight: ["400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
-const OpenSans = localFont({ src: "./OpenSans-Regular.ttf" });
+const RalewayFont = Raleway({
+  weight: ["600"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 const theme = createTheme({
   typography: {
-    fontFamily: OpenSans.style.fontFamily,
+    fontFamily: OpenSansFont.style.fontFamily,
+    h5: { fontFamily: RalewayFont.style.fontFamily },
   },
 });
 

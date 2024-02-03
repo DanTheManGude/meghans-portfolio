@@ -49,6 +49,7 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
+            variant="h5"
             noWrap
             sx={{
               mr: 2,
@@ -57,7 +58,7 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            {`Meghan's Portfolio`}
+            {`Portfolio`}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -111,7 +112,7 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            {`Meghan's Portfolio`}
+            {`Portfolio`}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pagesKeys.map((pageKey) => (
