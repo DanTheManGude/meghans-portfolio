@@ -5,6 +5,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
 import "./globals.css";
 
+import NavBar from "../components/NavBar";
+
 export const metadata: Metadata = {
   title: "Gude Designs",
   description: "Graphic Design Portfolio",
@@ -18,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AppRouterCacheProvider>
-        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <NavBar />
+          {children}
+        </ThemeProvider>
       </AppRouterCacheProvider>
     </html>
   );
