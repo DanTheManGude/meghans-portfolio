@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { ThemeProvider } from "@mui/material/styles";
+
+import theme from "./theme";
 import "./globals.css";
-
-import localFont from "next/font/local";
-
-const OpenSans = localFont({ src: "./OpenSans-Regular.ttf" });
 
 export const metadata: Metadata = {
   title: "Gude Designs",
@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={OpenSans.className}>{children}</body>
+      <AppRouterCacheProvider>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </AppRouterCacheProvider>
     </html>
   );
 }
