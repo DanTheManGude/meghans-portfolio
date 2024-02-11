@@ -10,16 +10,17 @@ const OpenSansFont = Open_Sans({
 });
 
 const RalewayFont = Raleway({
-  weight: ["600"],
+  weight: ["400", "600"],
   style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
 const theme = createTheme({
   typography: {
-    fontFamily: OpenSansFont.style.fontFamily,
-    h5: { fontFamily: RalewayFont.style.fontFamily },
+    fontFamily: RalewayFont.style.fontFamily,
   },
 });
+
+export const openSansFontFamily = OpenSansFont.style.fontFamily;
 
 export default theme;
