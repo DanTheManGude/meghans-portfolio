@@ -18,16 +18,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
 import logo from "../app/icon.png";
-
-const pagesKeys = ["allWorks", "print", "packaging", "digital", "web"] as const;
-
-const pages: { [key in (typeof pagesKeys)[number]]: string } = {
-  allWorks: "All Works",
-  print: "Print",
-  packaging: "Packaging",
-  digital: "Digital",
-  web: "Web",
-};
+import { pageKeys, pageNames } from "@/constants";
 
 function ResponsiveAppBar() {
   const router = useRouter();
@@ -94,7 +85,7 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              {pagesKeys.map((pageKey) => (
+              {pageKeys.map((pageKey) => (
                 <MenuItem
                   key={pageKey}
                   onClick={() => {
@@ -108,7 +99,7 @@ function ResponsiveAppBar() {
                       color={"primary"}
                       fontSize={32}
                     >
-                      {pages[pageKey]}
+                      {pageNames[pageKey]}
                     </Typography>
                   </Box>
                 </MenuItem>
@@ -129,7 +120,7 @@ function ResponsiveAppBar() {
             {`Portfolio`}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pagesKeys.map((pageKey) => (
+            {pageKeys.map((pageKey) => (
               <Button
                 key={pageKey}
                 onClick={handleCloseNavMenu}
@@ -144,7 +135,7 @@ function ResponsiveAppBar() {
                       textDecorationStyle: "dotted",
                     }}
                   >
-                    {pages[pageKey]}
+                    {pageNames[pageKey]}
                   </Typography>
                 </Link>
               </Button>
