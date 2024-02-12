@@ -13,31 +13,21 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 
-import Image from "next/image";
+import { useTheme } from "@mui/material/styles";
+
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
-import logo from "../app/icon.png";
 import { pageKeys, pageNames } from "@/constants";
+
+const title = "Meghan Butera.";
 
 function ResponsiveAppBar() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
   return (
-    <AppBar elevation={4}>
+    <AppBar color="transparent" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -50,62 +40,9 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            {`Portfolio`}
+            {title}
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="pages menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              keepMounted
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              marginThreshold={0}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-              slotProps={{
-                paper: {
-                  sx: {
-                    width: "100%",
-                    maxWidth: "100%",
-                    left: "0px",
-                    right: "0px",
-                  },
-                },
-              }}
-            >
-              {pageKeys.map((pageKey) => (
-                <MenuItem
-                  key={pageKey}
-                  onClick={() => {
-                    handleCloseNavMenu();
-                    router.push(`/${pageKey}`);
-                  }}
-                >
-                  <Box sx={{ width: "100%", alignItems: "center" }}>
-                    <Typography
-                      textAlign="center"
-                      color={"primary"}
-                      fontSize={32}
-                    >
-                      {pageNames[pageKey]}
-                    </Typography>
-                  </Box>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
           <Typography
             variant="h5"
             noWrap
@@ -117,22 +54,20 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            {`Portfolio`}
+            {title}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pageKeys.map((pageKey) => (
               <Button
                 key={pageKey}
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <Link href={`/${pageKey}`}>
                   <Typography
-                    color={"primary.contrastText"}
+                    color={"common.black"}
                     sx={{
                       textDecoration:
                         pathname === `/${pageKey}` ? "underline" : "none",
-                      textDecorationStyle: "dotted",
                     }}
                   >
                     {pageNames[pageKey]}
@@ -142,10 +77,16 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Link href={"/"}>
-              <Image src={logo} alt="logo" width={45} height={45} />
-            </Link>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="pages menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
