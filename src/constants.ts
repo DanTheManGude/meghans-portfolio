@@ -1,7 +1,7 @@
-export type PageKeys = "allWorks" | "print" | "packaging" | "digital" | "web";
+export type PageKeys = "home" | "print" | "packaging" | "digital" | "web";
 
 export const pageKeys: PageKeys[] = [
-  "allWorks",
+  "home",
   "print",
   "packaging",
   "digital",
@@ -9,9 +9,17 @@ export const pageKeys: PageKeys[] = [
 ];
 
 export const pageNames: { [key in PageKeys]: string } = {
-  allWorks: "All Works",
+  home: "Home",
   print: "Print",
   packaging: "Packaging",
   digital: "Digital",
   web: "Web",
+};
+
+export const pagePaths: { [key in PageKeys]: string } = {
+  home: "",
+  print: "print",
+  packaging: "packaging",
+  digital: "digital",
+  web: "web",
 };

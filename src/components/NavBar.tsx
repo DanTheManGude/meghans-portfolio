@@ -18,7 +18,7 @@ import { useTheme } from "@mui/material/styles";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
-import { pageKeys, pageNames } from "@/constants";
+import { pageKeys, pageNames, pagePaths } from "@/constants";
 
 const title = "Meghan Butera.";
 
@@ -62,12 +62,14 @@ function ResponsiveAppBar() {
                 key={pageKey}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <Link href={`/${pageKey}`}>
+                <Link href={`/${pagePaths[pageKey]}`}>
                   <Typography
                     color={"common.black"}
                     sx={{
                       textDecoration:
-                        pathname === `/${pageKey}` ? "underline" : "none",
+                        pathname === `/${pagePaths[pageKey]}`
+                          ? "underline"
+                          : "none",
                     }}
                   >
                     {pageNames[pageKey]}
