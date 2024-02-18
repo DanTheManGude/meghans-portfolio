@@ -1,30 +1,30 @@
 export const HOME_KEY = "HOME";
-export type HOME_KEY_TYPE = typeof HOME_KEY;
+export const CONTACT_KEY = "CONTACT";
 
-export type PageKeys =
-  | HOME_KEY_TYPE
+export type PageKey =
+  | typeof HOME_KEY
   | "DIGITAL"
   | "PACKAGING"
   | "PRINT"
   | "WEB"
-  | "CONTACT";
+  | typeof CONTACT_KEY;
 
-export const pageKeys: PageKeys[] = [
+export const pageKeys: PageKey[] = [
   HOME_KEY,
   "DIGITAL",
   "PACKAGING",
   "PRINT",
   "WEB",
-  "CONTACT",
+  CONTACT_KEY,
 ];
 
-export const pageNames: { [key in PageKeys]: string } = {
+export const pageNames: { [key in PageKey]: string } = {
   [HOME_KEY]: "Home",
   DIGITAL: "Digital",
   PACKAGING: "Packaging",
   PRINT: "Print",
   WEB: "Web",
-  CONTACT: "Contact",
+  [CONTACT_KEY]: "Contact",
 };
 
 export type PagePath =
@@ -35,17 +35,17 @@ export type PagePath =
   | "web"
   | "contact";
 
-export const pagePaths: { [key in PageKeys]: PagePath } = {
+export const pagePaths: { [key in PageKey]: PagePath } = {
   [HOME_KEY]: "home",
   DIGITAL: "digital",
   PACKAGING: "packaging",
   PRINT: "print",
   WEB: "web",
-  CONTACT: "contact",
+  [CONTACT_KEY]: "contact",
 };
 
-export const pagePathToKey: { [key in PagePath]: PageKeys } =
-  Object.entries<PagePath>(pagePaths).reduce<{ [key in PagePath]: PageKeys }>(
+export const pagePathToKey: { [key in PagePath]: PageKey } =
+  Object.entries<PagePath>(pagePaths).reduce<{ [key in PagePath]: PageKey }>(
     (acc, [pageKey, pagePath]) => ({ ...acc, [pagePath]: pageKey }),
-    {} as { [key in PagePath]: PageKeys }
+    {} as { [key in PagePath]: PageKey }
   );
