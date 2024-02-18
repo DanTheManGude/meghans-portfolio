@@ -12,6 +12,7 @@ import Menu from "@mui/material/Menu";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
+import Stack from "@mui/material/Stack";
 
 import { useTheme } from "@mui/material/styles";
 
@@ -27,11 +28,12 @@ function ResponsiveAppBar() {
   const pathname = usePathname();
 
   return (
-    <AppBar color="transparent" elevation={0}>
+    <AppBar color="transparent" elevation={1}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h5"
+            variant="h4"
+            fontWeight={600}
             noWrap
             sx={{
               mr: 2,
@@ -44,7 +46,8 @@ function ResponsiveAppBar() {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant="h4"
+            fontWeight={600}
             noWrap
             sx={{
               mr: 2,
@@ -56,7 +59,12 @@ function ResponsiveAppBar() {
           >
             {title}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Stack
+            direction={"row"}
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+            justifyContent="flex-end"
+            alignItems="flex-end"
+          >
             {pageKeys.map((pageKey) => (
               <Button
                 key={pageKey}
@@ -77,7 +85,7 @@ function ResponsiveAppBar() {
                 </Link>
               </Button>
             ))}
-          </Box>
+          </Stack>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -87,7 +95,7 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon fontSize="large" />
             </IconButton>
           </Box>
         </Toolbar>
