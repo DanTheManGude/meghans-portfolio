@@ -8,13 +8,9 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Stack from "@mui/material/Stack";
-
-import { useTheme } from "@mui/material/styles";
 
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";

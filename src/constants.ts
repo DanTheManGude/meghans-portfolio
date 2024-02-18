@@ -1,25 +1,34 @@
-export type PageKeys = "home" | "print" | "packaging" | "digital" | "web";
+export type PageKeys =
+  | "HOME"
+  | "DIGITAL"
+  | "PACKAGING"
+  | "PRINT"
+  | "WEB"
+  | "CONTACT";
 
 export const pageKeys: PageKeys[] = [
-  "home",
-  "print",
-  "packaging",
-  "digital",
-  "web",
+  "HOME",
+  "DIGITAL",
+  "PACKAGING",
+  "PRINT",
+  "WEB",
+  "CONTACT",
 ];
 
 export const pageNames: { [key in PageKeys]: string } = {
-  home: "Home",
-  print: "Print",
-  packaging: "Packaging",
-  digital: "Digital",
-  web: "Web",
+  HOME: "Home",
+  DIGITAL: "Digital",
+  PACKAGING: "Packaging",
+  PRINT: "Print",
+  WEB: "Web",
+  CONTACT: "Contact",
 };
 
 export const pagePaths: { [key in PageKeys]: string } = {
-  home: "",
-  print: "print",
-  packaging: "packaging",
-  digital: "digital",
-  web: "web",
+  HOME: "",
+  DIGITAL: "digital",
+  PACKAGING: "packaging",
+  PRINT: "print",
+  WEB: "web",
+  CONTACT: "contact",
 };
