@@ -38,7 +38,7 @@ export default function SideNav({ pathname }: { pathname: string }) {
         PaperProps={{
           sx: {
             backgroundColor: accentColor,
-            width: "50vw",
+            width: "70vw",
           },
         }}
       >
@@ -82,7 +82,7 @@ export default function SideNav({ pathname }: { pathname: string }) {
             bottom: "25px",
           }}
         >
-          <Image src={logo} alt="logo" width={100} height={100} />
+          <Image src={logo} alt="logo" width={80} height={80} />
         </Box>
       </Drawer>
     </>
