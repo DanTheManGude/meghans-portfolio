@@ -21,12 +21,12 @@ export default function ContactPage() {
           borderColor: accentColor,
         }}
       />
-      <Typography variant="body1">{paragraphOne}</Typography>
+      <Typography variant="body2">{paragraphOne}</Typography>
       <br />
-      <Typography variant="body1" fontStyle={"italic"}>
+      <Typography variant="body2" fontStyle={"italic"}>
         {paragraphTwo}
       </Typography>
-      <Typography variant="body1">{paragraphThree}</Typography>
+      <Typography variant="body2">{paragraphThree}</Typography>
       <br />
       <Link
         href="mailto:gudedesigns@gmail.com"
@@ -35,7 +35,7 @@ export default function ContactPage() {
         }}
       >
         <Typography
-          variant="body1"
+          variant="body2"
           color={"#5967af"}
         >{`gudedesigns@gmail.com`}</Typography>
       </Link>

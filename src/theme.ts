@@ -18,7 +18,7 @@ const RalewayFont = Raleway({
 const theme = createTheme({
   typography: {
     fontFamily: RalewayFont.style.fontFamily,
-    body1: {
+    body2: {
       fontFamily: OpenSansFont.style.fontFamily,
     },
   },
