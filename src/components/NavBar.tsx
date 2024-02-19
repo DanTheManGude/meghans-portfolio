@@ -13,7 +13,7 @@ import Stack from "@mui/material/Stack";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
-import { pageKeys, pageNames, pagePaths } from "@/constants";
+import { pageKeys, pageNames, pagePaths, pagePathToKey } from "@/constants";
 import SideNav from "./SideNav";
 
 const title = "Meghan Butera.";
@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
           </Stack>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <SideNav />
+            <SideNav pathname={pathname} />
           </Box>
         </Toolbar>
       </Container>
