@@ -7,15 +7,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
-import MenuIcon from "@mui/icons-material/Menu";
 import Stack from "@mui/material/Stack";
 
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
 import { pageKeys, pageNames, pagePaths } from "@/constants";
+import SideNav from "./SideNav";
 
 const title = "Meghan Butera.";
 
@@ -84,15 +83,7 @@ function ResponsiveAppBar() {
           </Stack>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="pages menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="inherit"
-            >
-              <MenuIcon fontSize="large" />
-            </IconButton>
+            <SideNav />
           </Box>
         </Toolbar>
       </Container>
