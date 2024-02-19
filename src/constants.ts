@@ -49,3 +49,5 @@ export const pagePathToKey: { [key in PagePath]: PageKey } =
     (acc, [pageKey, pagePath]) => ({ ...acc, [pagePath]: pageKey }),
     {} as { [key in PagePath]: PageKey }
   );
+
+export const accentColor = "#e3e5f3";
