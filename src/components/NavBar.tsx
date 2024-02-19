@@ -23,7 +23,7 @@ function ResponsiveAppBar() {
   const pathname = usePathname();
 
   return (
-    <AppBar color="transparent" elevation={0}>
+    <AppBar color="primary" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -67,7 +67,7 @@ function ResponsiveAppBar() {
               >
                 <Link href={`/${pagePaths[pageKey]}`}>
                   <Typography
-                    color={"common.black"}
+                    color="secondary"
                     sx={{
                       textDecoration:
                         pathname === `/${pagePaths[pageKey]}`

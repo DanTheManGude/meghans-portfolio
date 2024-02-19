@@ -32,7 +32,7 @@ export default function SideNav({ pathname }: { pathname: string }) {
         <MenuIcon fontSize="large" />
       </IconButton>
       <Drawer anchor="right" open={isOpenDrawer} onClose={closeDrawer}>
-        <Box sx={{ width: "50vw", height: "100vh", bgcolor: accentColor }}>
+        <Box sx={{ width: "50vw", height: "100%", bgcolor: accentColor }}>
           <IconButton
             size="medium"
             aria-label="close"
@@ -50,7 +50,7 @@ export default function SideNav({ pathname }: { pathname: string }) {
             {pageKeys.map((pageKey) => (
               <Link href={`/${pagePaths[pageKey]}`}>
                 <Typography
-                  color={"common.black"}
+                  color="secondary"
                   key={pageKey}
                   fontSize="28px"
                   fontWeight={600}
