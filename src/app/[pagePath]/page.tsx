@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Container from "@mui/material/Container";
 
 import {
   pagePathToKey,
@@ -27,7 +28,7 @@ export default function Page({
   const pageKey = pagePathToKey[pagePath];
 
   return (
-    <>
+    <Container maxWidth="xl">
       <SubTitle pageKey={pageKey} />
       {pageKey === CONTACT_KEY ? (
         <ContactPage />
@@ -35,6 +36,6 @@ export default function Page({
         <ProjectGrid pageKey={pageKey} />
       )}
       <Footer />
-    </>
+    </Container>
   );
 }
