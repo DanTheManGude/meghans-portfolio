@@ -31,51 +31,58 @@ export default function SideNav({ pathname }: { pathname: string }) {
       >
         <MenuIcon fontSize="large" />
       </IconButton>
-      <Drawer anchor="right" open={isOpenDrawer} onClose={closeDrawer}>
-        <Box sx={{ width: "50vw", height: "100%", bgcolor: accentColor }}>
-          <IconButton
-            size="medium"
-            aria-label="close"
-            sx={{
-              position: "absolute",
-              right: "10px",
-              top: "15px",
-              color: "black",
-            }}
-            onClick={closeDrawer}
-          >
-            <CloseRoundedIcon fontSize="large" />
-          </IconButton>
-          <Stack paddingLeft="35px" paddingTop={"65px"} spacing={2.5}>
-            {pageKeys.map((pageKey) => (
-              <Link href={`/${pagePaths[pageKey]}`}>
-                <Typography
-                  color="secondary"
-                  key={pageKey}
-                  fontSize="28px"
-                  fontWeight={600}
-                  sx={{
-                    textDecoration:
-                      pathname === `/${pagePaths[pageKey]}`
-                        ? "underline"
-                        : "none",
-                  }}
-                  onClick={closeDrawer}
-                >
-                  {pageNames[pageKey]}
-                </Typography>
-              </Link>
-            ))}
-          </Stack>
-          <Box
-            sx={{
-              position: "absolute",
-              right: "20px",
-              bottom: "25px",
-            }}
-          >
-            <Image src={logo} alt="logo" width={100} height={100} />
-          </Box>
+      <Drawer
+        anchor="right"
+        open={isOpenDrawer}
+        onClose={closeDrawer}
+        PaperProps={{
+          sx: {
+            backgroundColor: accentColor,
+            width: "50vw",
+          },
+        }}
+      >
+        <IconButton
+          size="medium"
+          aria-label="close"
+          sx={{
+            position: "absolute",
+            right: "10px",
+            top: "15px",
+            color: "black",
+          }}
+          onClick={closeDrawer}
+        >
+          <CloseRoundedIcon fontSize="large" />
+        </IconButton>
+        <Stack paddingLeft="35px" paddingTop={"65px"} spacing={2.5}>
+          {pageKeys.map((pageKey) => (
+            <Link key={pageKey} href={`/${pagePaths[pageKey]}`}>
+              <Typography
+                color="secondary"
+                fontSize="28px"
+                fontWeight={600}
+                sx={{
+                  textDecoration:
+                    pathname === `/${pagePaths[pageKey]}`
+                      ? "underline"
+                      : "none",
+                }}
+                onClick={closeDrawer}
+              >
+                {pageNames[pageKey]}
+              </Typography>
+            </Link>
+          ))}
+        </Stack>
+        <Box
+          sx={{
+            position: "absolute",
+            right: "20px",
+            bottom: "25px",
+          }}
+        >
+          <Image src={logo} alt="logo" width={100} height={100} />
         </Box>
       </Drawer>
     </>
