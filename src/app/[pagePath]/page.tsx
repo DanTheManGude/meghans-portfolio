@@ -11,7 +11,6 @@ import {
 import SubTitle from "@/components/SubTitle";
 import ProjectGrid from "@/components/ProjectGrid";
 import ContactPage from "@/components/ContactPage";
-import Footer from "@/components/Footer";
 
 const isPagePath = (pagePath: string): pagePath is PagePath => {
   return Object.keys(pagePathToKey).indexOf(pagePath) !== -1;
@@ -35,7 +34,6 @@ export default function Page({
       ) : (
         <ProjectGrid pageKey={pageKey} />
       )}
-      <Footer />
     </Container>
   );
 }
