@@ -77,6 +77,50 @@ export default function Footer() {
           <Image src={logo} alt="logo" width={80} height={80} />
         </Box>
       </Container>
+      <Stack
+        spacing={1}
+        alignItems="center"
+        sx={{ paddingTop: "20px", display: { xs: "flex", md: "none" } }}
+      >
+        <Box>
+          <Image src={logo} alt="logo" width={60} height={60} />
+        </Box>
+        {pageKeys.map((pageKey) => (
+          <Button key={pageKey} sx={{ color: "white", display: "block" }}>
+            <Link href={`/${pagePaths[pageKey]}`}>
+              <Typography
+                fontSize={"16px"}
+                color="secondary"
+                fontWeight={600}
+                sx={{
+                  textDecoration:
+                    pathname === `/${pagePaths[pageKey]}`
+                      ? "underline"
+                      : "none",
+                }}
+              >
+                {pageNames[pageKey]}
+              </Typography>
+            </Link>
+          </Button>
+        ))}
+        <Stack direction="row" sx={{ paddingBottom: "10px" }}>
+          <Link href={"mailto:gudedesigns@gmail.com"}>
+            <IconButton size="large" color="secondary">
+              <EmailOutlinedIcon fontSize="large" />
+            </IconButton>
+          </Link>
+          <Link
+            href={"https://www.linkedin.com/in/meghangude/"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <IconButton size="large" color="secondary">
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
+          </Link>
+        </Stack>
+      </Stack>
     </Container>
   );
 }
