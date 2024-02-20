@@ -1,9 +1,7 @@
 import Typography from "@mui/material/Typography";
 
-import { PageKey, CONTACT_KEY } from "@/constants";
+import { WorksPageKey } from "@/constants";
 
-export default function ProjectGrid({ pageKey }: { pageKey: PageKey }) {
-  if (pageKey === CONTACT_KEY) return null;
-
+export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
   return <Typography>ProjectGrid</Typography>;
 }

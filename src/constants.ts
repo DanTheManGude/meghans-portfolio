@@ -50,4 +50,14 @@ export const pagePathToKey: { [key in PagePath]: PageKey } =
     {} as { [key in PagePath]: PageKey }
   );
 
+export type WorksPageKey = Exclude<PageKey, typeof CONTACT_KEY>;
+
+export const worksMap: { [key in WorksPageKey]: string[] } = {
+  [HOME_KEY]: [""],
+  DIGITAL: [""],
+  PACKAGING: [""],
+  PRINT: [""],
+  WEB: [""],
+};
+
 export const accentColor = "#e3e5f3";
