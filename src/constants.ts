@@ -59,7 +59,7 @@ export const worksNames = {
   LITERATURE_AND_PACKAGING: "Variety of Literature and Packaging",
   MULTIVITAMIN_PRODUCT: "Multivitamin Product Design",
   TYPE_DREAMS_BRANDING: "Type Dreams Branding",
-} as const;
+};
 
 export type WorksKey = keyof typeof worksNames;
 

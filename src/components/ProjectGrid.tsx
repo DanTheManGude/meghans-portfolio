@@ -1,7 +1,9 @@
 import Typography from "@mui/material/Typography";
 
-import { WorksPageKey } from "@/constants";
+import { WorksPageKey, worksMap, worksNames } from "@/constants";
 
 export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
-  return <Typography>ProjectGrid</Typography>;
+  return worksMap[pageKey].map((worksKey) => (
+    <Typography>{worksNames[worksKey]}</Typography>
+  ));
 }
