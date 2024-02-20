@@ -14,6 +14,7 @@ export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
     >
       {worksMap[pageKey].map((worksKey) => (
         <Grid
+          key={worksKey}
           item
           xs={12}
           md={4}
