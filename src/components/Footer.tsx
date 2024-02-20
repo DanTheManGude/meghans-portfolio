@@ -3,14 +3,17 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
+import logo from "@/app/icon.png";
 import { accentColor, pageKeys, pageNames, pagePaths } from "@/constants";
 
 export default function Footer() {
@@ -27,7 +30,7 @@ export default function Footer() {
             {pageKeys.map((pageKey) => (
               <Button
                 key={pageKey}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ marginTop: "20px", color: "white", display: "block" }}
               >
                 <Link href={`/${pagePaths[pageKey]}`}>
                   <Typography
@@ -64,6 +67,15 @@ export default function Footer() {
             </Link>
           </Stack>
         </Stack>
+        <Box
+          sx={{
+            position: "absolute",
+            right: "20px",
+            bottom: "15px",
+          }}
+        >
+          <Image src={logo} alt="logo" width={80} height={80} />
+        </Box>
       </Container>
     </Container>
   );
