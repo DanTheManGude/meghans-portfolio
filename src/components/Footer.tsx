@@ -17,14 +17,13 @@ import logo from "@/app/icon.png";
 import { accentColor, pageKeys, pageNames, pagePaths } from "@/constants";
 
 export default function Footer() {
-  const router = useRouter();
   const pathname = usePathname();
 
   return (
-    <Container
+    <Box
       sx={{ marginTop: "auto", width: "100vw", backgroundColor: accentColor }}
     >
-      <Container sx={{ display: { xs: "none", md: "flex" } }}>
+      <Box sx={{ paddingLeft: "20px", display: { xs: "none", md: "flex" } }}>
         <Stack>
           <Stack direction="row">
             {pageKeys.map((pageKey) => (
@@ -76,7 +75,7 @@ export default function Footer() {
         >
           <Image src={logo} alt="logo" width={80} height={80} />
         </Box>
-      </Container>
+      </Box>
       <Stack
         spacing={1}
         alignItems="center"
@@ -121,6 +120,6 @@ export default function Footer() {
           </Link>
         </Stack>
       </Stack>
-    </Container>
+    </Box>
   );
 }
