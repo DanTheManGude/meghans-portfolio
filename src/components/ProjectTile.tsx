@@ -145,6 +145,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
               top: "0",
               left: "0",
               backgroundColor: "transparent",
+              cursor: "pointer",
             }}
             onClick={onLeftMove}
           />
@@ -156,6 +157,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
               top: "0",
               right: "0",
               backgroundColor: "transparent",
+              cursor: "pointer",
             }}
             onClick={onRightMove}
           />
