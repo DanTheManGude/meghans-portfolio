@@ -9,7 +9,7 @@ export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
       container
       spacing={5}
       alignItems="center"
-      sx={{ paddingTop: "30px" }}
+      sx={{ paddingTop: "30px", paddingBottom: "15px" }}
       textAlign="center"
     >
       {worksMap[pageKey].map((worksKey) => (
