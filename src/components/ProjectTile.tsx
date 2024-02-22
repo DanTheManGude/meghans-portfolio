@@ -32,7 +32,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
       onClick={handleTileClick}
     >
       <Image
-        src={`/projects/thumbnails/${worksKey}.jpg`}
+        src={`/images/thumbnails/${worksKey}.jpg`}
         alt={`Project ${worksName} thumbnail`}
         width={0}
         height={0}
