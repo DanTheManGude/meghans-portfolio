@@ -111,7 +111,9 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
           },
         }}
       >
-        <DialogTitle>{worksName}</DialogTitle>
+        <DialogTitle sx={{ marginRight: "50px", padding: 2 }}>
+          {worksName}
+        </DialogTitle>
         <IconButton
           size="large"
           aria-label="close"
