@@ -8,6 +8,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 import { WorksKey, worksNames } from "@/constants";
 
@@ -77,7 +80,23 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
           },
         }}
       >
-        <DialogContent>
+        <DialogTitle sx={{ m: 0, p: 2 }} id="dialog-title">
+          {worksName}
+        </DialogTitle>
+        <IconButton
+          size="large"
+          aria-label="close"
+          onClick={closeDialog}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+          }}
+          color="secondary"
+        >
+          <CloseIcon fontSize="medium" />
+        </IconButton>
+        <DialogContent dividers>
           <Box>
             <Image
               src={`/images/projects/${worksKey}/0.jpg`}
