@@ -22,7 +22,8 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
   const overlayId = `${worksKey}-overlay`;
 
   const worksName = worksNames[worksKey];
-  const { fileExtension, length } = worksSlideShow[worksKey];
+  const { fileExtension, length: slideshowLength } = worksSlideShow[worksKey];
+  const slideshowMax = slideshowLength - 1;
 
   const [slideshowIndex, setSlideshowIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -31,6 +32,24 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
   const closeDialog = () => {
     setIsDialogOpen(false);
     setSlideshowIndex(0);
+  };
+
+  const onLeftMove = () => {
+    setSlideshowIndex((currentIndex) => {
+      if (currentIndex > 0) {
+        return currentIndex - 1;
+      }
+      return slideshowMax;
+    });
+  };
+
+  const onRightMove = () => {
+    setSlideshowIndex((currentIndex) => {
+      if (currentIndex === slideshowMax) {
+        return 0;
+      }
+      return currentIndex + 1;
+    });
   };
 
   return (
@@ -92,9 +111,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
           },
         }}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="dialog-title">
-          {worksName}
-        </DialogTitle>
+        <DialogTitle>{worksName}</DialogTitle>
         <IconButton
           size="large"
           aria-label="close"
@@ -103,55 +120,45 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
             position: "absolute",
             right: 8,
             top: 8,
+            zIndex: 9000,
           }}
           color="secondary"
         >
           <CloseIcon fontSize="medium" />
         </IconButton>
-        <DialogContent dividers sx={{ paddingX: "0" }}>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            spacing={0}
-            sx={{ paddingX: "1%" }}
-          >
-            <Button
-              sx={{
-                width: "5%",
-                height: "150px",
-                paddingX: "0",
-                minWidth: "13px",
-              }}
-              variant="outlined"
-              color="secondary"
-            >
-              <ArrowBackIosRoundedIcon fontSize="medium" color="secondary" />
-            </Button>
-            <Box sx={{ width: "85%" }}>
-              <Image
-                src={`/images/projects/${worksKey}/${slideshowIndex}.${fileExtension}`}
-                alt={`Project ${worksName} showcase example ${slideshowIndex}`}
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: "100%", height: "auto" }}
-              />
-            </Box>
-
-            <Button
-              sx={{
-                width: "5%",
-                height: "150px",
-                paddingX: "0",
-                minWidth: "13px",
-              }}
-              variant="outlined"
-              color="secondary"
-            >
-              <ArrowForwardIosRoundedIcon fontSize="medium" color="secondary" />
-            </Button>
-          </Stack>
+        <DialogContent dividers sx={{ paddingX: "0", paddingY: "0" }}>
+          <Box sx={{ width: "100%" }}>
+            <Image
+              src={`/images/projects/${worksKey}/${slideshowIndex}.${fileExtension}`}
+              alt={`Project ${worksName} showcase example ${slideshowIndex}`}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Box>
+          <Box
+            sx={{
+              position: "absolute",
+              width: "50%",
+              height: "100%",
+              top: "0",
+              left: "0",
+              backgroundColor: "transparent",
+            }}
+            onClick={onLeftMove}
+          />
+          <Box
+            sx={{
+              position: "absolute",
+              width: "50%",
+              height: "100%",
+              top: "0",
+              right: "0",
+              backgroundColor: "transparent",
+            }}
+            onClick={onRightMove}
+          />
         </DialogContent>
       </Dialog>
     </>
