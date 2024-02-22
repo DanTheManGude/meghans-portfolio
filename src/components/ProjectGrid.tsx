@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 
-import { WorksPageKey, WorksKey, worksMap, worksNames } from "@/constants";
+import { WorksPageKey, worksMap } from "@/constants";
 import ProjectTile from "./ProjectTile";
 
 export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {

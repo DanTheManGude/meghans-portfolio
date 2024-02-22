@@ -4,8 +4,6 @@ import { useState } from "react";
 
 import Image from "next/image";
 
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
@@ -13,8 +11,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
-import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
 import { WorksKey, worksNames, worksSlideShow } from "@/constants";
 
@@ -70,6 +66,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         onClick={openDialog}
       >
         <Image
+          priority={true}
           src={`/images/thumbnails/${worksKey}.jpg`}
           alt={`Project ${worksName} thumbnail`}
           width={0}
