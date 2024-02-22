@@ -1,6 +1,5 @@
 "use client";
 
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
@@ -11,7 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import logo from "@/app/icon.png";
 import { accentColor, pageKeys, pageNames, pagePaths } from "@/constants";

@@ -78,4 +78,15 @@ export const worksMap: { [key in WorksPageKey]: WorksKey[] } = {
   WEB: [],
 };
 
+export const worksSlideShow: {
+  [key in WorksKey]: { fileExtension: string; length: number };
+} = {
+  CALM_THINKING_AMAZON: { fileExtension: "jpg", length: 7 },
+  ORGANIC_SOCIAL: { fileExtension: "jpg", length: 7 },
+  PROMOTIONAL_LANDING_PAGE: { fileExtension: "jpg", length: 2 },
+  LITERATURE_AND_PACKAGING: { fileExtension: "png", length: 6 },
+  MULTIVITAMIN_PRODUCT: { fileExtension: "jpg", length: 4 },
+  TYPE_DREAMS_BRANDING: { fileExtension: "jpg", length: 3 },
+};
+
 export const accentColor = "#e3e5f3";
