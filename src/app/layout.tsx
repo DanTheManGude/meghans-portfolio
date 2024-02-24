@@ -10,6 +10,17 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Meghan's Portfolio",
   description: "Graphic Design Portfolio",
+  openGraph: {
+    type: "website",
+    url: "https://dev.gudedesigns.com",
+    title: "Meghan's Portfolio",
+    description: "Graphic Design Portfolio",
+    images: [
+      {
+        url: "/images/logo.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
