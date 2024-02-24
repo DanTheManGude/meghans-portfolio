@@ -12,8 +12,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import logo from "@/app/icon.png";
-import { accentColor, pageKeys, pageNames, pagePaths } from "@/constants";
+import {
+  accentColor,
+  pageKeys,
+  pageNames,
+  pagePaths,
+  logoPath,
+} from "@/constants";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -72,7 +77,7 @@ export default function Footer() {
             </Stack>
           </Stack>
           <Box paddingRight={"20px"}>
-            <Image src={logo} alt="logo" width={80} height={80} />
+            <Image src={logoPath} alt="logo" width={80} height={80} />
           </Box>
         </Stack>
       </Box>
@@ -82,7 +87,7 @@ export default function Footer() {
         sx={{ paddingTop: "20px", display: { xs: "flex", md: "none" } }}
       >
         <Box>
-          <Image src={logo} alt="logo" width={60} height={60} />
+          <Image src={logoPath} alt="logo" width={60} height={60} />
         </Box>
         {pageKeys.map((pageKey) => (
           <Button key={pageKey} sx={{ color: "white", display: "block" }}>

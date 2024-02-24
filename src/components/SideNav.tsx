@@ -11,8 +11,13 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
-import logo from "@/app/icon.png";
-import { pageKeys, pageNames, pagePaths, accentColor } from "@/constants";
+import {
+  pageKeys,
+  pageNames,
+  pagePaths,
+  accentColor,
+  logoPath,
+} from "@/constants";
 
 export default function SideNav({ pathname }: { pathname: string }) {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
@@ -82,7 +87,7 @@ export default function SideNav({ pathname }: { pathname: string }) {
             bottom: "25px",
           }}
         >
-          <Image src={logo} alt="logo" width={80} height={80} />
+          <Image src={logoPath} alt="logo" width={80} height={80} />
         </Box>
       </Drawer>
     </>
