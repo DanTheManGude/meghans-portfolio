@@ -15,11 +15,6 @@ export const metadata: Metadata = {
     url: "https://dev.gudedesigns.com",
     title: "Meghan's Portfolio",
     description: "Graphic Design Portfolio",
-    images: [
-      {
-        url: "/images/logo.png",
-      },
-    ],
   },
 };
 
