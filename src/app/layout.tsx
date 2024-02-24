@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 
+import { logoPath } from "@/constants";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import theme from "../theme";
@@ -15,11 +16,7 @@ export const metadata: Metadata = {
     url: "https://dev.gudedesigns.com",
     title: "Meghan's Portfolio",
     description: "Graphic Design Portfolio",
-    images: [
-      {
-        url: "/images/logo.png",
-      },
-    ],
+    images: [{ url: logoPath }],
   },
 };
 
