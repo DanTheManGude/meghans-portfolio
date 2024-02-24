@@ -23,7 +23,7 @@ function ResponsiveAppBar() {
   const pathname = usePathname();
 
   return (
-    <AppBar color="primary" elevation={0}>
+    <AppBar color="primary" elevation={0} sx={{ paddingY: 2 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
