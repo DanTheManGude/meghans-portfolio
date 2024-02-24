@@ -158,7 +158,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
                 sizes="100vw"
                 layout="fill"
                 objectFit="contain"
-                style={{ zIndex: 1 }}
+                style={{ zIndex: 1, opacity: 0 }}
               />
             ))}
           </Box>
