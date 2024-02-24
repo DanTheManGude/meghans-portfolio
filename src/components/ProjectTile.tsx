@@ -54,6 +54,9 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
     });
   };
 
+  const getImageUrl = (index: number): string =>
+    `/images/projects/${worksKey}/${index}.${fileExtension}`;
+
   return (
     <>
       <Box
@@ -135,14 +138,29 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         <DialogContent dividers sx={{ paddingX: "0", paddingY: "0" }}>
           <Box sx={{ width: "100%", height: "100%", position: "relative" }}>
             <Image
-              src={`/images/projects/${worksKey}/${slideshowIndex}.${fileExtension}`}
+              priority
+              src={getImageUrl(slideshowIndex)}
               alt={`Project ${worksName} showcase example ${slideshowIndex}`}
               width={0}
               height={0}
               sizes="100vw"
               layout="fill"
               objectFit="contain"
+              style={{ zIndex: 9000 }}
             />
+            {[...Array(slideshowLength)].map((_, index) => (
+              <Image
+                key={`preview-${worksName}-${index}`}
+                src={getImageUrl(index)}
+                alt={`preview ${worksName} ${index}`}
+                width={0}
+                height={0}
+                sizes="100vw"
+                layout="fill"
+                objectFit="contain"
+                style={{ zIndex: 1 }}
+              />
+            ))}
           </Box>
         </DialogContent>
         <DialogActions>
