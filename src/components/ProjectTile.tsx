@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import Image from "next/image";
 
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
@@ -11,6 +13,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
 import { WorksKey, worksNames, worksSlideShow } from "@/constants";
 
@@ -125,41 +129,43 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         >
           <CloseIcon fontSize="medium" />
         </IconButton>
-        <DialogContent dividers sx={{ paddingX: "0", paddingY: "0" }}>
-          <Box sx={{ width: "100%" }}>
-            <Image
-              src={`/images/projects/${worksKey}/${slideshowIndex}.${fileExtension}`}
-              alt={`Project ${worksName} showcase example ${slideshowIndex}`}
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }}
-            />
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              width: "50%",
-              height: "100%",
-              top: "0",
-              left: "0",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-            }}
-            onClick={onLeftMove}
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              width: "50%",
-              height: "100%",
-              top: "0",
-              right: "0",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-            }}
-            onClick={onRightMove}
-          />
+        <DialogContent dividers sx={{ paddingX: "0", paddingY: ".5" }}>
+          <Stack spacing={0.5}>
+            <Box sx={{ width: "100%" }}>
+              <Image
+                src={`/images/projects/${worksKey}/${slideshowIndex}.${fileExtension}`}
+                alt={`Project ${worksName} showcase example ${slideshowIndex}`}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </Box>
+            <Stack
+              direction="row"
+              justifyContent="space-around"
+              alignItems="center"
+              spacing={1}
+              paddingX={1}
+            >
+              <Button
+                variant="outlined"
+                color="secondary"
+                onClick={onLeftMove}
+                sx={{ flexGrow: "1", maxWidth: "33%" }}
+              >
+                <ArrowBackRoundedIcon />
+              </Button>
+              <Button
+                variant="outlined"
+                color="secondary"
+                onClick={onRightMove}
+                sx={{ flexGrow: "1", maxWidth: "33%" }}
+              >
+                <ArrowForwardRoundedIcon />
+              </Button>
+            </Stack>
+          </Stack>
         </DialogContent>
       </Dialog>
     </>
