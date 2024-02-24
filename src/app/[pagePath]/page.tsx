@@ -27,7 +27,7 @@ export default function Page({
   const pageKey = pagePathToKey[pagePath];
 
   return (
-    <Container maxWidth="xl" sx={{ marginTop: 4 }}>
+    <Container maxWidth="xl" sx={{ marginY: 4 }}>
       <SubTitle pageKey={pageKey} />
       {pageKey === CONTACT_KEY ? (
         <ContactPage />
