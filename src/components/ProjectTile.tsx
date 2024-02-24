@@ -144,9 +144,8 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
               width={0}
               height={0}
               sizes="100vw"
-              layout="fill"
-              objectFit="contain"
-              style={{ zIndex: 9000 }}
+              fill
+              style={{ objectFit: "contain", zIndex: 9000 }}
             />
             {[...Array(slideshowLength)].map((_, index) => (
               <Image
@@ -156,9 +155,8 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
                 width={0}
                 height={0}
                 sizes="100vw"
-                layout="fill"
-                objectFit="contain"
-                style={{ zIndex: 1, opacity: 0 }}
+                fill
+                style={{ objectFit: "contain", zIndex: 1, opacity: 0 }}
               />
             ))}
           </Box>
