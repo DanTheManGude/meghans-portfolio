@@ -18,7 +18,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
-import { WorksKey, worksNames, worksSlideShow } from "@/constants";
+import {
+  WorksKey,
+  defaultDataUrl,
+  worksNames,
+  worksSlideShow,
+} from "@/constants";
 
 export default function ProjectTile({
   worksKey,
@@ -35,12 +40,11 @@ export default function ProjectTile({
 
   const [slideshowIndex, setSlideshowIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [blurData, setBlurData] = useState("");
 
   useEffect(() => {
-    blurDataPromise.then((blurData) => {
-      console.log(worksKey, blurData);
-    });
-  }, [blurDataPromise]);
+    blurDataPromise.then(setBlurData);
+  }, []);
 
   const openDialog = () => setIsDialogOpen(true);
   const closeDialog = () => {
@@ -86,15 +90,19 @@ export default function ProjectTile({
         }}
         onClick={openDialog}
       >
-        <Image
-          priority={true}
-          src={`/images/thumbnails/${worksKey}.jpg`}
-          alt={`Project ${worksName} thumbnail`}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-        />
+        {blurData && (
+          <Image
+            priority={true}
+            src={`/images/thumbnails/${worksKey}.jpg`}
+            alt={`Project ${worksName} thumbnail`}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            placeholder="blur"
+            blurDataURL={blurData}
+          />
+        )}
         <Box
           id={overlayId}
           sx={{
