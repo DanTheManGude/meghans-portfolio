@@ -121,9 +121,8 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         sx={{
           "& .MuiDialog-paper": {
             width: "98%",
-            height: "90vh",
+            height: { xs: "80vh", md: "90vh" },
             maxWidth: "95vh",
-            maxHeight: "95vw",
             margin: 0,
           },
         }}
