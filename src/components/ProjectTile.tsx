@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
@@ -18,9 +18,20 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
-import { WorksKey, worksNames, worksSlideShow } from "@/constants";
+import {
+  WorksKey,
+  defaultDataUrl,
+  worksNames,
+  worksSlideShow,
+} from "@/constants";
 
-export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
+export default function ProjectTile({
+  worksKey,
+  blurDataPromise,
+}: {
+  worksKey: WorksKey;
+  blurDataPromise: Promise<string>;
+}) {
   const overlayId = `${worksKey}-overlay`;
 
   const worksName = worksNames[worksKey];
@@ -29,6 +40,11 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
 
   const [slideshowIndex, setSlideshowIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [blurData, setBlurData] = useState("");
+
+  useEffect(() => {
+    blurDataPromise.then(setBlurData);
+  }, []);
 
   const openDialog = () => setIsDialogOpen(true);
   const closeDialog = () => {
@@ -74,15 +90,19 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         }}
         onClick={openDialog}
       >
-        <Image
-          priority={true}
-          src={`/images/thumbnails/${worksKey}.jpg`}
-          alt={`Project ${worksName} thumbnail`}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
-        />
+        {blurData && (
+          <Image
+            priority={true}
+            src={`/images/thumbnails/${worksKey}.jpg`}
+            alt={`Project ${worksName} thumbnail`}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            placeholder="blur"
+            blurDataURL={blurData}
+          />
+        )}
         <Box
           id={overlayId}
           sx={{
