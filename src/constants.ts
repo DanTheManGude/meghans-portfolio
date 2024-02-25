@@ -92,5 +92,3 @@ export const worksSlideShow: {
 export const accentColor = "#e3e5f3";
 
 export const logoPath = "/images/logo.png";
-
-export const defaultDataUrl = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAAsTAAALEwEAmpwYAAAADklEQVR4nGNoQAIMxHEAcFIYAYPG8BkAAAAASUVORK5CYII=`;

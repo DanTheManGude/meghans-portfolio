@@ -2,7 +2,6 @@ import Grid from "@mui/material/Grid";
 
 import { WorksPageKey, worksMap } from "@/constants";
 import ProjectTile from "./ProjectTile";
-import { getBlurData } from "@/utils";
 
 export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
   return (
@@ -21,10 +20,7 @@ export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
           md={4}
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <ProjectTile
-            worksKey={worksKey}
-            blurDataPromise={getBlurData(worksKey)}
-          />
+          <ProjectTile worksKey={worksKey} />
         </Grid>
       ))}
     </Grid>
