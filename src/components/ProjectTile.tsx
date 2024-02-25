@@ -18,7 +18,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
-import { WorksKey, worksNames, worksSlideShow } from "@/constants";
+import {
+  WorksKey,
+  worksBlurData,
+  worksNames,
+  worksSlideShow,
+} from "@/constants";
 
 export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
   const overlayId = `${worksKey}-overlay`;
@@ -29,6 +34,8 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
 
   const [slideshowIndex, setSlideshowIndex] = useState(0);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const blurData = worksBlurData[worksKey];
 
   const openDialog = () => setIsDialogOpen(true);
   const closeDialog = () => {
@@ -82,6 +89,8 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
           height={0}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
+          placeholder={blurData ? "blur" : "empty"}
+          blurDataURL={blurData || ""}
         />
         <Box
           id={overlayId}
