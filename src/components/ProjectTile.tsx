@@ -123,6 +123,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
             width: "98%",
             height: "90vh",
             maxWidth: "95vh",
+            maxHeight: "95vw",
             margin: 0,
           },
         }}
