@@ -27,14 +27,17 @@ const seoKeywords = [
   "amazon content",
 ];
 
+const title = "Meghan's Portfolio"
+const description = "Graphic Design Portfolio of product and package design, email design, social media ads, marketing material, Amazon content and more.";
+
 export const metadata: Metadata = {
-  title: "Meghan's Portfolio",
-  description: "Graphic Design Portfolio",
+  title,
+  description,
   openGraph: {
     type: "website",
     url: "https://dev.gudedesigns.com",
-    title: "Meghan's Portfolio",
-    description: "Graphic Design Portfolio",
+    title,
+    description,
     images: [{ url: "/icon.png" }],
   },
   keywords: seoKeywords,
