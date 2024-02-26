@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { logoPath } from "@/constants";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import theme from "../theme";
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://dev.gudedesigns.com",
     title: "Meghan's Portfolio",
     description: "Graphic Design Portfolio",
-    images: [{ url: logoPath }],
+    images: [{ url: "/icon.png" }],
   },
   keywords: seoKeywords,
 };
