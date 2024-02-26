@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-import VercelAnalytics from "@vercel/analytics";
-
 import Image from "next/image";
 
 import Stack from "@mui/material/Stack";
@@ -26,10 +24,6 @@ import {
   worksNames,
   worksSlideShow,
 } from "@/constants";
-import { ValueOf } from "next/dist/shared/lib/constants";
-
-const slideshowDirection = { LEFT: "LEFT", RIGHT: "RIGHT" } as const;
-type SlideshowDirecton = ValueOf<typeof slideshowDirection>;
 
 export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
   const overlayId = `${worksKey}-overlay`;
@@ -39,51 +33,31 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
   const slideshowMax = slideshowLength - 1;
 
   const [slideshowIndex, setSlideshowIndex] = useState(0);
-  const resetSlideshowIndex = () => setSlideshowIndex(0);
-
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const openDialog = () => setIsDialogOpen(true);
-  const closeDialog = () => setIsDialogOpen(false);
 
   const blurData = worksBlurData[worksKey];
 
-  const handleOpenDialog = () => {
-    openDialog();
-    VercelAnalytics.track("openDialog", {
-      project: worksKey,
-    });
+  const openDialog = () => setIsDialogOpen(true);
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+    setSlideshowIndex(0);
   };
 
-  const handleCloseDialog = () => {
-    closeDialog();
-    resetSlideshowIndex();
-  };
-
-  const trackSlideshowMove = (index: number) => {
-    VercelAnalytics.track("slideshowMove", {
-      project: worksKey,
-      index,
-    });
-  };
-
-  const getHandleSlideshowMove = (direction: SlideshowDirecton) => () => {
+  const onLeftMove = () => {
     setSlideshowIndex((currentIndex) => {
-      let newIndex = currentIndex;
-      if (direction === slideshowDirection.LEFT) {
-        if (currentIndex > 0) {
-          newIndex = currentIndex - 1;
-        } else {
-          newIndex = slideshowMax;
-        }
-      } else if (direction === slideshowDirection.RIGHT) {
-        if (currentIndex === slideshowMax) {
-          newIndex = 0;
-        } else {
-          newIndex = currentIndex + 1;
-        }
+      if (currentIndex > 0) {
+        return currentIndex - 1;
       }
-      trackSlideshowMove(newIndex);
-      return newIndex;
+      return slideshowMax;
+    });
+  };
+
+  const onRightMove = () => {
+    setSlideshowIndex((currentIndex) => {
+      if (currentIndex === slideshowMax) {
+        return 0;
+      }
+      return currentIndex + 1;
     });
   };
 
@@ -105,7 +79,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
           },
           cursor: "pointer",
         }}
-        onClick={handleOpenDialog}
+        onClick={openDialog}
       >
         <Image
           priority={true}
@@ -142,7 +116,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         </Box>
       </Box>
       <Dialog
-        onClose={handleCloseDialog}
+        onClose={closeDialog}
         open={isDialogOpen}
         sx={{
           "& .MuiDialog-paper": {
@@ -159,7 +133,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
         <IconButton
           size="large"
           aria-label="close"
-          onClick={handleCloseDialog}
+          onClick={closeDialog}
           sx={{
             position: "absolute",
             right: 8,
@@ -208,7 +182,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
             <Button
               variant="outlined"
               color="secondary"
-              onClick={getHandleSlideshowMove(slideshowDirection.LEFT)}
+              onClick={onLeftMove}
               sx={{ flexGrow: "1", maxWidth: "33%" }}
             >
               <ArrowBackRoundedIcon />
@@ -216,7 +190,7 @@ export default function ProjectTile({ worksKey }: { worksKey: WorksKey }) {
             <Button
               variant="outlined"
               color="secondary"
-              onClick={getHandleSlideshowMove(slideshowDirection.RIGHT)}
+              onClick={onRightMove}
               sx={{ flexGrow: "1", maxWidth: "33%" }}
             >
               <ArrowForwardRoundedIcon />
