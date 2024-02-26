@@ -1,7 +1,7 @@
 import { CONTACT_KEY, HOME_KEY, pageKeys, pagePaths } from "@/constants";
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://dev.gudedesigns.com/home";
+const BASE_URL = "https://dev.gudedesigns.com/";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return pageKeys.map((pageKey) => {
