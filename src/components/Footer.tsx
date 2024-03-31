@@ -51,6 +51,8 @@ export default function Footer() {
                           pathname === `/${pagePaths[pageKey]}`
                             ? "underline"
                             : "none",
+                        textTransform: "none",
+                        fontSize: 20,
                       }}
                     >
                       {pageNames[pageKey]}
@@ -101,6 +103,8 @@ export default function Footer() {
                     pathname === `/${pagePaths[pageKey]}`
                       ? "underline"
                       : "none",
+                  textTransform: "none",
+                  fontSize: 20,
                 }}
               >
                 {pageNames[pageKey]}
