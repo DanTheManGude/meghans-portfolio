@@ -7,6 +7,9 @@ import Stack from "@mui/material/Stack";
 
 import ProjectGrid from "@/components/ProjectGrid";
 
+const titleText = "I'm Meghan Butera, designer and creative based in New York.";
+const subTitleText = "Specializing in branding, packaging, and digital design.";
+
 const Title = (props: PropsWithChildren) => (
   <Typography
     sx={{
@@ -53,12 +56,8 @@ export default function Page() {
           sx={{ width: { xs: "100%", md: 700, mx: "auto" } }}
           alignItems="center"
         >
-          <Title>
-            I'm Meghan Butera, designer and creative based in New York.
-          </Title>
-          <Subtitle>
-            Specializing in branding, packaging, and digital design.
-          </Subtitle>
+          <Title>{titleText}</Title>
+          <Subtitle>{subTitleText}</Subtitle>
         </Stack>
       </Box>
 
