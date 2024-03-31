@@ -1,9 +1,9 @@
 import Grid from "@mui/material/Grid";
 
-import { WorksPageKey, worksMap } from "@/constants";
+import { worksKeys } from "@/constants";
 import ProjectTile from "./ProjectTile";
 
-export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
+export default function ProjectGrid() {
   return (
     <Grid
       container
@@ -12,7 +12,7 @@ export default function ProjectGrid({ pageKey }: { pageKey: WorksPageKey }) {
       sx={{ paddingTop: "30px", paddingBottom: "15px" }}
       textAlign="center"
     >
-      {worksMap[pageKey].map((worksKey) => (
+      {worksKeys.map((worksKey) => (
         <Grid
           key={worksKey}
           item

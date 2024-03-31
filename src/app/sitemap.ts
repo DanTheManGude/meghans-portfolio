@@ -1,4 +1,4 @@
-import { CONTACT_KEY, HOME_KEY, pageKeys, pagePaths } from "@/constants";
+import { ABOUT_KEY, HOME_KEY, pageKeys, pagePaths } from "@/constants";
 import { MetadataRoute } from "next";
 
 const BASE_URL = "https://dev.gudedesigns.com/";
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       case HOME_KEY:
         priority = 1;
         break;
-      case CONTACT_KEY:
+      case ABOUT_KEY:
         priority = 0.8;
         break;
       default:

@@ -11,25 +11,21 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 
-import { pageKeys, pageNames, pagePaths, pagePathToKey } from "@/constants";
+import { pageKeys, pageNames, pagePaths, logoPath } from "@/constants";
 import SideNav from "./SideNav";
-
-const title = "Meghan Butera.";
 
 function ResponsiveAppBar() {
   const router = useRouter();
   const pathname = usePathname();
 
   return (
-    <AppBar color="primary" elevation={0} sx={{ paddingY: 2 }}>
+    <AppBar color="primary" elevation={0} sx={{ paddingTop: 2 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h3"
-            fontWeight={600}
-            noWrap
+          <Box
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -37,13 +33,10 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            {title}
-          </Typography>
+            <Image src={logoPath} alt="logo" width={80} height={80} />
+          </Box>
 
-          <Typography
-            variant="h4"
-            fontWeight={600}
-            noWrap
+          <Box
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -52,8 +45,9 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            {title}
-          </Typography>
+            <Image src={logoPath} alt="logo" width={60} height={60} />
+          </Box>
+
           <Stack
             direction={"row"}
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
@@ -73,6 +67,8 @@ function ResponsiveAppBar() {
                         pathname === `/${pagePaths[pageKey]}`
                           ? "underline"
                           : "none",
+                      textTransform: "none",
+                      fontSize: 20,
                     }}
                   >
                     {pageNames[pageKey]}

@@ -1,56 +1,19 @@
 export const HOME_KEY = "HOME";
-export const CONTACT_KEY = "CONTACT";
+export const ABOUT_KEY = "ABOUT";
 
-export type PageKey =
-  | typeof HOME_KEY
-  | "DIGITAL"
-  | "PACKAGING"
-  | "PRINT"
-  | "WEB"
-  | typeof CONTACT_KEY;
+export type PageKey = typeof HOME_KEY | typeof ABOUT_KEY;
 
-export const pageKeys: PageKey[] = [
-  HOME_KEY,
-  "DIGITAL",
-  "PACKAGING",
-  "PRINT",
-  "WEB",
-  CONTACT_KEY,
-];
+export const pageKeys: PageKey[] = [HOME_KEY, ABOUT_KEY];
 
 export const pageNames: { [key in PageKey]: string } = {
-  [HOME_KEY]: "Home",
-  DIGITAL: "Digital",
-  PACKAGING: "Packaging",
-  PRINT: "Print",
-  WEB: "Web",
-  [CONTACT_KEY]: "Contact",
+  [HOME_KEY]: "Work",
+  [ABOUT_KEY]: "About",
 };
 
-export type PagePath =
-  | "home"
-  | "digital"
-  | "packaging"
-  | "print"
-  | "web"
-  | "contact";
-
-export const pagePaths: { [key in PageKey]: PagePath } = {
+export const pagePaths: { [key in PageKey]: string } = {
   [HOME_KEY]: "home",
-  DIGITAL: "digital",
-  PACKAGING: "packaging",
-  PRINT: "print",
-  WEB: "web",
-  [CONTACT_KEY]: "contact",
-};
-
-export const pagePathToKey: { [key in PagePath]: PageKey } =
-  Object.entries<PagePath>(pagePaths).reduce<{ [key in PagePath]: PageKey }>(
-    (acc, [pageKey, pagePath]) => ({ ...acc, [pagePath]: pageKey }),
-    {} as { [key in PagePath]: PageKey }
-  );
-
-export type WorksPageKey = Exclude<PageKey, typeof CONTACT_KEY>;
+  [ABOUT_KEY]: "about",
+} as const;
 
 export const worksNames = {
   CALM_THINKING_AMAZON: "Calm Thinking Amazon",
@@ -63,20 +26,14 @@ export const worksNames = {
 
 export type WorksKey = keyof typeof worksNames;
 
-export const worksMap: { [key in WorksPageKey]: WorksKey[] } = {
-  [HOME_KEY]: [
-    "CALM_THINKING_AMAZON",
-    "ORGANIC_SOCIAL",
-    "PROMOTIONAL_LANDING_PAGE",
-    "LITERATURE_AND_PACKAGING",
-    "MULTIVITAMIN_PRODUCT",
-    "TYPE_DREAMS_BRANDING",
-  ],
-  DIGITAL: [],
-  PACKAGING: [],
-  PRINT: [],
-  WEB: [],
-};
+export const worksKeys: WorksKey[] = [
+  "CALM_THINKING_AMAZON",
+  "ORGANIC_SOCIAL",
+  "PROMOTIONAL_LANDING_PAGE",
+  "LITERATURE_AND_PACKAGING",
+  "MULTIVITAMIN_PRODUCT",
+  "TYPE_DREAMS_BRANDING",
+];
 
 export const worksSlideShow: {
   [key in WorksKey]: { fileExtension: string; length: number };
