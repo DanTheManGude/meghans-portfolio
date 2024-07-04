@@ -1,13 +1,13 @@
-import { PropsWithChildren } from "react";
 import Typography, { TypographyProps } from "@mui/material/Typography";
+import { ProjectKey, projectDescription, projectKeys } from "@/constants";
 
 export default function ProjectDescription({
-  children,
+  projectKey,
   ...props
-}: PropsWithChildren<TypographyProps>) {
+}: { projectKey: ProjectKey } & TypographyProps) {
   return (
     <Typography variant="body2" {...props}>
-      {children}
+      {projectDescription[projectKey]}
     </Typography>
   );
 }

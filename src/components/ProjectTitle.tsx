@@ -1,10 +1,10 @@
-import { PropsWithChildren } from "react";
+import { ProjectKey, projectNames } from "@/constants";
 import Typography, { TypographyProps } from "@mui/material/Typography";
 
 export default function ProjectTitle({
-  children,
+  projectKey,
   ...props
-}: PropsWithChildren<TypographyProps>) {
+}: { projectKey: ProjectKey } & TypographyProps) {
   return (
     <Typography
       sx={{
@@ -14,7 +14,7 @@ export default function ProjectTitle({
       textAlign="left"
       {...props}
     >
-      {children}
+      {projectNames[projectKey]}
     </Typography>
   );
 }
