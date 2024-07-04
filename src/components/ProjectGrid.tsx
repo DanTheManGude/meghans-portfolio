@@ -44,7 +44,6 @@ export default function ProjectGrid({
           </Grid>
         )
       )}
-      ( )
     </Grid>
   );
 }
