@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 
-import { ProjectKey, SectionKey, projectSections } from "@/constants";
+import { ProjectKey, SectionKey, projectSections, TileInfo } from "@/constants";
 import ProjectTile from "./ProjectTile";
 
 export default function ProjectGrid({
@@ -10,22 +10,8 @@ export default function ProjectGrid({
 }: {
   projectKey: ProjectKey;
   sectionKey: SectionKey;
-  openDialog: (index: number) => void;
+  openDialog: (targetTile: TileInfo) => void;
 }) {
-  const getHandleOpenDialog = (relativeIndex: number) => () => {
-    let targetIndex = 0;
-    for (let sectionInfo of projectSections[projectKey]) {
-      if (sectionInfo.key === sectionKey) {
-        targetIndex += relativeIndex;
-        break;
-      } else {
-        targetIndex += sectionInfo.length;
-      }
-    }
-
-    openDialog(targetIndex);
-  };
-
   return (
     <Grid
       container
@@ -53,7 +39,7 @@ export default function ProjectGrid({
               projectKey={projectKey}
               sectionKey={sectionKey}
               index={index}
-              onClick={getHandleOpenDialog(index)}
+              onClick={() => openDialog({ sectionKey, index })}
             />
           </Grid>
         )

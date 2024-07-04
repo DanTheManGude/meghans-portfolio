@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import {
   ProjectKey,
   SectionKey,
+  TileInfo,
   sectionDescriptions,
   sectionNames,
 } from "@/constants";
@@ -16,7 +17,7 @@ export default function ProjectSection({
 }: {
   projectKey: ProjectKey;
   sectionKey: SectionKey;
-  openDialog: (index: number) => void;
+  openDialog: (targetTile: TileInfo) => void;
 }) {
   return (
     <Stack>

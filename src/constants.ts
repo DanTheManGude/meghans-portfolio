@@ -78,6 +78,8 @@ export const projectDescription: {
   [projectKeys.NEURO_Q]: Copy.NEURO_Q_DESCRIPTION,
 };
 
+export type TileInfo = { sectionKey: SectionKey; index: number };
+
 export const accentColor = "#e3e5f3";
 
 export const logoPath = "/images/logo.png";
