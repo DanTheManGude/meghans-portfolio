@@ -39,6 +39,7 @@ export default function Page() {
         <ProjectDescription projectKey={projectKey} />
         {projectSections[projectKey].map((sectionInfo) => (
           <ProjectSection
+            key={sectionInfo.key}
             projectKey={projectKey}
             sectionKey={sectionInfo.key}
             openDialog={openDialog}
