@@ -24,7 +24,7 @@ export default function NextProjectButton({
       color="secondary"
       sx={{ width: { xs: "85%", md: "40%" }, marginTop: 2 }}
     >
-      <Link href={projectNames[projectOrder[nextProjectIndex]]}>
+      <Link href={`/${projectNames[projectOrder[nextProjectIndex]]}`}>
         <Typography fontSize={"18px"} color="secondary" fontWeight={600}>
           {`See next project`}
         </Typography>
