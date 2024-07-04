@@ -5,8 +5,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
-import ProjectGrid from "@/components/ProjectGrid";
-
 const titleText = "I'm Meghan Butera, designer and creative based in New York.";
 const subTitleText = "Specializing in branding, packaging, and digital design.";
 
@@ -60,8 +58,6 @@ export default function Page() {
           <Subtitle>{subTitleText}</Subtitle>
         </Stack>
       </Box>
-
-      <ProjectGrid />
     </Container>
   );
 }
