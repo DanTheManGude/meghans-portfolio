@@ -27,7 +27,15 @@ export default function Footer() {
     <Box
       sx={{ marginTop: "auto", width: "100vw", backgroundColor: accentColor }}
     >
-      <Box sx={{ paddingLeft: "20px", display: { xs: "none", md: "flex" } }}>
+      <Box
+        sx={{
+          paddingLeft: "30px",
+          paddingTop: "20px",
+          paddingBottom: "10px",
+          paddingRight: "20px",
+          display: { xs: "none", md: "flex" },
+        }}
+      >
         <Stack
           direction="row"
           justifyContent="space-between"
@@ -35,6 +43,16 @@ export default function Footer() {
           sx={{ width: "100%" }}
         >
           <Stack>
+            <Typography sx={{ fontSize: 28 }} fontWeight={600}>
+              Meghan Butera
+            </Typography>
+            <Box sx={{ width: 400 }}>
+              <Typography sx={{ fontSize: 19 }}>
+                Graphic designer specializing in branding, packaging, and
+                digital design.
+              </Typography>
+            </Box>
+
             <Stack direction="row">
               {pageKeys.map((pageKey) => (
                 <Button
@@ -61,6 +79,23 @@ export default function Footer() {
                 </Button>
               ))}
             </Stack>
+          </Stack>
+          <Stack
+            paddingRight={"20px"}
+            justifyContent="space-around"
+            sx={{ height: "100%" }}
+          >
+            <Link href={"mailto:gudedesigns@gmail.com"}>
+              <Button size="large" color="secondary" variant="contained">
+                <Typography
+                  fontSize={22}
+                  color="primary"
+                  sx={{ textTransform: "none" }}
+                >
+                  Say Hello
+                </Typography>
+              </Button>
+            </Link>
             <Stack direction="row" sx={{ paddingBottom: "10px" }}>
               <Link href={"mailto:gudedesigns@gmail.com"}>
                 <IconButton size="large" color="secondary">
@@ -78,9 +113,6 @@ export default function Footer() {
               </Link>
             </Stack>
           </Stack>
-          <Box paddingRight={"20px"}>
-            <Image src={logoPath} alt="logo" width={80} height={80} />
-          </Box>
         </Stack>
       </Box>
       <Stack
