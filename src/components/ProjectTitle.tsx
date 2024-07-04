@@ -7,6 +7,7 @@ export default function ProjectTitle({
 }: { projectKey: ProjectKey } & TypographyProps) {
   return (
     <Typography
+      alignSelf={"flex-start"}
       sx={{
         fontSize: { xs: 24, md: 36 },
       }}

@@ -24,6 +24,8 @@ export const projectKeys = {
 
 export type ProjectKey = ValueOf<typeof projectKeys>;
 
+export const projectOrder: ProjectKey[] = [projectKeys.NEURO_Q];
+
 export const sectionKeys = {
   NEURO_Q_BRANDING: "NEURO_Q_BRANDING",
   NEURO_Q_PACKAGING: "NEURO_Q_PACKAGING",
