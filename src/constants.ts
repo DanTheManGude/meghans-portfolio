@@ -1,5 +1,5 @@
 import { ValueOf } from "next/dist/shared/lib/constants";
-import { NEURO_Q_DESCRIPTION } from "./copy";
+import * as Copy from "./copy";
 
 export const HOME_KEY = "HOME";
 export const ABOUT_KEY = "ABOUT";
@@ -58,12 +58,12 @@ export const sectionNames: { [key in SectionKey]: string } = {
 };
 
 export const sectionDescriptions: { [key in SectionKey]: string } = {
-  NEURO_Q_BRANDING: "b",
-  NEURO_Q_PACKAGING: "p",
-  NEURO_Q_LITERATURE: "l",
-  NEURO_Q_AMAZON: "a",
-  NEURO_Q_SOCIAL: "s",
-  NEURO_Q_LANDING_PAGES: "lp",
+  NEURO_Q_BRANDING: Copy.NEURO_Q_BRANDING_DESCRIPTION,
+  NEURO_Q_PACKAGING: Copy.NEURO_Q_PACKAGING_DESCRIPTION,
+  NEURO_Q_LITERATURE: Copy.NEURO_Q_LITERATURE_DESCRIPTION,
+  NEURO_Q_AMAZON: Copy.NEURO_Q_AMAZON_DESCRIPTION,
+  NEURO_Q_SOCIAL: Copy.NEURO_Q_SOCIAL_DESCRIPTION,
+  NEURO_Q_LANDING_PAGES: Copy.NEURO_Q_LANDING_PAGES_DESCRIPTION,
 };
 
 export const projectNames: {
@@ -75,7 +75,7 @@ export const projectNames: {
 export const projectDescription: {
   [key in ProjectKey]: string;
 } = {
-  [projectKeys.NEURO_Q]: NEURO_Q_DESCRIPTION,
+  [projectKeys.NEURO_Q]: Copy.NEURO_Q_DESCRIPTION,
 };
 
 export const accentColor = "#e3e5f3";
