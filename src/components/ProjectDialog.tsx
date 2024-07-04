@@ -41,6 +41,54 @@ export default function ProjectSection({
   const getImageUrl = (tile: TileInfo) =>
     `/images/works/${projectKey}/${tile.sectionKey}/${tile.index}.jpg`;
 
+  const onLeftMove = () =>
+    setTargetTile((existingTile) => {
+      if (targetTile.index > 0) {
+        return {
+          ...existingTile,
+          index: existingTile.index - 1,
+        };
+      }
+
+      const currentSectionIndex = projectSections[projectKey].findIndex(
+        (sectionInfo) => sectionInfo.key === existingTile.sectionKey
+      );
+      const newSectionIndex =
+        (currentSectionIndex > 0
+          ? currentSectionIndex
+          : projectSections[projectKey].length) - 1;
+
+      return {
+        sectionKey: projectSections[projectKey][newSectionIndex].key,
+        index: projectSections[projectKey][newSectionIndex].length - 1,
+      };
+    });
+
+  const onRightMove = () =>
+    setTargetTile((existingTile) => {
+      const currentSectionIndex = projectSections[projectKey].findIndex(
+        (sectionInfo) => sectionInfo.key === existingTile.sectionKey
+      );
+
+      if (
+        existingTile.index + 1 <
+        projectSections[projectKey][currentSectionIndex].length
+      ) {
+        return {
+          ...existingTile,
+          index: existingTile.index + 1,
+        };
+      }
+
+      if (currentSectionIndex + 1 < projectSections[projectKey].length) {
+        return {
+          sectionKey: projectSections[projectKey][currentSectionIndex + 1].key,
+          index: 0,
+        };
+      }
+      return { sectionKey: projectSections[projectKey][0].key, index: 0 };
+    });
+
   return (
     <Dialog
       onClose={closeDialog}
