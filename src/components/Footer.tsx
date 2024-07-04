@@ -8,17 +8,15 @@ import IconButton from "@mui/material/IconButton";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import {
-  accentColor,
-  pageKeys,
-  pageNames,
-  pagePaths,
-  logoPath,
-} from "@/constants";
+import { accentColor, pageKeys, pageNames, pagePaths } from "@/constants";
+
+const TITLE = `Meghan Butera`;
+const TAGLINE = `Graphic designer specializing in branding, packaging, and digital
+design.`;
+const EMAIL_BUTTON = `Say Hello`;
 
 export default function Footer() {
   const pathname = usePathname();
@@ -44,13 +42,10 @@ export default function Footer() {
         >
           <Stack>
             <Typography sx={{ fontSize: 28 }} fontWeight={600}>
-              Meghan Butera
+              {TITLE}
             </Typography>
             <Box sx={{ width: 400 }}>
-              <Typography sx={{ fontSize: 19 }}>
-                Graphic designer specializing in branding, packaging, and
-                digital design.
-              </Typography>
+              <Typography sx={{ fontSize: 19 }}>{TAGLINE}</Typography>
             </Box>
 
             <Stack direction="row">
@@ -92,7 +87,7 @@ export default function Footer() {
                   color="primary"
                   sx={{ textTransform: "none" }}
                 >
-                  Say Hello
+                  {EMAIL_BUTTON}
                 </Typography>
               </Button>
             </Link>
@@ -121,11 +116,10 @@ export default function Footer() {
         sx={{ paddingTop: "20px", display: { xs: "flex", md: "none" } }}
       >
         <Typography fontSize={25} fontWeight={600} textAlign={"center"}>
-          Meghan Butera
+          {TITLE}
         </Typography>
         <Typography fontSize={16} sx={{ maxWidth: "85%" }} textAlign={"center"}>
-          Graphic designer specializing in branding, packaging, and digital
-          design.
+          {TAGLINE}
         </Typography>
         {pageKeys.map((pageKey) => (
           <Button key={pageKey} sx={{ color: "white", display: "block" }}>
@@ -155,7 +149,7 @@ export default function Footer() {
               color="primary"
               sx={{ textTransform: "none" }}
             >
-              Say Hello
+              {EMAIL_BUTTON}
             </Typography>
           </Button>
         </Link>
