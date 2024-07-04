@@ -120,9 +120,13 @@ export default function Footer() {
         alignItems="center"
         sx={{ paddingTop: "20px", display: { xs: "flex", md: "none" } }}
       >
-        <Box>
-          <Image src={logoPath} alt="logo" width={60} height={60} />
-        </Box>
+        <Typography fontSize={25} fontWeight={600} textAlign={"center"}>
+          Meghan Butera
+        </Typography>
+        <Typography fontSize={16} sx={{ maxWidth: "85%" }} textAlign={"center"}>
+          Graphic designer specializing in branding, packaging, and digital
+          design.
+        </Typography>
         {pageKeys.map((pageKey) => (
           <Button key={pageKey} sx={{ color: "white", display: "block" }}>
             <Link href={`/${pagePaths[pageKey]}`}>
@@ -144,6 +148,17 @@ export default function Footer() {
             </Link>
           </Button>
         ))}
+        <Link href={"mailto:gudedesigns@gmail.com"}>
+          <Button size="medium" color="secondary" variant="contained">
+            <Typography
+              fontSize={18}
+              color="primary"
+              sx={{ textTransform: "none" }}
+            >
+              Say Hello
+            </Typography>
+          </Button>
+        </Link>
         <Stack direction="row" sx={{ paddingBottom: "10px" }}>
           <Link href={"mailto:gudedesigns@gmail.com"}>
             <IconButton size="large" color="secondary">
