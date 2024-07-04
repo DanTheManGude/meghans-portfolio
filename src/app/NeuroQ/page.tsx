@@ -10,6 +10,7 @@ import ProjectTitle from "@/components/ProjectTitle";
 import ProjectDescription from "@/components/ProjectDescription";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
+import NextProjectButton from "@/components/NextProjectButton";
 
 const projectKey = projectKeys.NEURO_Q;
 
@@ -34,9 +35,9 @@ export default function Page() {
         paddingTop: 3,
       }}
     >
-      <Stack>
+      <Stack alignItems={"center"} width={"100%"}>
         <ProjectTitle projectKey={projectKey} />
-        <ProjectDescription projectKey={projectKey} />
+        <ProjectDescription projectKey={projectKey} sx={{ paddingBottom: 2 }} />
         {projectSections[projectKey].map((sectionInfo) => (
           <ProjectSection
             key={sectionInfo.key}
@@ -45,6 +46,7 @@ export default function Page() {
             openDialog={openDialog}
           />
         ))}
+        <NextProjectButton currentProjectKey={projectKey} />
       </Stack>
       <ProjectDialog
         projectKey={projectKey}

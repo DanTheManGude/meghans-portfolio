@@ -21,7 +21,7 @@ export default function ProjectSection({
 }) {
   return (
     <Stack>
-      <Typography sx={{ fontSize: { xs: 18, md: 31 } }}>
+      <Typography fontWeight={600} sx={{ fontSize: { xs: 18, md: 26 } }}>
         {sectionNames[sectionKey]}
       </Typography>
       <Typography variant="body2">{sectionDescriptions[sectionKey]}</Typography>
