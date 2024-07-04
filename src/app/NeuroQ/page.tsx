@@ -36,7 +36,7 @@ export default function Page() {
     >
       <Stack>
         <ProjectTitle projectKey={projectKey} />
-        <ProjectDescription projectKey={projectKey} />
+        <ProjectDescription projectKey={projectKey} sx={{ paddingBottom: 2 }} />
         {projectSections[projectKey].map((sectionInfo) => (
           <ProjectSection
             key={sectionInfo.key}

@@ -8,7 +8,7 @@ export default function ProjectTitle({
   return (
     <Typography
       sx={{
-        fontSize: { xs: 18, md: 31 },
+        fontSize: { xs: 24, md: 36 },
       }}
       fontWeight={600}
       textAlign="left"
