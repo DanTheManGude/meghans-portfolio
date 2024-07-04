@@ -39,7 +39,8 @@ export default function ProjectTile({
     >
       <Image
         priority={true}
-        src={`/images/thumbnails/${projectKey}/${sectionKey}/${index}.jpg`}
+        //TODO change url to thumbnails
+        src={`/images/works/${projectKey}/${sectionKey}/${index}.jpg`}
         alt={`Project ${projectNames[projectKey]} section ${
           sectionNames[sectionKey]
         } thumbnail ${index + 1}`}
