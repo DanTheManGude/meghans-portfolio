@@ -113,7 +113,11 @@ export default function Footer() {
       <Stack
         spacing={1}
         alignItems="center"
-        sx={{ paddingTop: "20px", display: { xs: "flex", md: "none" } }}
+        sx={{
+          display: { xs: "flex", md: "none" },
+          paddingTop: "20px",
+          paddingBottom: "20px",
+        }}
       >
         <Typography fontSize={25} fontWeight={600} textAlign={"center"}>
           {TITLE}
