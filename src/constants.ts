@@ -20,11 +20,19 @@ export const pagePaths: { [key in PageKey]: string } = {
 
 export const projectKeys = {
   NEURO_Q: "NEURO_Q",
+  LIFE_SEASONS: "LIFE_SEASONS",
+  SUPPLEMENT: "SUPPLEMENT",
+  EMAIL: "EMAIL",
 } as const;
 
 export type ProjectKey = ValueOf<typeof projectKeys>;
 
-export const projectOrder: ProjectKey[] = [projectKeys.NEURO_Q];
+export const projectOrder: ProjectKey[] = [
+  projectKeys.NEURO_Q,
+  projectKeys.LIFE_SEASONS,
+  projectKeys.SUPPLEMENT,
+  projectKeys.EMAIL,
+];
 
 export const sectionKeys = {
   NEURO_Q_BRANDING: "NEURO_Q_BRANDING",
@@ -48,6 +56,9 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
     { key: sectionKeys.NEURO_Q_SOCIAL, length: 3 },
     { key: sectionKeys.NEURO_Q_LANDING_PAGES, length: 3 },
   ],
+  [projectKeys.LIFE_SEASONS]: [],
+  [projectKeys.SUPPLEMENT]: [],
+  [projectKeys.EMAIL]: [],
 };
 
 export const sectionNames: { [key in SectionKey]: string } = {
@@ -72,12 +83,18 @@ export const projectNames: {
   [key in ProjectKey]: string;
 } = {
   [projectKeys.NEURO_Q]: "NeuroQ",
+  [projectKeys.LIFE_SEASONS]: "LifeSeasons",
+  [projectKeys.SUPPLEMENT]: "Supplement",
+  [projectKeys.EMAIL]: "Email",
 };
 
 export const projectDescription: {
   [key in ProjectKey]: string;
 } = {
   [projectKeys.NEURO_Q]: Copy.NEURO_Q_DESCRIPTION,
+  [projectKeys.LIFE_SEASONS]: Copy.LIFE_SEASONS_DESCRIPTION,
+  [projectKeys.SUPPLEMENT]: Copy.SUPPLEMENT_DESCRIPTION,
+  [projectKeys.EMAIL]: Copy.EMAIL_DESCRIPTION,
 };
 
 export type TileInfo = { sectionKey: SectionKey; index: number };

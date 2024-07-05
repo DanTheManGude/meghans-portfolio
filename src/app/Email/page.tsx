@@ -12,7 +12,7 @@ import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
 
-const projectKey = projectKeys.NEURO_Q;
+const projectKey = projectKeys.EMAIL;
 
 export default function Page() {
   const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>();
