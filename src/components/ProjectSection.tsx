@@ -20,7 +20,7 @@ export default function ProjectSection({
   openDialog: (targetTile: TileInfo) => void;
 }) {
   return (
-    <Stack width={"100%"} alignItems={"left"}>
+    <Stack width={"100%"} alignItems={"left"} paddingTop={4}>
       <Typography fontWeight={600} sx={{ fontSize: { xs: 18, md: 26 } }}>
         {sectionNames[sectionKey]}
       </Typography>
