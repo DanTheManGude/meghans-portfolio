@@ -55,13 +55,13 @@ export default function Page() {
         display="flex"
         justifyContent="center"
       >
-        <Stack
-          sx={{ width: { xs: "100%", md: 700, mx: "auto" } }}
-          alignItems="center"
-        >
-          <Title>{titleText}</Title>
-          <Subtitle>{subTitleText}</Subtitle>
+        <Stack alignItems="center">
+          <Stack sx={{ width: { xs: "100%", md: 700, mx: "auto" } }}>
+            <Title>{titleText}</Title>
+            <Subtitle>{subTitleText}</Subtitle>
+          </Stack>
           <Grid
+            width={{ xs: "100%", md: "80%", mx: "auto" }}
             container
             spacing={5}
             alignItems="center"
