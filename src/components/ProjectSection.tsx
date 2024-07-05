@@ -1,5 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
+
 import {
   ProjectKey,
   SectionKey,
@@ -24,7 +26,9 @@ export default function ProjectSection({
       <Typography fontWeight={600} sx={{ fontSize: { xs: 18, md: 26 } }}>
         {sectionNames[sectionKey]}
       </Typography>
-      <Typography variant="body2">{sectionDescriptions[sectionKey]}</Typography>
+      <Typography variant="body2" sx={{ width: { md: "75%" } }}>
+        {sectionDescriptions[sectionKey]}
+      </Typography>
 
       <ProjectGrid
         projectKey={projectKey}
