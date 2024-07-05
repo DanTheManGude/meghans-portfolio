@@ -125,27 +125,30 @@ export default function Footer() {
         <Typography fontSize={16} sx={{ maxWidth: "85%" }} textAlign={"center"}>
           {TAGLINE}
         </Typography>
-        {pageKeys.map((pageKey) => (
-          <Button key={pageKey} sx={{ color: "white", display: "block" }}>
-            <Link href={`/${pagePaths[pageKey]}`}>
-              <Typography
-                fontSize={"16px"}
-                color="secondary"
-                fontWeight={600}
-                sx={{
-                  textDecoration:
-                    pathname === `/${pagePaths[pageKey]}`
-                      ? "underline"
-                      : "none",
-                  textTransform: "none",
-                  fontSize: 20,
-                }}
-              >
-                {pageNames[pageKey]}
-              </Typography>
-            </Link>
-          </Button>
-        ))}
+        <Stack direction={"row"}>
+          {pageKeys.map((pageKey) => (
+            <Button key={pageKey} sx={{ color: "white", display: "block" }}>
+              <Link href={`/${pagePaths[pageKey]}`}>
+                <Typography
+                  fontSize={"16px"}
+                  color="secondary"
+                  fontWeight={600}
+                  sx={{
+                    textDecoration:
+                      pathname === `/${pagePaths[pageKey]}`
+                        ? "underline"
+                        : "none",
+                    textTransform: "none",
+                    fontSize: 20,
+                  }}
+                >
+                  {pageNames[pageKey]}
+                </Typography>
+              </Link>
+            </Button>
+          ))}
+        </Stack>
+
         <Link href={"mailto:gudedesigns@gmail.com"}>
           <Button size="medium" color="secondary" variant="contained">
             <Typography
