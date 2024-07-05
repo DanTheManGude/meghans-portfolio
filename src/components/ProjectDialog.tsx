@@ -30,12 +30,17 @@ export default function ProjectSection({
   projectKey: ProjectKey;
   closeDialog: () => void;
   isDialogOpen: boolean;
-  openingTargetTile: TileInfo;
+  openingTargetTile?: TileInfo;
 }) {
-  const [targetTile, setTargetTile] = useState<TileInfo>(openingTargetTile);
+  const [targetTile, setTargetTile] = useState<TileInfo>({
+    sectionKey: projectSections[projectKey][0]?.key,
+    index: 0,
+  });
 
   useEffect(() => {
-    setTargetTile(openingTargetTile);
+    if (openingTargetTile) {
+      setTargetTile(openingTargetTile);
+    }
   }, [openingTargetTile]);
 
   const getImageUrl = (tile: TileInfo) =>

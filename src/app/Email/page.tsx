@@ -12,13 +12,10 @@ import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
 
-const projectKey = projectKeys.SUPPLEMENT;
+const projectKey = projectKeys.EMAIL;
 
 export default function Page() {
-  const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>({
-    sectionKey: projectSections[projectKey][0].key,
-    index: 0,
-  });
+  const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const closeDialog = () => setIsDialogOpen(false);
 

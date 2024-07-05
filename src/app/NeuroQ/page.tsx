@@ -15,10 +15,7 @@ import NextProjectButton from "@/components/NextProjectButton";
 const projectKey = projectKeys.NEURO_Q;
 
 export default function Page() {
-  const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>({
-    sectionKey: projectSections[projectKey][0].key,
-    index: 0,
-  });
+  const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const closeDialog = () => setIsDialogOpen(false);
 

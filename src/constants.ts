@@ -89,9 +89,12 @@ export const projectNames: {
 };
 
 export const projectDescription: {
-  [key in ProjectKey]?: string;
+  [key in ProjectKey]: string;
 } = {
   [projectKeys.NEURO_Q]: Copy.NEURO_Q_DESCRIPTION,
+  [projectKeys.LIFE_SEASONS]: Copy.LIFE_SEASONS_DESCRIPTION,
+  [projectKeys.SUPPLEMENT]: Copy.SUPPLEMENT_DESCRIPTION,
+  [projectKeys.EMAIL]: Copy.EMAIL_DESCRIPTION,
 };
 
 export type TileInfo = { sectionKey: SectionKey; index: number };

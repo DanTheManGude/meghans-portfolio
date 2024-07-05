@@ -1,4 +1,7 @@
 export const NEURO_Q_DESCRIPTION = `When I was brought on as the Senior Graphic Designer for NeuroQ at LifeSeasons, they were In their beginning stages of branding, advertising and overall creative voice. Over the last two plus years I've worked to bring a new life to the brand to enhance sales and customer journey. Below are some examples.`;
+export const LIFE_SEASONS_DESCRIPTION = `LifeSeasons description`;
+export const SUPPLEMENT_DESCRIPTION = `Supplement description`;
+export const EMAIL_DESCRIPTION = `Email description`;
 
 export const NEURO_Q_BRANDING_DESCRIPTION = `I created a brand guide for NeuroQ to hone in on our brand voice. This was used internally and also externally to ensure our guidelines were always being upheld.`;
 export const NEURO_Q_PACKAGING_DESCRIPTION = `As part of the customer experience, we wanted to create an elevated experience for the customer. There was a series of testing done to see which design preformed the best and resulted in the best retention.`;
