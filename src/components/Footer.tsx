@@ -23,7 +23,11 @@ export default function Footer() {
 
   return (
     <Box
-      sx={{ marginTop: "auto", width: "100vw", backgroundColor: accentColor }}
+      sx={{
+        marginTop: "auto",
+        width: "100vw",
+        backgroundColor: "secondary.main",
+      }}
     >
       <Box
         sx={{
@@ -41,11 +45,17 @@ export default function Footer() {
           sx={{ width: "100%" }}
         >
           <Stack>
-            <Typography sx={{ fontSize: 28 }} fontWeight={600}>
+            <Typography
+              sx={{ fontSize: 28 }}
+              fontWeight={600}
+              color={"primary"}
+            >
               {TITLE}
             </Typography>
             <Box sx={{ width: 400 }}>
-              <Typography sx={{ fontSize: 19 }}>{TAGLINE}</Typography>
+              <Typography sx={{ fontSize: 19 }} color={"primary"}>
+                {TAGLINE}
+              </Typography>
             </Box>
 
             <Stack direction="row">
@@ -57,7 +67,7 @@ export default function Footer() {
                   <Link href={`/${pagePaths[pageKey]}`}>
                     <Typography
                       fontSize={"18px"}
-                      color="secondary"
+                      color="primary"
                       fontWeight={600}
                       sx={{
                         textDecoration:
@@ -81,10 +91,10 @@ export default function Footer() {
             sx={{ height: "100%" }}
           >
             <Link href={"mailto:gudedesigns@gmail.com"}>
-              <Button size="large" color="secondary" variant="contained">
+              <Button size="large" color="primary" variant="contained">
                 <Typography
                   fontSize={22}
-                  color="primary"
+                  color="secondary"
                   sx={{ textTransform: "none" }}
                 >
                   {EMAIL_BUTTON}
@@ -93,7 +103,7 @@ export default function Footer() {
             </Link>
             <Stack direction="row" sx={{ paddingBottom: "10px" }}>
               <Link href={"mailto:gudedesigns@gmail.com"}>
-                <IconButton size="large" color="secondary">
+                <IconButton size="large" color="primary">
                   <EmailOutlinedIcon fontSize="large" />
                 </IconButton>
               </Link>
@@ -102,7 +112,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <IconButton size="large" color="secondary">
+                <IconButton size="large" color="primary">
                   <LinkedInIcon fontSize="large" />
                 </IconButton>
               </Link>
@@ -119,19 +129,32 @@ export default function Footer() {
           paddingBottom: "20px",
         }}
       >
-        <Typography fontSize={25} fontWeight={600} textAlign={"center"}>
+        <Typography
+          fontSize={25}
+          fontWeight={600}
+          textAlign={"center"}
+          color={"primary"}
+        >
           {TITLE}
         </Typography>
-        <Typography fontSize={16} sx={{ maxWidth: "85%" }} textAlign={"center"}>
+        <Typography
+          fontSize={16}
+          sx={{ maxWidth: "85%" }}
+          textAlign={"center"}
+          color={"primary"}
+        >
           {TAGLINE}
         </Typography>
         <Stack direction={"row"}>
           {pageKeys.map((pageKey) => (
-            <Button key={pageKey} sx={{ color: "white", display: "block" }}>
+            <Button
+              key={pageKey}
+              sx={{ color: "primary.main", display: "block" }}
+            >
               <Link href={`/${pagePaths[pageKey]}`}>
                 <Typography
                   fontSize={"16px"}
-                  color="secondary"
+                  color="primary"
                   fontWeight={600}
                   sx={{
                     textDecoration:
@@ -150,10 +173,10 @@ export default function Footer() {
         </Stack>
 
         <Link href={"mailto:gudedesigns@gmail.com"}>
-          <Button size="medium" color="secondary" variant="contained">
+          <Button size="medium" color="primary" variant="contained">
             <Typography
               fontSize={18}
-              color="primary"
+              color="secondary"
               sx={{ textTransform: "none" }}
             >
               {EMAIL_BUTTON}
@@ -162,7 +185,7 @@ export default function Footer() {
         </Link>
         <Stack direction="row" sx={{ paddingBottom: "10px" }}>
           <Link href={"mailto:gudedesigns@gmail.com"}>
-            <IconButton size="large" color="secondary">
+            <IconButton size="large" color="primary">
               <EmailOutlinedIcon fontSize="large" />
             </IconButton>
           </Link>
@@ -171,7 +194,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <IconButton size="large" color="secondary">
+            <IconButton size="large" color="primary">
               <LinkedInIcon fontSize="large" />
             </IconButton>
           </Link>
