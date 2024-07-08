@@ -63,7 +63,7 @@ export default function Page() {
             <Subtitle>{subTitleText}</Subtitle>
           </Stack>
           <Grid
-            width={{ xs: "100%", md: "80%", mx: "auto" }}
+            width={{ xs: "100%", md: "95%", mx: "auto" }}
             container
             spacing={5}
             alignItems="center"
@@ -85,7 +85,6 @@ export default function Page() {
                     <Box
                       sx={{
                         width: "100%",
-                        maxWidth: "400px",
                         position: "relative",
                         [`& #${overlayId}`]: {
                           opacity: 0,
