@@ -9,8 +9,8 @@ export type PageKey = typeof HOME_KEY | typeof ABOUT_KEY;
 export const pageKeys: PageKey[] = [HOME_KEY, ABOUT_KEY];
 
 export const pageNames: { [key in PageKey]: string } = {
-  [HOME_KEY]: "Work",
-  [ABOUT_KEY]: "About",
+  [HOME_KEY]: "work",
+  [ABOUT_KEY]: "about",
 };
 
 export const pagePaths: { [key in PageKey]: string } = {
