@@ -10,7 +10,8 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import { projectNames, projectOrder } from "@/constants";
 
-const titleText = "I'm Meghan Butera, designer and creative based in New York.";
+const titleText1 = "I'm Meghan Butera,";
+const titleText2 = "designer and creative based in New York.";
 const subTitleText = "Specializing in branding, packaging, and digital design.";
 
 const Title = (props: PropsWithChildren) => (
@@ -56,8 +57,9 @@ export default function Page() {
         justifyContent="center"
       >
         <Stack alignItems="center">
-          <Stack sx={{ width: { xs: "100%", md: 700, mx: "auto" } }}>
-            <Title>{titleText}</Title>
+          <Stack sx={{ width: "100%" }}>
+            <Title>{titleText1}</Title>
+            <Title>{titleText2}</Title>
             <Subtitle>{subTitleText}</Subtitle>
           </Stack>
           <Grid
