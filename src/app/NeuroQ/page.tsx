@@ -6,13 +6,23 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 
 import { TileInfo, projectKeys, projectSections } from "@/constants";
-import ProjectTitle from "@/components/ProjectTitle";
 import ProjectDescription from "@/components/ProjectDescription";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
+import ProjectHeaderBlock from "@/components/ProjectHeaderBlock";
 
 const projectKey = projectKeys.NEURO_Q;
+
+const headerBlock1Title = "Scope:";
+const headerBlock1Body =
+  "Enhance customer journey, drive sales and create successfull marketing campaigns";
+const headerBlock2Title = "Skills Used:";
+const headerBlock2Body =
+  "Branding • Layout • UX Design • Digital Design • Print and Packaging Design • Video Editing";
+const headerBlock3Title = "Tools Used:";
+const headerBlock3Body =
+  "Photoshop • Illustrator • Figma • Sketch • Premiere Pro • Dimensions";
 
 export default function Page() {
   const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>();
@@ -30,11 +40,29 @@ export default function Page() {
       sx={{
         marginY: 4,
         paddingTop: 3,
+        marginX: 2,
       }}
     >
       <Stack alignItems={"center"} width={"100%"}>
-        <ProjectTitle projectKey={projectKey} />
-        <ProjectDescription projectKey={projectKey} sx={{ paddingBottom: 2 }} />
+        <Stack
+          direction={"row"}
+          width={"100%"}
+          justifyContent="space-around"
+          alignItems="flex-start"
+        >
+          <ProjectHeaderBlock
+            titleText={headerBlock1Title}
+            bodyText={headerBlock1Body}
+          />
+          <ProjectHeaderBlock
+            titleText={headerBlock2Title}
+            bodyText={headerBlock2Body}
+          />
+          <ProjectHeaderBlock
+            titleText={headerBlock2Title}
+            bodyText={headerBlock3Body}
+          />
+        </Stack>
         {projectSections[projectKey].map((sectionInfo) => (
           <ProjectSection
             key={sectionInfo.key}
