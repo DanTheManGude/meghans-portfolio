@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 
 import { TileInfo, projectKeys, projectSections } from "@/constants";
 import ProjectTitle from "@/components/ProjectTitle";
-import ProjectDescription from "@/components/ProjectDescription";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
@@ -34,7 +33,6 @@ export default function Page() {
     >
       <Stack alignItems={"center"} width={"100%"}>
         <ProjectTitle projectKey={projectKey} />
-        <ProjectDescription projectKey={projectKey} sx={{ paddingBottom: 2 }} />
         {projectSections[projectKey].map((sectionInfo) => (
           <ProjectSection
             key={sectionInfo.key}

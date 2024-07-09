@@ -6,12 +6,11 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 
 import { TileInfo, projectKeys, projectSections } from "@/constants";
-import ProjectDescription from "@/components/ProjectDescription";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
-import ProjectHeaderBlock from "@/components/ProjectHeaderBlock";
 import ProjectHeaderBlockSection from "@/components/ProjectHeaderBlockSection";
+import ProjectHeader from "@/components/ProjectHeader";
 
 const projectKey = projectKeys.NEURO_Q;
 
@@ -35,6 +34,7 @@ export default function Page() {
       }}
     >
       <Stack alignItems={"center"} width={"100%"}>
+        <ProjectHeader projectKey={projectKey} />
         <ProjectHeaderBlockSection projectKey={projectKey} />
         {projectSections[projectKey].map((sectionInfo) => (
           <ProjectSection
