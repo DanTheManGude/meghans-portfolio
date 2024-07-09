@@ -97,6 +97,62 @@ export const projectDescription: {
   [projectKeys.EMAIL]: Copy.EMAIL_DESCRIPTION,
 };
 
+export const projectHeaderBlockSectionKeys = {
+  SCOPE: "SCOPE",
+  SKILLS_USED: "SKILLS_USED",
+  TOOLS_USED: "TOOLS_USED",
+} as const;
+
+export type ProjectHeaderBlockSectionKey = ValueOf<
+  typeof projectHeaderBlockSectionKeys
+>;
+
+export const projectHeaderBlockSectionOrder: ProjectHeaderBlockSectionKey[] = [
+  projectHeaderBlockSectionKeys.SCOPE,
+  projectHeaderBlockSectionKeys.SKILLS_USED,
+  projectHeaderBlockSectionKeys.TOOLS_USED,
+];
+
+export const projectHeaderBlockSectionTitles: {
+  [key in ProjectHeaderBlockSectionKey]: string;
+} = {
+  [projectHeaderBlockSectionKeys.SCOPE]: Copy.PROJECT_HEADER_BLOCK_SCOPE_TITLE,
+  [projectHeaderBlockSectionKeys.SKILLS_USED]:
+    Copy.PROJECT_HEADER_BLOCK_SKILLS_USED_TITLE,
+  [projectHeaderBlockSectionKeys.TOOLS_USED]:
+    Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_TITLE,
+};
+
+export const projectHeaderBlockSectionBodyTexts: {
+  [key in ProjectKey]: {
+    [key in ProjectHeaderBlockSectionKey]: string;
+  };
+} = {
+  [projectKeys.NEURO_Q]: {
+    [projectHeaderBlockSectionKeys.SCOPE]:
+      Copy.PROJECT_HEADER_BLOCK_SCOPE_BODY_NEURO_Q,
+    [projectHeaderBlockSectionKeys.SKILLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_NEURO_Q,
+    [projectHeaderBlockSectionKeys.TOOLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_NEURO_Q,
+  },
+  [projectKeys.LIFE_SEASONS]: {
+    [projectHeaderBlockSectionKeys.SCOPE]: "",
+    [projectHeaderBlockSectionKeys.SKILLS_USED]: "",
+    [projectHeaderBlockSectionKeys.TOOLS_USED]: "",
+  },
+  [projectKeys.SUPPLEMENT]: {
+    [projectHeaderBlockSectionKeys.SCOPE]: "",
+    [projectHeaderBlockSectionKeys.SKILLS_USED]: "",
+    [projectHeaderBlockSectionKeys.TOOLS_USED]: "",
+  },
+  [projectKeys.EMAIL]: {
+    [projectHeaderBlockSectionKeys.SCOPE]: "",
+    [projectHeaderBlockSectionKeys.SKILLS_USED]: "",
+    [projectHeaderBlockSectionKeys.TOOLS_USED]: "",
+  },
+};
+
 export type TileInfo = { sectionKey: SectionKey; index: number };
 
 export const accentColor = "#e3e5f3";

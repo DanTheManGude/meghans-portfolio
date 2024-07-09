@@ -9,7 +9,11 @@ export default function ProjectHeaderBlock({
   bodyText: string;
 }) {
   return (
-    <Stack width={"28%"} alignItems={"center"}>
+    <Stack
+      width={"100%"}
+      alignItems={"center"}
+      sx={{ paddingX: { md: 3.5, xs: 0 }, paddingY: { md: 0, xs: 2 } }}
+    >
       <Typography
         fontWeight={600}
         sx={{ fontSize: { xs: 18, md: 26 } }}
