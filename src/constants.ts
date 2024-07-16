@@ -1,4 +1,7 @@
 import { ValueOf } from "next/dist/shared/lib/constants";
+import { Asset } from "next-video/dist/assets.js";
+import { StaticImageData } from "next/image";
+
 import * as Copy from "./copy";
 
 export const HOME_KEY = "HOME";
@@ -157,6 +160,8 @@ export const projectHeaderBlockSectionBodyTexts: {
 };
 
 export type TileInfo = { sectionKey: SectionKey; index: number };
+
+export type VideoInfo = { asset: Asset; poster: StaticImageData };
 
 export const accentColor = "#e3e5f3";
 
