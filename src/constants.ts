@@ -41,6 +41,7 @@ export const sectionKeys = {
   NEURO_Q_AMAZON: "NEURO_Q_AMAZON",
   NEURO_Q_SOCIAL: "NEURO_Q_SOCIAL",
   NEURO_Q_LANDING_PAGES: "NEURO_Q_LANDING_PAGES",
+  NEURO_Q_VIDEO: "NEURO_Q_VIDEO",
 } as const;
 
 export type SectionKey = ValueOf<typeof sectionKeys>;
@@ -62,12 +63,13 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
 };
 
 export const sectionNames: { [key in SectionKey]: string } = {
-  NEURO_Q_BRANDING: "Branding",
-  NEURO_Q_PACKAGING: "Packaging",
-  NEURO_Q_LITERATURE: "Literature",
+  NEURO_Q_BRANDING: "Brand Guide",
+  NEURO_Q_PACKAGING: "Custom Packaging",
+  NEURO_Q_LITERATURE: "Literature Inserts",
   NEURO_Q_AMAZON: "Amazon",
-  NEURO_Q_SOCIAL: "Social",
+  NEURO_Q_SOCIAL: "Organic Social",
   NEURO_Q_LANDING_PAGES: "Landing Pages",
+  NEURO_Q_VIDEO: "Video Editing",
 };
 
 export const sectionDescriptions: { [key in SectionKey]: string } = {
@@ -77,6 +79,7 @@ export const sectionDescriptions: { [key in SectionKey]: string } = {
   NEURO_Q_AMAZON: Copy.NEURO_Q_AMAZON_DESCRIPTION,
   NEURO_Q_SOCIAL: Copy.NEURO_Q_SOCIAL_DESCRIPTION,
   NEURO_Q_LANDING_PAGES: Copy.NEURO_Q_LANDING_PAGES_DESCRIPTION,
+  NEURO_Q_VIDEO: Copy.NEURO_Q_VIDEO_DESCRIPTION,
 };
 
 export const projectNames: {

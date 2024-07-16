@@ -4,13 +4,23 @@ import { useState } from "react";
 
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 
-import { TileInfo, projectKeys, projectSections } from "@/constants";
+import {
+  TileInfo,
+  projectKeys,
+  projectSections,
+  sectionDescriptions,
+  sectionKeys,
+  sectionNames,
+} from "@/constants";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
 import ProjectHeaderBlockSection from "@/components/ProjectHeaderBlockSection";
 import ProjectHeader from "@/components/ProjectHeader";
+import ProjectGrid from "@/components/ProjectGrid";
+import SectionTitle from "@/components/SectionTitle";
 
 const projectKey = projectKeys.NEURO_Q;
 
@@ -44,6 +54,12 @@ export default function Page() {
             openDialog={openDialog}
           />
         ))}
+        <Stack width={"100%"} alignItems={"left"} paddingTop={4}>
+          <SectionTitle>{sectionNames[sectionKeys.NEURO_Q_VIDEO]}</SectionTitle>
+          <Typography variant="body2" sx={{ width: { md: "75%" } }}>
+            {sectionDescriptions[sectionKeys.NEURO_Q_VIDEO]}
+          </Typography>
+        </Stack>
         <NextProjectButton currentProjectKey={projectKey} />
       </Stack>
       <ProjectDialog

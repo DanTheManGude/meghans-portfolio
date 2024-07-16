@@ -9,6 +9,7 @@ export const NEURO_Q_LITERATURE_DESCRIPTION = `With an older demographic, printe
 export const NEURO_Q_AMAZON_DESCRIPTION = `With Amazon holding such a strong online shopping presence and a preferred method for many people it was important to have the imagery match the brand. I created new carousel images and A+ content for all products.`;
 export const NEURO_Q_SOCIAL_DESCRIPTION = `Instagram and Facebook posts reiterated our brand message, reviews, products, and educational excerpts from our clinically studied supplements.`;
 export const NEURO_Q_LANDING_PAGES_DESCRIPTION = `Serving as a place for our digital ads to funnel to, landing pages were used in our digital marketing campaigns. Here are two examples of landing page designs created to be educational and ultimately convert to sales.`;
+export const NEURO_Q_VIDEO_DESCRIPTION = `Providing educational content to our consumers was a top priority. I created videos related to our blog content to be posted on our website as well as YouTube. These included a variety of topics from ingredients, conditions and overall product knowledge.`;
 
 export const PROJECT_HEADER_BLOCK_SCOPE_TITLE = "Scope:";
 export const PROJECT_HEADER_BLOCK_SKILLS_USED_TITLE = "Skills Used:";
