@@ -15,7 +15,7 @@ export const PROJECT_HEADER_BLOCK_SKILLS_USED_TITLE = "Skills Used:";
 export const PROJECT_HEADER_BLOCK_TOOLS_USED_TITLE = "Tools Used:";
 
 export const PROJECT_HEADER_BLOCK_SCOPE_BODY_NEURO_Q =
-  "Enhance customer journey, drive sales and create successfull marketing campaigns";
+  "Enhance customer journey, drive sales and create successful marketing campaigns";
 export const PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_NEURO_Q =
   "Branding • Layout • UX Design • Digital Design • Print and Packaging Design • Video Editing";
 export const PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_NEURO_Q =
