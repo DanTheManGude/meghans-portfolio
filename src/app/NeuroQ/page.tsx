@@ -6,8 +6,10 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 import {
+  NEURO_Q_VIDEOS,
   TileInfo,
   VideoInfo,
   projectKeys,
@@ -24,21 +26,7 @@ import ProjectHeader from "@/components/ProjectHeader";
 import SectionTitle from "@/components/SectionTitle";
 import VideoPlayer from "@/components/VideoPlayer";
 
-import NQvideo_0 from "/videos/NQ-blog-reduce-inflammation.mp4";
-import NQvideo_1 from "/videos/NQ-blog-video-hyperaphantasia.mp4";
-import NQvideo_2 from "/videos/NQ-blog-video-pqq.mp4";
-
-import NQvideoPoster_0 from "/public/images/videoPosters/nq-video-0.jpg";
-import NQvideoPoster_1 from "/public/images/videoPosters/nq-video-1.jpg";
-import NQvideoPoster_2 from "/public/images/videoPosters/nq-video-2.jpg";
-
 const projectKey = projectKeys.NEURO_Q;
-
-const videos: VideoInfo[] = [
-  { asset: NQvideo_0, poster: NQvideoPoster_0 },
-  { asset: NQvideo_1, poster: NQvideoPoster_1 },
-  { asset: NQvideo_2, poster: NQvideoPoster_2 },
-];
 
 export default function Page() {
   const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>();
@@ -82,7 +70,7 @@ export default function Page() {
             sx={{ paddingTop: "30px", paddingBottom: "15px" }}
             textAlign="center"
           >
-            {videos.map((videoInfo) => (
+            {NEURO_Q_VIDEOS.map((videoInfo) => (
               <Grid
                 key={`video-0`}
                 item
@@ -90,7 +78,14 @@ export default function Page() {
                 md={4}
                 style={{ display: "flex", justifyContent: "center" }}
               >
-                <VideoPlayer videoInfo={videoInfo} />
+                <Box
+                  sx={{
+                    width: "100%",
+                    maxWidth: "400px",
+                  }}
+                >
+                  <VideoPlayer videoInfo={videoInfo} />
+                </Box>
               </Grid>
             ))}
           </Grid>

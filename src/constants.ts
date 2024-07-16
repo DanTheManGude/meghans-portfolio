@@ -161,7 +161,22 @@ export const projectHeaderBlockSectionBodyTexts: {
 
 export type TileInfo = { sectionKey: SectionKey; index: number };
 
-export type VideoInfo = { asset: Asset; poster: StaticImageData };
+export type VideoInfo = { videoSource: string; posterSource: string };
+
+export const NEURO_Q_VIDEOS: VideoInfo[] = [
+  {
+    videoSource: "/videos/NQ-blog-reduce-inflammation.mp4",
+    posterSource: "/images/videoPosters/nq-video-0.jpg",
+  },
+  {
+    videoSource: "/videos/NQ-blog-video-hyperaphantasia.mp4",
+    posterSource: "/images/videoPosters/nq-video-1.jpg",
+  },
+  {
+    videoSource: "/videos/NQ-blog-video-pqq.mp4",
+    posterSource: "/images/videoPosters/nq-video-2.jpg",
+  },
+];
 
 export const accentColor = "#e3e5f3";
 
