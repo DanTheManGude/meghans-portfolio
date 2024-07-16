@@ -11,3 +11,8 @@ body {
 a {
   text-decoration: none;
 }
+
+mux-player {
+  --seek-backward-button: none;
+  --seek-forward-button: none;
+}

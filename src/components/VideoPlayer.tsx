@@ -1,4 +1,4 @@
-import { accentColor, VideoInfo } from "@/constants";
+import { VideoInfo } from "@/constants";
 import Player from "next-video/player";
 
 export default function VideoPlayer(props: { videoInfo: VideoInfo }) {
