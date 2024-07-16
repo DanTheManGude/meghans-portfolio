@@ -16,12 +16,12 @@ export default function ProjectHeaderBlock({
     >
       <Typography
         fontWeight={600}
-        sx={{ fontSize: { xs: 18, md: 26 } }}
+        sx={{ fontSize: { xs: 18, md: 22 } }}
         textAlign={"center"}
       >
         {titleText}
       </Typography>
-      <Typography sx={{ fontSize: { xs: 14, md: 20 } }} textAlign={"center"}>
+      <Typography sx={{ fontSize: { xs: 14, md: 17 } }} textAlign={"center"}>
         {bodyText}
       </Typography>
     </Stack>
