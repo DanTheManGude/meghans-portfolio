@@ -176,6 +176,15 @@ export const projectNames: {
   [projectKeys.EMAIL]: "Email",
 };
 
+export const projectHeaderBackgroundInfos: {
+  [key in ProjectKey]: { color?: string; image?: boolean };
+} = {
+  [projectKeys.NEURO_Q]: { image: true },
+  [projectKeys.LIFE_SEASONS]: { color: "#99c55f" },
+  [projectKeys.SUPPLEMENT]: {},
+  [projectKeys.EMAIL]: {},
+};
+
 export const projectDescription: {
   [key in ProjectKey]: string;
 } = {

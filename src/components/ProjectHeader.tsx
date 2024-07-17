@@ -1,25 +1,40 @@
 import Image from "next/image";
 
 import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
+import Box, { BoxProps } from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import { ProjectKey, projectDescription } from "@/constants";
+import {
+  ProjectKey,
+  projectDescription,
+  projectHeaderBackgroundInfos,
+} from "@/constants";
 
 export default function ProjectHeader({
   projectKey,
 }: {
   projectKey: ProjectKey;
 }) {
+  var parentBoxStyles: BoxProps["sx"] = { width: "100%" };
+
+  if (projectHeaderBackgroundInfos[projectKey].image) {
+    parentBoxStyles = {
+      ...parentBoxStyles,
+      backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      width: "100%",
+    };
+  }
+  if (projectHeaderBackgroundInfos[projectKey].color) {
+    parentBoxStyles = {
+      ...parentBoxStyles,
+      backgroundColor: projectHeaderBackgroundInfos[projectKey].color,
+    };
+  }
+
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        width: "100%",
-      }}
-    >
+    <Box sx={parentBoxStyles}>
       <Stack alignItems={"center"} spacing={2} paddingTop={5} paddingBottom={8}>
         <Box
           sx={{ display: { md: "flex", xs: "none" } }}
@@ -31,7 +46,7 @@ export default function ProjectHeader({
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "200px", height: "auto" }}
+            style={{ width: "auto", height: "64px" }}
           />
         </Box>
         <Box
@@ -44,7 +59,7 @@ export default function ProjectHeader({
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "130px", height: "auto" }}
+            style={{ width: "auto", height: "40px" }}
           />
         </Box>
 
