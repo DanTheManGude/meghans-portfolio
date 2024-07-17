@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import {
   ProjectKey,
   SectionInfo,
-  SectionKey,
   projectNames,
   sectionNames,
 } from "@/constants";

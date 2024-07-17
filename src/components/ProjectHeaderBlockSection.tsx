@@ -1,4 +1,6 @@
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
 
 import {
   ProjectKey,
@@ -6,7 +8,6 @@ import {
   projectHeaderBlockSectionOrder,
   projectHeaderBlockSectionTitles,
 } from "@/constants";
-import ProjectHeaderBlock from "./ProjectHeaderBlock";
 
 export default function ProjectHeaderBlockSection({
   projectKey,
@@ -30,16 +31,29 @@ export default function ProjectHeaderBlockSection({
           md={4}
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <ProjectHeaderBlock
-            titleText={
-              projectHeaderBlockSectionTitles[projectHeaderBlockSectionKey]
-            }
-            bodyText={
-              projectHeaderBlockSectionBodyTexts[projectKey][
-                projectHeaderBlockSectionKey
-              ]
-            }
-          />
+          <Stack
+            width={"100%"}
+            alignItems={"center"}
+            sx={{ paddingX: { md: 3.5, xs: 0 }, paddingY: { md: 0, xs: 2 } }}
+          >
+            <Typography
+              fontWeight={600}
+              sx={{ fontSize: { xs: 18, md: 22 } }}
+              textAlign={"center"}
+            >
+              {projectHeaderBlockSectionTitles[projectHeaderBlockSectionKey]}
+            </Typography>
+            <Typography
+              sx={{ fontSize: { xs: 14, md: 17 } }}
+              textAlign={"center"}
+            >
+              {
+                projectHeaderBlockSectionBodyTexts[projectKey][
+                  projectHeaderBlockSectionKey
+                ]
+              }
+            </Typography>
+          </Stack>
         </Grid>
       ))}
     </Grid>
