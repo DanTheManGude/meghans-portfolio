@@ -8,7 +8,7 @@ import {
   sectionTypes,
   videoFileNames,
 } from "@/constants";
-import ProjectImageTile from "./ProjectTile";
+import ProjectImageTile from "./ProjectImageTile";
 import VideoPlayer from "./VideoPlayer";
 
 export default function ProjectGrid({
