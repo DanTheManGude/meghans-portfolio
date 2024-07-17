@@ -247,7 +247,7 @@ export const projectNames: {
   [projectKeys.NEURO_Q]: "NeuroQ",
   [projectKeys.LIFE_SEASONS]: "LifeSeasons",
   [projectKeys.SUPPLEMENTS]: "Supplements",
-  [projectKeys.EMAIL]: "Email",
+  [projectKeys.EMAIL]: "Email Design",
 };
 
 export const projectHeaderInfos: {
