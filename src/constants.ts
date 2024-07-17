@@ -53,6 +53,9 @@ export const sectionKeys = {
   SUPPLEMENTS_REDS_KITCHEN_SINK: "SUPPLEMENTS_REDS_KITCHEN_SINK",
   SUPPLEMENTS_SHADOW_SUPPLEMENTS: "SUPPLEMENTS_SHADOW_SUPPLEMENTS",
   SUPPLEMENTS_KETO_VITALS: "SUPPLEMENTS_KETO_VITALS",
+  EMAIL_CANVAS_PEOPLE: "EMAIL_CANVAS_PEOPLE",
+  EMAIL_NEURO_Q: "EMAIL_NEURO_Q",
+  EMAIL_LIFE_SEASONS: "EMAIL_LIFE_SEASONS",
 } as const;
 
 export const sectionTypes = {
@@ -179,7 +182,26 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
       width: 4,
     },
   ],
-  [projectKeys.EMAIL]: [],
+  [projectKeys.EMAIL]: [
+    {
+      key: sectionKeys.EMAIL_CANVAS_PEOPLE,
+      length: 4,
+      type: sectionTypes.IMAGE,
+      width: 3,
+    },
+    {
+      key: sectionKeys.EMAIL_NEURO_Q,
+      length: 4,
+      type: sectionTypes.IMAGE,
+      width: 3,
+    },
+    {
+      key: sectionKeys.EMAIL_LIFE_SEASONS,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+  ],
 };
 
 export const sectionNames: { [key in SectionKey]: string } = {
@@ -200,6 +222,9 @@ export const sectionNames: { [key in SectionKey]: string } = {
   SUPPLEMENTS_REDS_KITCHEN_SINK: "Red's Kitchen Sink",
   SUPPLEMENTS_SHADOW_SUPPLEMENTS: "Shadow Supplements",
   SUPPLEMENTS_KETO_VITALS: "KetoVitals",
+  EMAIL_CANVAS_PEOPLE: "Canvas People",
+  EMAIL_NEURO_Q: "NeuroQ",
+  EMAIL_LIFE_SEASONS: "LifeSeasons",
 };
 
 export const sectionDescriptions: { [key in SectionKey]?: string } = {
@@ -235,7 +260,7 @@ export const projectHeaderInfos: {
   [projectKeys.NEURO_Q]: { backgroundImage: true, logoImage: true },
   [projectKeys.LIFE_SEASONS]: { color: "#99c55f", logoImage: true },
   [projectKeys.SUPPLEMENTS]: { color: "#7f5e78", logoImage: false },
-  [projectKeys.EMAIL]: { logoImage: false },
+  [projectKeys.EMAIL]: { color: "#ea9d76", logoImage: false },
 };
 
 export const projectDescription: {
