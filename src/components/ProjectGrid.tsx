@@ -63,7 +63,7 @@ export default function ProjectGrid({
             key={`${sectionInfo.key}-${index}`}
             item
             xs={12}
-            md={4}
+            md={sectionInfo.width}
             style={{ display: "flex", justifyContent: "center" }}
           >
             <Box
