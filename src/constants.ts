@@ -22,7 +22,7 @@ export const pagePaths: { [key in PageKey]: string } = {
 export const projectKeys = {
   NEURO_Q: "NEURO_Q",
   LIFE_SEASONS: "LIFE_SEASONS",
-  SUPPLEMENT: "SUPPLEMENT",
+  SUPPLEMENTS: "SUPPLEMENTS",
   EMAIL: "EMAIL",
 } as const;
 
@@ -31,7 +31,7 @@ export type ProjectKey = ValueOf<typeof projectKeys>;
 export const projectOrder: ProjectKey[] = [
   projectKeys.NEURO_Q,
   projectKeys.LIFE_SEASONS,
-  projectKeys.SUPPLEMENT,
+  projectKeys.SUPPLEMENTS,
   projectKeys.EMAIL,
 ];
 
@@ -47,6 +47,12 @@ export const sectionKeys = {
   LIFE_SEASONS_VIDEO: "LIFE_SEASONS_VIDEO",
   LIFE_SEASONS_AMAZON: "LIFE_SEASONS_AMAZON",
   LIFE_SEASONS_RETAIL: "LIFE_SEASONS_RETAIL",
+  SUPPLEMENTS_WARRIOR_STRONG_WELLNESS: "SUPPLEMENTS_WARRIOR_STRONG_WELLNESS",
+  SUPPLEMENTS_ALPHA_WOLF_NUTRITION: "SUPPLEMENTS_ALPHA_WOLF_NUTRITION",
+  SUPPLEMENTS_BELLES_SECRETS: "SUPPLEMENTS_BELLES_SECRETS",
+  SUPPLEMENTS_REDS_KITCHEN_SINK: "SUPPLEMENTS_REDS_KITCHEN_SINK",
+  SUPPLEMENTS_SHADOW_SUPPLEMENTS: "SUPPLEMENTS_SHADOW_SUPPLEMENTS",
+  SUPPLEMENTS_KETO_VITALS: "SUPPLEMENTS_KETO_VITALS",
 } as const;
 
 export const sectionTypes = {
@@ -135,7 +141,44 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
       width: 4,
     },
   ],
-  [projectKeys.SUPPLEMENT]: [],
+  [projectKeys.SUPPLEMENTS]: [
+    {
+      key: sectionKeys.SUPPLEMENTS_WARRIOR_STRONG_WELLNESS,
+      length: 6,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.SUPPLEMENTS_ALPHA_WOLF_NUTRITION,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.SUPPLEMENTS_BELLES_SECRETS,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.SUPPLEMENTS_REDS_KITCHEN_SINK,
+      length: 2,
+      type: sectionTypes.IMAGE,
+      width: 5,
+    },
+    {
+      key: sectionKeys.SUPPLEMENTS_SHADOW_SUPPLEMENTS,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.SUPPLEMENTS_KETO_VITALS,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+  ],
   [projectKeys.EMAIL]: [],
 };
 
@@ -151,9 +194,15 @@ export const sectionNames: { [key in SectionKey]: string } = {
   LIFE_SEASONS_VIDEO: "Video Editing",
   LIFE_SEASONS_AMAZON: "Amazon",
   LIFE_SEASONS_RETAIL: "Retail",
+  SUPPLEMENTS_WARRIOR_STRONG_WELLNESS: "Warrior Strong Wellness",
+  SUPPLEMENTS_ALPHA_WOLF_NUTRITION: "Alpha Wolf Nutrition",
+  SUPPLEMENTS_BELLES_SECRETS: "Belle's Secrets",
+  SUPPLEMENTS_REDS_KITCHEN_SINK: "Red's Kitchen Sink",
+  SUPPLEMENTS_SHADOW_SUPPLEMENTS: "Shadow Supplements",
+  SUPPLEMENTS_KETO_VITALS: "KetoVitals",
 };
 
-export const sectionDescriptions: { [key in SectionKey]: string } = {
+export const sectionDescriptions: { [key in SectionKey]?: string } = {
   NEURO_Q_BRANDING: Copy.NEURO_Q_BRANDING_DESCRIPTION,
   NEURO_Q_PACKAGING: Copy.NEURO_Q_PACKAGING_DESCRIPTION,
   NEURO_Q_LITERATURE: Copy.NEURO_Q_LITERATURE_DESCRIPTION,
@@ -172,7 +221,7 @@ export const projectNames: {
 } = {
   [projectKeys.NEURO_Q]: "NeuroQ",
   [projectKeys.LIFE_SEASONS]: "LifeSeasons",
-  [projectKeys.SUPPLEMENT]: "Supplement",
+  [projectKeys.SUPPLEMENTS]: "Supplements",
   [projectKeys.EMAIL]: "Email",
 };
 
@@ -181,7 +230,7 @@ export const projectHeaderBackgroundInfos: {
 } = {
   [projectKeys.NEURO_Q]: { image: true },
   [projectKeys.LIFE_SEASONS]: { color: "#99c55f" },
-  [projectKeys.SUPPLEMENT]: {},
+  [projectKeys.SUPPLEMENTS]: { color: "#7f5e78" },
   [projectKeys.EMAIL]: {},
 };
 
@@ -190,7 +239,7 @@ export const projectDescription: {
 } = {
   [projectKeys.NEURO_Q]: Copy.NEURO_Q_DESCRIPTION,
   [projectKeys.LIFE_SEASONS]: Copy.LIFE_SEASONS_DESCRIPTION,
-  [projectKeys.SUPPLEMENT]: Copy.SUPPLEMENT_DESCRIPTION,
+  [projectKeys.SUPPLEMENTS]: Copy.SUPPLEMENTS_DESCRIPTION,
   [projectKeys.EMAIL]: Copy.EMAIL_DESCRIPTION,
 };
 
@@ -241,15 +290,21 @@ export const projectHeaderBlockSectionBodyTexts: {
     [projectHeaderBlockSectionKeys.TOOLS_USED]:
       Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_LIFE_SEASONS,
   },
-  [projectKeys.SUPPLEMENT]: {
-    [projectHeaderBlockSectionKeys.SCOPE]: "",
-    [projectHeaderBlockSectionKeys.SKILLS_USED]: "",
-    [projectHeaderBlockSectionKeys.TOOLS_USED]: "",
+  [projectKeys.SUPPLEMENTS]: {
+    [projectHeaderBlockSectionKeys.SCOPE]:
+      Copy.PROJECT_HEADER_BLOCK_SCOPE_BODY_SUPPLEMENTS,
+    [projectHeaderBlockSectionKeys.SKILLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_SUPPLEMENTS,
+    [projectHeaderBlockSectionKeys.TOOLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_SUPPLEMENTS,
   },
   [projectKeys.EMAIL]: {
-    [projectHeaderBlockSectionKeys.SCOPE]: "",
-    [projectHeaderBlockSectionKeys.SKILLS_USED]: "",
-    [projectHeaderBlockSectionKeys.TOOLS_USED]: "",
+    [projectHeaderBlockSectionKeys.SCOPE]:
+      Copy.PROJECT_HEADER_BLOCK_SCOPE_BODY_EMAIL,
+    [projectHeaderBlockSectionKeys.SKILLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_EMAIL,
+    [projectHeaderBlockSectionKeys.TOOLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_EMAIL,
   },
 };
 
