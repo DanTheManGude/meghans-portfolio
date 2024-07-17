@@ -225,13 +225,17 @@ export const projectNames: {
   [projectKeys.EMAIL]: "Email",
 };
 
-export const projectHeaderBackgroundInfos: {
-  [key in ProjectKey]: { color?: string; image?: boolean };
+export const projectHeaderInfos: {
+  [key in ProjectKey]: {
+    color?: string;
+    backgroundImage?: boolean;
+    logoImage: boolean;
+  };
 } = {
-  [projectKeys.NEURO_Q]: { image: true },
-  [projectKeys.LIFE_SEASONS]: { color: "#99c55f" },
-  [projectKeys.SUPPLEMENTS]: { color: "#7f5e78" },
-  [projectKeys.EMAIL]: {},
+  [projectKeys.NEURO_Q]: { backgroundImage: true, logoImage: true },
+  [projectKeys.LIFE_SEASONS]: { color: "#99c55f", logoImage: true },
+  [projectKeys.SUPPLEMENTS]: { color: "#7f5e78", logoImage: false },
+  [projectKeys.EMAIL]: { logoImage: false },
 };
 
 export const projectDescription: {

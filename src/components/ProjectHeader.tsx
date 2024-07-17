@@ -7,7 +7,8 @@ import Typography from "@mui/material/Typography";
 import {
   ProjectKey,
   projectDescription,
-  projectHeaderBackgroundInfos,
+  projectHeaderInfos,
+  projectNames,
 } from "@/constants";
 
 export default function ProjectHeader({
@@ -17,7 +18,7 @@ export default function ProjectHeader({
 }) {
   var parentBoxStyles: BoxProps["sx"] = { width: "100%" };
 
-  if (projectHeaderBackgroundInfos[projectKey].image) {
+  if (projectHeaderInfos[projectKey].backgroundImage) {
     parentBoxStyles = {
       ...parentBoxStyles,
       backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
@@ -26,42 +27,55 @@ export default function ProjectHeader({
       width: "100%",
     };
   }
-  if (projectHeaderBackgroundInfos[projectKey].color) {
+  if (projectHeaderInfos[projectKey].color) {
     parentBoxStyles = {
       ...parentBoxStyles,
-      backgroundColor: projectHeaderBackgroundInfos[projectKey].color,
+      backgroundColor: projectHeaderInfos[projectKey].color,
     };
   }
 
   return (
     <Box sx={parentBoxStyles}>
       <Stack alignItems={"center"} spacing={2} paddingTop={5} paddingBottom={8}>
-        <Box
-          sx={{ display: { md: "flex", xs: "none" } }}
-          justifyContent="center"
-        >
-          <Image
-            src={`/images/projectLogos/${projectKey}.png`}
-            alt="logo"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "auto", height: "64px" }}
-          />
-        </Box>
-        <Box
-          sx={{ display: { md: "none", xs: "flex" } }}
-          justifyContent="center"
-        >
-          <Image
-            src={`/images/projectLogos/${projectKey}.png`}
-            alt="logo"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "auto", height: "40px" }}
-          />
-        </Box>
+        {projectHeaderInfos[projectKey].logoImage ? (
+          <>
+            <Box
+              sx={{ display: { md: "flex", xs: "none" } }}
+              justifyContent="center"
+            >
+              <Image
+                src={`/images/projectLogos/${projectKey}.png`}
+                alt="logo"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "auto", height: "64px" }}
+              />
+            </Box>
+            <Box
+              sx={{ display: { md: "none", xs: "flex" } }}
+              justifyContent="center"
+            >
+              <Image
+                src={`/images/projectLogos/${projectKey}.png`}
+                alt="logo"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "auto", height: "40px" }}
+              />
+            </Box>
+          </>
+        ) : (
+          <Typography
+            variant="body2"
+            fontSize={{ md: 50, xs: 28 }}
+            color={"primary"}
+            textAlign={"center"}
+          >
+            {projectNames[projectKey]}
+          </Typography>
+        )}
 
         <Typography
           variant="body2"
