@@ -3,46 +3,33 @@ import Image from "next/image";
 import Box from "@mui/material/Box";
 import {
   ProjectKey,
+  SectionInfo,
   SectionKey,
   projectNames,
   sectionNames,
 } from "@/constants";
 
-export default function ProjectTile({
+export default function ProjectImageTile({
   projectKey,
-  sectionKey,
+  sectionInfo,
   index,
   onClick,
+  overlayId,
 }: {
   projectKey: ProjectKey;
-  sectionKey: SectionKey;
+  sectionInfo: SectionInfo;
   index: number;
   onClick: () => void;
+  overlayId: string;
 }) {
-  const overlayId = `${sectionKey}-${index}-overlay`;
-
   return (
-    <Box
-      sx={{
-        width: "100%",
-        maxWidth: "400px",
-        position: "relative",
-        [`& #${overlayId}`]: {
-          opacity: 0,
-        },
-        [`& #${overlayId}:hover`]: {
-          opacity: 1,
-        },
-        cursor: "pointer",
-      }}
-      onClick={onClick}
-    >
+    <>
       <Image
         priority={true}
         //TODO change url to thumbnails
-        src={`/images/works/${projectKey}/${sectionKey}/${index}.jpg`}
+        src={`/images/works/${projectKey}/${sectionInfo.key}/${index}.jpg`}
         alt={`Project ${projectNames[projectKey]} section ${
-          sectionNames[sectionKey]
+          sectionNames[sectionInfo.key]
         } thumbnail ${index + 1}`}
         width={0}
         height={0}
@@ -58,7 +45,8 @@ export default function ProjectTile({
           top: "0",
           backgroundColor: "rgba(0,0,0,.5)",
         }}
+        onClick={onClick}
       />
-    </Box>
+    </>
   );
 }

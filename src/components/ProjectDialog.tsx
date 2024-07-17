@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 import Image from "next/image";
 
@@ -16,12 +16,14 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
 import {
   ProjectKey,
+  SectionInfo,
   TileInfo,
   projectSections,
   sectionNames,
+  sectionTypes,
 } from "@/constants";
 
-export default function ProjectSection({
+export default function ProjectDialog({
   projectKey,
   closeDialog,
   isDialogOpen,
@@ -32,8 +34,16 @@ export default function ProjectSection({
   isDialogOpen: boolean;
   openingTargetTile?: TileInfo;
 }) {
+  const projectImageSections: SectionInfo[] = useMemo(
+    () =>
+      projectSections[projectKey].filter(
+        (sectionInfo) => sectionInfo.type === sectionTypes.IMAGE
+      ),
+    [projectKey]
+  );
+
   const [targetTile, setTargetTile] = useState<TileInfo>({
-    sectionKey: projectSections[projectKey][0]?.key,
+    sectionKey: projectImageSections[0]?.key,
     index: 0,
   });
 
@@ -55,29 +65,29 @@ export default function ProjectSection({
         };
       }
 
-      const currentSectionIndex = projectSections[projectKey].findIndex(
+      const currentSectionIndex = projectImageSections.findIndex(
         (sectionInfo) => sectionInfo.key === existingTile.sectionKey
       );
       const newSectionIndex =
         (currentSectionIndex > 0
           ? currentSectionIndex
-          : projectSections[projectKey].length) - 1;
+          : projectImageSections.length) - 1;
 
       return {
-        sectionKey: projectSections[projectKey][newSectionIndex].key,
-        index: projectSections[projectKey][newSectionIndex].length - 1,
+        sectionKey: projectImageSections[newSectionIndex].key,
+        index: projectImageSections[newSectionIndex].length - 1,
       };
     });
 
   const onRightMove = () =>
     setTargetTile((existingTile) => {
-      const currentSectionIndex = projectSections[projectKey].findIndex(
+      const currentSectionIndex = projectImageSections.findIndex(
         (sectionInfo) => sectionInfo.key === existingTile.sectionKey
       );
 
       if (
         existingTile.index + 1 <
-        projectSections[projectKey][currentSectionIndex].length
+        projectImageSections[currentSectionIndex].length
       ) {
         return {
           ...existingTile,
@@ -85,13 +95,13 @@ export default function ProjectSection({
         };
       }
 
-      if (currentSectionIndex + 1 < projectSections[projectKey].length) {
+      if (currentSectionIndex + 1 < projectImageSections.length) {
         return {
-          sectionKey: projectSections[projectKey][currentSectionIndex + 1].key,
+          sectionKey: projectImageSections[currentSectionIndex + 1].key,
           index: 0,
         };
       }
-      return { sectionKey: projectSections[projectKey][0].key, index: 0 };
+      return { sectionKey: projectImageSections[0].key, index: 0 };
     });
 
   return (
@@ -140,7 +150,7 @@ export default function ProjectSection({
             style={{ objectFit: "contain", zIndex: 9000 }}
           />
           {[
-            ...projectSections[projectKey].map((sectionInfo) =>
+            ...projectImageSections.map((sectionInfo) =>
               [...Array(sectionInfo.length)].map((_, index) => (
                 <Image
                   key={`preview-${sectionInfo.key}-${index}`}

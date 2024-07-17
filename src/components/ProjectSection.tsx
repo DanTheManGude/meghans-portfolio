@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 
 import {
   ProjectKey,
+  SectionInfo,
   SectionKey,
   TileInfo,
   sectionDescriptions,
@@ -14,23 +15,22 @@ import SectionTitle from "./SectionTitle";
 
 export default function ProjectSection({
   projectKey,
-  sectionKey,
+  sectionInfo,
   openDialog,
 }: {
   projectKey: ProjectKey;
-  sectionKey: SectionKey;
+  sectionInfo: SectionInfo;
   openDialog: (targetTile: TileInfo) => void;
 }) {
   return (
     <Stack width={"100%"} alignItems={"left"} paddingTop={4}>
-      <SectionTitle>{sectionNames[sectionKey]}</SectionTitle>
+      <SectionTitle>{sectionNames[sectionInfo.key]}</SectionTitle>
       <Typography variant="body2" sx={{ width: { md: "75%" } }}>
-        {sectionDescriptions[sectionKey]}
+        {sectionDescriptions[sectionInfo.key]}
       </Typography>
-
       <ProjectGrid
         projectKey={projectKey}
-        sectionKey={sectionKey}
+        sectionInfo={sectionInfo}
         openDialog={openDialog}
       />
     </Stack>

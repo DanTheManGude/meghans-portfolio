@@ -1,6 +1,4 @@
 import { ValueOf } from "next/dist/shared/lib/constants";
-import { Asset } from "next-video/dist/assets.js";
-import { StaticImageData } from "next/image";
 
 import * as Copy from "./copy";
 
@@ -47,18 +45,65 @@ export const sectionKeys = {
   NEURO_Q_VIDEO: "NEURO_Q_VIDEO",
 } as const;
 
-export type SectionKey = ValueOf<typeof sectionKeys>;
+export const sectionTypes = {
+  IMAGE: "IMAGE",
+  VIDEO: "VIDEO",
+} as const;
 
-export type SectionInfo = { key: SectionKey; length: number };
+export type SectionKey = ValueOf<typeof sectionKeys>;
+export type SectionType = ValueOf<typeof sectionTypes>;
+
+export type SectionInfo = {
+  key: SectionKey;
+  length: number;
+  type: SectionType;
+  width: number;
+};
 
 export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
   [projectKeys.NEURO_Q]: [
-    { key: sectionKeys.NEURO_Q_BRANDING, length: 3 },
-    { key: sectionKeys.NEURO_Q_PACKAGING, length: 3 },
-    { key: sectionKeys.NEURO_Q_LITERATURE, length: 3 },
-    { key: sectionKeys.NEURO_Q_AMAZON, length: 3 },
-    { key: sectionKeys.NEURO_Q_SOCIAL, length: 3 },
-    { key: sectionKeys.NEURO_Q_LANDING_PAGES, length: 3 },
+    {
+      key: sectionKeys.NEURO_Q_BRANDING,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.NEURO_Q_PACKAGING,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.NEURO_Q_LITERATURE,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.NEURO_Q_AMAZON,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.NEURO_Q_SOCIAL,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.NEURO_Q_LANDING_PAGES,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.NEURO_Q_VIDEO,
+      length: 3,
+      type: sectionTypes.VIDEO,
+      width: 4,
+    },
   ],
   [projectKeys.LIFE_SEASONS]: [],
   [projectKeys.SUPPLEMENT]: [],
@@ -161,22 +206,13 @@ export const projectHeaderBlockSectionBodyTexts: {
 
 export type TileInfo = { sectionKey: SectionKey; index: number };
 
-export type VideoInfo = { videoSource: string; posterSource: string };
-
-export const NEURO_Q_VIDEOS: VideoInfo[] = [
-  {
-    videoSource: "/videos/NQ-blog-reduce-inflammation.mp4",
-    posterSource: "/images/videoPosters/nq-video-0.jpg",
-  },
-  {
-    videoSource: "/videos/NQ-blog-video-hyperaphantasia.mp4",
-    posterSource: "/images/videoPosters/nq-video-1.jpg",
-  },
-  {
-    videoSource: "/videos/NQ-blog-video-pqq.mp4",
-    posterSource: "/images/videoPosters/nq-video-2.jpg",
-  },
-];
+export const videoFileNames: { [key in SectionKey]?: string[] } = {
+  [sectionKeys.NEURO_Q_VIDEO]: [
+    "NQ-blog-reduce-inflammation.mp4",
+    "NQ-blog-video-hyperaphantasia.mp4",
+    "NQ-blog-video-pqq.mp4",
+  ],
+};
 
 export const accentColor = "#e3e5f3";
 

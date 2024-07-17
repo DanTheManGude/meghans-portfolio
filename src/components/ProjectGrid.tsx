@@ -1,15 +1,23 @@
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
-import { ProjectKey, SectionKey, projectSections, TileInfo } from "@/constants";
-import ProjectTile from "./ProjectTile";
+import {
+  ProjectKey,
+  TileInfo,
+  SectionInfo,
+  sectionTypes,
+  videoFileNames,
+} from "@/constants";
+import ProjectImageTile from "./ProjectTile";
+import VideoPlayer from "./VideoPlayer";
 
 export default function ProjectGrid({
   projectKey,
-  sectionKey,
+  sectionInfo,
   openDialog,
 }: {
   projectKey: ProjectKey;
-  sectionKey: SectionKey;
+  sectionInfo: SectionInfo;
   openDialog: (targetTile: TileInfo) => void;
 }) {
   return (
@@ -20,30 +28,63 @@ export default function ProjectGrid({
       sx={{ paddingTop: "30px", paddingBottom: "15px" }}
       textAlign="center"
     >
-      {Array.from(
-        {
-          length:
-            projectSections[projectKey].find(
-              (sectionInfo) => sectionInfo.key === sectionKey
-            )?.length || 0,
-        },
-        (_value, index) => (
+      {Array.from({ length: sectionInfo.length }, (_value, index) => {
+        const overlayId = `${sectionInfo.key}-${index}-overlay`;
+
+        var RenderedTile = null;
+
+        switch (sectionInfo.type) {
+          case sectionTypes.VIDEO:
+            RenderedTile = (
+              <VideoPlayer
+                videoFileName={videoFileNames[sectionInfo.key]?.[index] ?? ""}
+                posterSource={`/images/videoPosters/${sectionInfo.key}/${index}.jpg`}
+              />
+            );
+            break;
+          case sectionTypes.IMAGE:
+          default:
+            RenderedTile = (
+              <ProjectImageTile
+                projectKey={projectKey}
+                sectionInfo={sectionInfo}
+                index={index}
+                overlayId={overlayId}
+                onClick={() =>
+                  openDialog({ sectionKey: sectionInfo.key, index })
+                }
+              />
+            );
+            break;
+        }
+
+        return (
           <Grid
-            key={`${sectionKey}-${index}`}
+            key={`${sectionInfo.key}-${index}`}
             item
             xs={12}
             md={4}
             style={{ display: "flex", justifyContent: "center" }}
           >
-            <ProjectTile
-              projectKey={projectKey}
-              sectionKey={sectionKey}
-              index={index}
-              onClick={() => openDialog({ sectionKey, index })}
-            />
+            <Box
+              sx={{
+                width: "100%",
+                maxWidth: { xs: "440px" },
+                position: "relative",
+                [`& #${overlayId}`]: {
+                  opacity: 0,
+                },
+                [`& #${overlayId}:hover`]: {
+                  opacity: 1,
+                },
+                cursor: "pointer",
+              }}
+            >
+              {RenderedTile}
+            </Box>
           </Grid>
-        )
-      )}
+        );
+      })}
     </Grid>
   );
 }

@@ -4,27 +4,13 @@ import { useState } from "react";
 
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 
-import {
-  NEURO_Q_VIDEOS,
-  TileInfo,
-  VideoInfo,
-  projectKeys,
-  projectSections,
-  sectionDescriptions,
-  sectionKeys,
-  sectionNames,
-} from "@/constants";
+import { TileInfo, projectKeys, projectSections } from "@/constants";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
 import ProjectHeaderBlockSection from "@/components/ProjectHeaderBlockSection";
 import ProjectHeader from "@/components/ProjectHeader";
-import SectionTitle from "@/components/SectionTitle";
-import VideoPlayer from "@/components/VideoPlayer";
 
 const projectKey = projectKeys.NEURO_Q;
 
@@ -54,42 +40,10 @@ export default function Page() {
           <ProjectSection
             key={sectionInfo.key}
             projectKey={projectKey}
-            sectionKey={sectionInfo.key}
+            sectionInfo={sectionInfo}
             openDialog={openDialog}
           />
         ))}
-        <Stack width={"100%"} alignItems={"left"} paddingTop={4}>
-          <SectionTitle>{sectionNames[sectionKeys.NEURO_Q_VIDEO]}</SectionTitle>
-          <Typography variant="body2" sx={{ width: { md: "75%" } }}>
-            {sectionDescriptions[sectionKeys.NEURO_Q_VIDEO]}
-          </Typography>
-          <Grid
-            container
-            spacing={5}
-            alignItems="center"
-            sx={{ paddingTop: "30px", paddingBottom: "15px" }}
-            textAlign="center"
-          >
-            {NEURO_Q_VIDEOS.map((videoInfo) => (
-              <Grid
-                key={`video-0`}
-                item
-                xs={12}
-                md={4}
-                style={{ display: "flex", justifyContent: "center" }}
-              >
-                <Box
-                  sx={{
-                    width: "100%",
-                    maxWidth: "400px",
-                  }}
-                >
-                  <VideoPlayer videoInfo={videoInfo} />
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Stack>
         <NextProjectButton currentProjectKey={projectKey} />
       </Stack>
       <ProjectDialog
