@@ -43,6 +43,10 @@ export const sectionKeys = {
   NEURO_Q_SOCIAL: "NEURO_Q_SOCIAL",
   NEURO_Q_LANDING_PAGES: "NEURO_Q_LANDING_PAGES",
   NEURO_Q_VIDEO: "NEURO_Q_VIDEO",
+  LIFE_SEASONS_PRODUCT: "LIFE_SEASONS_PRODUCT",
+  LIFE_SEASONS_VIDEO: "LIFE_SEASONS_VIDEO",
+  LIFE_SEASONS_AMAZON: "LIFE_SEASONS_AMAZON",
+  LIFE_SEASONS_RETAIL: "LIFE_SEASONS_RETAIL",
 } as const;
 
 export const sectionTypes = {
@@ -105,7 +109,32 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
       width: 4,
     },
   ],
-  [projectKeys.LIFE_SEASONS]: [],
+  [projectKeys.LIFE_SEASONS]: [
+    {
+      key: sectionKeys.LIFE_SEASONS_PRODUCT,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.LIFE_SEASONS_VIDEO,
+      length: 3,
+      type: sectionTypes.VIDEO,
+      width: 4,
+    },
+    {
+      key: sectionKeys.LIFE_SEASONS_AMAZON,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+    {
+      key: sectionKeys.LIFE_SEASONS_RETAIL,
+      length: 3,
+      type: sectionTypes.IMAGE,
+      width: 4,
+    },
+  ],
   [projectKeys.SUPPLEMENT]: [],
   [projectKeys.EMAIL]: [],
 };
@@ -118,6 +147,10 @@ export const sectionNames: { [key in SectionKey]: string } = {
   NEURO_Q_SOCIAL: "Organic Social",
   NEURO_Q_LANDING_PAGES: "Landing Pages",
   NEURO_Q_VIDEO: "Video Editing",
+  LIFE_SEASONS_PRODUCT: "Product Design",
+  LIFE_SEASONS_VIDEO: "Video Editing",
+  LIFE_SEASONS_AMAZON: "Amazon",
+  LIFE_SEASONS_RETAIL: "Retail",
 };
 
 export const sectionDescriptions: { [key in SectionKey]: string } = {
@@ -128,6 +161,10 @@ export const sectionDescriptions: { [key in SectionKey]: string } = {
   NEURO_Q_SOCIAL: Copy.NEURO_Q_SOCIAL_DESCRIPTION,
   NEURO_Q_LANDING_PAGES: Copy.NEURO_Q_LANDING_PAGES_DESCRIPTION,
   NEURO_Q_VIDEO: Copy.NEURO_Q_VIDEO_DESCRIPTION,
+  LIFE_SEASONS_PRODUCT: Copy.LIFE_SEASONS_PRODUCT,
+  LIFE_SEASONS_VIDEO: Copy.LIFE_SEASONS_VIDEO,
+  LIFE_SEASONS_AMAZON: Copy.LIFE_SEASONS_AMAZON,
+  LIFE_SEASONS_RETAIL: Copy.LIFE_SEASONS_RETAIL,
 };
 
 export const projectNames: {
@@ -188,9 +225,12 @@ export const projectHeaderBlockSectionBodyTexts: {
       Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_NEURO_Q,
   },
   [projectKeys.LIFE_SEASONS]: {
-    [projectHeaderBlockSectionKeys.SCOPE]: "",
-    [projectHeaderBlockSectionKeys.SKILLS_USED]: "",
-    [projectHeaderBlockSectionKeys.TOOLS_USED]: "",
+    [projectHeaderBlockSectionKeys.SCOPE]:
+      Copy.PROJECT_HEADER_BLOCK_SCOPE_BODY_LIFE_SEASONS,
+    [projectHeaderBlockSectionKeys.SKILLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_LIFE_SEASONS,
+    [projectHeaderBlockSectionKeys.TOOLS_USED]:
+      Copy.PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_LIFE_SEASONS,
   },
   [projectKeys.SUPPLEMENT]: {
     [projectHeaderBlockSectionKeys.SCOPE]: "",
@@ -211,6 +251,11 @@ export const videoFileNames: { [key in SectionKey]?: string[] } = {
     "NQ-blog-reduce-inflammation.mp4",
     "NQ-blog-video-hyperaphantasia.mp4",
     "NQ-blog-video-pqq.mp4",
+  ],
+  [sectionKeys.LIFE_SEASONS_VIDEO]: [
+    "LS_breathe-x_amazon_video.mp4",
+    "LS_circulari-T_amazon_video.mp4",
+    "LS_visibili-T_amazon_video.mp4",
   ],
 };
 
