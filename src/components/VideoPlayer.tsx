@@ -1,16 +1,12 @@
 import Player from "next-video/player";
 
 export default function VideoPlayer(props: {
-  videoFileName: string;
+  videoSource: string;
   posterSource: string;
 }) {
-  const { videoFileName, posterSource } = props;
+  const { videoSource, posterSource } = props;
 
   return (
-    <Player
-      src={`/videos/${videoFileName}`}
-      poster={posterSource}
-      accentColor={"black"}
-    />
+    <Player src={videoSource} poster={posterSource} accentColor={"black"} />
   );
 }

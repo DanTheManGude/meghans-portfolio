@@ -6,7 +6,7 @@ import {
   TileInfo,
   SectionInfo,
   sectionTypes,
-  videoFileNames,
+  videoSources,
 } from "@/constants";
 import ProjectImageTile from "./ProjectImageTile";
 import VideoPlayer from "./VideoPlayer";
@@ -37,7 +37,7 @@ export default function ProjectGrid({
           case sectionTypes.VIDEO:
             RenderedTile = (
               <VideoPlayer
-                videoFileName={videoFileNames[sectionInfo.key]?.[index] ?? ""}
+                videoSource={videoSources[sectionInfo.key]?.[index] ?? ""}
                 posterSource={`/images/videoPosters/${sectionInfo.key}/${index}.jpg`}
               />
             );

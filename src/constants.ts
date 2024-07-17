@@ -339,16 +339,16 @@ export const projectHeaderBlockSectionBodyTexts: {
 
 export type TileInfo = { sectionKey: SectionKey; index: number };
 
-export const videoFileNames: { [key in SectionKey]?: string[] } = {
+export const videoSources: { [key in SectionKey]?: string[] } = {
   [sectionKeys.NEURO_Q_VIDEO]: [
-    "NQ-blog-reduce-inflammation.mp4",
-    "NQ-blog-video-hyperaphantasia.mp4",
-    "NQ-blog-video-pqq.mp4",
+    "https://videos.gudedesigns.com/hubfs/portfolio/NQ-blog-reduce-inflammation.mp4",
+    "https://videos.gudedesigns.com/hubfs/portfolio/NQ-blog-video-hyperaphantasia.mp4",
+    "https://videos.gudedesigns.com/hubfs/portfolio/NQ-blog-video-pqq.mp4",
   ],
   [sectionKeys.LIFE_SEASONS_VIDEO]: [
-    "LS_breathe-x_amazon_video.mp4",
-    "LS_circulari-T_amazon_video.mp4",
-    "LS_visibili-T_amazon_video.mp4",
+    "https://videos.gudedesigns.com/hubfs/portfolio/LS_breathe-x_amazon_video.mp4",
+    "https://videos.gudedesigns.com/hubfs/portfolio/LS_circulari-T_amazon_video.mp4",
+    "https://videos.gudedesigns.com/hubfs/portfolio/LS_visibili-T_amazon_video.mp4",
   ],
 };
 
