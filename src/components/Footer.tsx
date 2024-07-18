@@ -11,7 +11,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { accentColor, pageKeys, pageNames, pagePaths } from "@/constants";
+import {
+  emailUrl,
+  linkedinUrl,
+  pageKeys,
+  pageNames,
+  pagePaths,
+} from "@/constants";
 
 const TITLE = `Meghan Butera`;
 const TAGLINE = `Graphic designer specializing in branding, packaging, and digital
@@ -90,7 +96,7 @@ export default function Footer() {
             justifyContent="space-around"
             sx={{ height: "100%" }}
           >
-            <Link href={"mailto:gudedesigns@gmail.com"}>
+            <Link href={emailUrl}>
               <Button size="large" color="primary" variant="contained">
                 <Typography
                   fontSize={22}
@@ -102,13 +108,13 @@ export default function Footer() {
               </Button>
             </Link>
             <Stack direction="row" sx={{ paddingBottom: "10px" }}>
-              <Link href={"mailto:gudedesigns@gmail.com"}>
+              <Link href={emailUrl}>
                 <IconButton size="large" color="primary">
                   <EmailOutlinedIcon fontSize="large" />
                 </IconButton>
               </Link>
               <Link
-                href={"https://www.linkedin.com/in/meghangude/"}
+                href={linkedinUrl}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -172,7 +178,7 @@ export default function Footer() {
           ))}
         </Stack>
 
-        <Link href={"mailto:gudedesigns@gmail.com"}>
+        <Link href={emailUrl}>
           <Button size="medium" color="primary" variant="contained">
             <Typography
               fontSize={18}
@@ -184,16 +190,12 @@ export default function Footer() {
           </Button>
         </Link>
         <Stack direction="row" sx={{ paddingBottom: "10px" }}>
-          <Link href={"mailto:gudedesigns@gmail.com"}>
+          <Link href={emailUrl}>
             <IconButton size="large" color="primary">
               <EmailOutlinedIcon fontSize="large" />
             </IconButton>
           </Link>
-          <Link
-            href={"https://www.linkedin.com/in/meghangude/"}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <Link href={linkedinUrl} rel="noopener noreferrer" target="_blank">
             <IconButton size="large" color="primary">
               <LinkedInIcon fontSize="large" />
             </IconButton>
