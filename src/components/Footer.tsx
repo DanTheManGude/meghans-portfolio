@@ -1,12 +1,12 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-import Link from "next/link";
 
 import {
   emailUrl,
@@ -19,7 +19,31 @@ import {
 const TITLE = `Meghan Butera`;
 const TAGLINE = `Graphic designer specializing in branding, packaging, and digital
 design.`;
-const EMAIL_BUTTON = `Say Hello`;
+const EMAIL_BUTTON_TEXT = `Say Hello`;
+const emailIconImagePath = "/images/mail-icon.png";
+
+const RenderedEmailAndLinkedinLinks = (
+  <>
+    <Link href={emailUrl}>
+      <IconButton>
+        <Image
+          priority={true}
+          src={emailIconImagePath}
+          alt={`email`}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "auto", height: "26.25px" }}
+        />
+      </IconButton>
+    </Link>
+    <Link href={linkedinUrl} rel="noopener noreferrer" target="_blank">
+      <IconButton size="large" color="primary">
+        <LinkedInIcon fontSize="large" />
+      </IconButton>
+    </Link>
+  </>
+);
 
 export default function Footer() {
   return (
@@ -94,25 +118,16 @@ export default function Footer() {
                   color="secondary"
                   sx={{ textTransform: "none" }}
                 >
-                  {EMAIL_BUTTON}
+                  {EMAIL_BUTTON_TEXT}
                 </Typography>
               </Button>
             </Link>
-            <Stack direction="row" sx={{ paddingBottom: "10px" }}>
-              <Link href={emailUrl}>
-                <IconButton size="large" color="primary">
-                  <EmailOutlinedIcon fontSize="large" />
-                </IconButton>
-              </Link>
-              <Link
-                href={linkedinUrl}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <IconButton size="large" color="primary">
-                  <LinkedInIcon fontSize="large" />
-                </IconButton>
-              </Link>
+            <Stack
+              direction="row"
+              sx={{ paddingBottom: "10px" }}
+              alignItems={"center"}
+            >
+              {RenderedEmailAndLinkedinLinks}
             </Stack>
           </Stack>
         </Stack>
@@ -172,21 +187,16 @@ export default function Footer() {
               color="secondary"
               sx={{ textTransform: "none" }}
             >
-              {EMAIL_BUTTON}
+              {EMAIL_BUTTON_TEXT}
             </Typography>
           </Button>
         </Link>
-        <Stack direction="row" sx={{ paddingBottom: "10px" }}>
-          <Link href={emailUrl}>
-            <IconButton size="large" color="primary">
-              <EmailOutlinedIcon fontSize="large" />
-            </IconButton>
-          </Link>
-          <Link href={linkedinUrl} rel="noopener noreferrer" target="_blank">
-            <IconButton size="large" color="primary">
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-          </Link>
+        <Stack
+          direction="row"
+          sx={{ paddingBottom: "10px" }}
+          alignItems={"center"}
+        >
+          {RenderedEmailAndLinkedinLinks}
         </Stack>
       </Stack>
     </Box>
