@@ -7,6 +7,7 @@ import {
   SectionInfo,
   sectionTypes,
   videoSources,
+  defaultTileInfo,
 } from "@/constants";
 import ProjectImageTile from "./ProjectImageTile";
 import VideoPlayer from "./VideoPlayer";
@@ -47,7 +48,8 @@ export default function ProjectGrid({
             RenderedTile = (
               <ProjectImageTile
                 projectKey={projectKey}
-                sectionInfo={sectionInfo}
+                sectionKey={sectionInfo.key}
+                tileInfo={sectionInfo.tileInfos?.[index] ?? defaultTileInfo}
                 index={index}
                 overlayId={overlayId}
                 onClick={() =>

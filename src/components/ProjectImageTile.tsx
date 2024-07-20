@@ -1,34 +1,35 @@
 import Image from "next/image";
 
 import Box from "@mui/material/Box";
-import {
-  ProjectKey,
-  SectionInfo,
-  projectNames,
-  sectionNames,
-} from "@/constants";
+import { ProjectKey, SectionKey, TileInfo, sectionNames } from "@/constants";
 
 export default function ProjectImageTile({
   projectKey,
-  sectionInfo,
+  sectionKey,
+  tileInfo,
   index,
   onClick,
   overlayId,
 }: {
   projectKey: ProjectKey;
-  sectionInfo: SectionInfo;
+  sectionKey: SectionKey;
+  tileInfo: TileInfo;
   index: number;
   onClick: () => void;
   overlayId: string;
 }) {
+  const thumbnailSource = `/images/${
+    tileInfo.designatedThumbnail ? "worksThumbnails" : "works"
+  }/${projectKey}/${sectionKey}/${index}.${
+    tileInfo.thumbnailExt ?? tileInfo.workFileExt
+  }`;
+
+  console.log(thumbnailSource);
   return (
     <>
       <Image
-        //TODO change url to thumbnails
-        src={`/images/works/${projectKey}/${sectionInfo.key}/${index}.jpg`}
-        alt={`Project ${projectNames[projectKey]} section ${
-          sectionNames[sectionInfo.key]
-        } thumbnail ${index + 1}`}
+        src={thumbnailSource}
+        alt={`Section ${sectionNames[sectionKey]} thumbnail ${index + 1}`}
         width={0}
         height={0}
         sizes="100vw"
