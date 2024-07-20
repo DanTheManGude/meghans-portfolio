@@ -378,6 +378,34 @@ export const videoSources: { [key in SectionKey]?: string[] } = {
   ],
 };
 
+export type ResumeInfo = {
+  title: string;
+  company: string;
+  dates: string;
+  location: string;
+};
+
+export const resumeInfos: ResumeInfo[] = [
+  {
+    title: "Senior Graphic Designer",
+    company: "LifeSeasons",
+    dates: "Nov 2021 - Jul 2024",
+    location: "Remote",
+  },
+  {
+    title: "Senior Graphic Designer",
+    company: "CanvasPeople",
+    dates: "Jul 2018 - Nov 2021",
+    location: "Remote",
+  },
+  {
+    title: "Graphic Designer",
+    company: "ABH Pharma",
+    dates: "May 2017 - Jul 2018",
+    location: "Edgewood, NY",
+  },
+];
+
 export const accentColor = "#e3e5f3";
 
 export const logoPath = "/images/logo.png";

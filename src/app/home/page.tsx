@@ -8,10 +8,8 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import Skeleton from "@mui/material/Skeleton";
 
 import {
-  projectHeaderInfos,
   projectKeys,
   projectNames,
   projectOrder,
