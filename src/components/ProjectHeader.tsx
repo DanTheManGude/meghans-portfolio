@@ -24,7 +24,6 @@ export default function ProjectHeader({
   if (projectHeaderInfos[projectKey].backgroundImage) {
     parentBoxStyles = {
       ...parentBoxStyles,
-      backgroundColor: "black",
       backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",

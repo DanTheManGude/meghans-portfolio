@@ -268,10 +268,10 @@ export const projectHeaderInfos: {
 } = {
   [projectKeys.NEURO_Q]: {
     backgroundImage: true,
-    color: "#99c55f",
+    color: "#3070b4",
     logoImage: true,
   },
-  [projectKeys.LIFE_SEASONS]: { color: "#3070b4", logoImage: true },
+  [projectKeys.LIFE_SEASONS]: { color: "#99c55f", logoImage: true },
   [projectKeys.SUPPLEMENTS]: { color: "#7f5e78", logoImage: false },
   [projectKeys.EMAIL]: { color: "#ea9d76", logoImage: false },
 };
