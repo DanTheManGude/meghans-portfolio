@@ -272,6 +272,15 @@ export const projectHeaderInfos: {
   [projectKeys.EMAIL]: { color: "#ea9d76", logoImage: false },
 };
 
+export const projectThumbnailColors: {
+  [key in ProjectKey]: string;
+} = {
+  [projectKeys.NEURO_Q]: "#3d81bd",
+  [projectKeys.LIFE_SEASONS]: "#acc969",
+  [projectKeys.SUPPLEMENTS]: "#92778a",
+  [projectKeys.EMAIL]: "#e99c76",
+};
+
 export const projectDescription: {
   [key in ProjectKey]: string;
 } = {

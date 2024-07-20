@@ -16,3 +16,18 @@ mux-player {
   --seek-backward-button: none;
   --seek-forward-button: none;
 }
+
+.projectThumbnalSkeletonContainer {
+  height: 0;
+  overflow: "hidden";
+  padding-top: "100%";
+  position: "relative";
+}
+
+.projectThumbnalSkeletonLoader {
+  position: "absolute";
+  top: 0;
+  left: 0;
+  width: "100%";
+  height: "100%";
+}

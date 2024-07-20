@@ -8,11 +8,15 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
+import Skeleton from "@mui/material/Skeleton";
+
 import {
+  projectHeaderInfos,
   projectKeys,
   projectNames,
   projectOrder,
   projectPaths,
+  projectThumbnailColors,
 } from "@/constants";
 
 const titleText1 = "I'm Meghan Butera,";
@@ -85,42 +89,48 @@ export default function Page() {
                   xs={12}
                   md={6}
                   style={{ display: "flex", justifyContent: "center" }}
+                  flexGrow={1}
                 >
-                  <Link href={`/${projectPaths[projectKey]}`}>
-                    <Box
-                      sx={{
-                        width: "100%",
-                        position: "relative",
-                        [`& #${overlayId}`]: {
-                          opacity: 0,
-                        },
-                        [`& #${overlayId}:hover`]: {
-                          opacity: 1,
-                        },
-                        cursor: "pointer",
-                      }}
-                    >
-                      <Image
-                        priority={projectKey === projectKeys.NEURO_Q}
-                        src={`/images/projectThumbnails/${projectKey}.jpg`}
-                        alt={`Project ${projectNames[projectKey]} thumbnail`}
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                        style={{ width: "100%", height: "auto" }}
-                      />
+                  <Box flexGrow={1}>
+                    <Link href={`/${projectPaths[projectKey]}`}>
                       <Box
-                        id={overlayId}
                         sx={{
-                          position: "absolute",
                           width: "100%",
-                          height: "100%",
-                          top: "0",
-                          backgroundColor: "rgba(0,0,0,.5)",
+                          position: "relative",
+                          [`& #${overlayId}`]: {
+                            opacity: 0,
+                          },
+                          [`& #${overlayId}:hover`]: {
+                            opacity: 1,
+                          },
+                          cursor: "pointer",
+                          backgroundColor: projectThumbnailColors[projectKey],
+                          aspectRatio: 2,
                         }}
-                      />
-                    </Box>
-                  </Link>
+                      >
+                        <Image
+                          priority={projectKey === projectKeys.NEURO_Q}
+                          src={`/images/projectThumbnails/${projectKey}.jpg`}
+                          alt={`Project ${projectNames[projectKey]} thumbnail`}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          style={{ width: "100%", height: "auto", zIndex: 200 }}
+                        />
+                        <Box
+                          id={overlayId}
+                          sx={{
+                            position: "absolute",
+                            width: "100%",
+                            height: "100%",
+                            top: "0",
+                            backgroundColor: "rgba(0,0,0,.5)",
+                            zIndex: 2,
+                          }}
+                        />
+                      </Box>
+                    </Link>
+                  </Box>
                 </Grid>
               );
             })}
