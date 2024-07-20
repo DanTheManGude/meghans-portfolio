@@ -24,7 +24,6 @@ export default function ProjectImageTile({
   return (
     <>
       <Image
-        priority={true}
         //TODO change url to thumbnails
         src={`/images/works/${projectKey}/${sectionInfo.key}/${index}.jpg`}
         alt={`Project ${projectNames[projectKey]} section ${

@@ -8,7 +8,12 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import { projectNames, projectOrder, projectPaths } from "@/constants";
+import {
+  projectKeys,
+  projectNames,
+  projectOrder,
+  projectPaths,
+} from "@/constants";
 
 const titleText1 = "I'm Meghan Butera,";
 const titleText2 = "designer and creative based in New York.";
@@ -96,7 +101,7 @@ export default function Page() {
                       }}
                     >
                       <Image
-                        priority={true}
+                        priority={projectKey === projectKeys.NEURO_Q}
                         src={`/images/projectThumbnails/${projectKey}.jpg`}
                         alt={`Project ${projectNames[projectKey]} thumbnail`}
                         width={0}

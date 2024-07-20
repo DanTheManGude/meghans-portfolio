@@ -27,7 +27,7 @@ const RenderedEmailAndLinkedinLinks = (
     <Link href={emailUrl}>
       <IconButton>
         <Image
-          priority={true}
+          priority
           src={emailIconImagePath}
           alt={`email`}
           width={0}

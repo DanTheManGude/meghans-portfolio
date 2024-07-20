@@ -45,7 +45,8 @@ export default function ProjectHeader({
             >
               <Image
                 src={`/images/projectLogos/${projectKey}.png`}
-                alt="logo"
+                priority
+                alt={`${projectNames[projectKey]} logo`}
                 width={0}
                 height={0}
                 sizes="100vw"
@@ -58,7 +59,8 @@ export default function ProjectHeader({
             >
               <Image
                 src={`/images/projectLogos/${projectKey}.png`}
-                alt="logo"
+                priority
+                alt={`${projectNames[projectKey]} logo`}
                 width={0}
                 height={0}
                 sizes="100vw"

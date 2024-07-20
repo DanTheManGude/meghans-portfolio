@@ -73,7 +73,6 @@ export default function Page() {
         >
           <Box sx={{ width: "100%" }}>
             <Image
-              priority={true}
               src={`/images/portfolio-pic.jpg`}
               alt={`Photo of myself`}
               width={0}
