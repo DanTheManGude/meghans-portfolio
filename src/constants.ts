@@ -26,6 +26,24 @@ export const projectKeys = {
   EMAIL: "EMAIL",
 } as const;
 
+export const projectNames: {
+  [key in ProjectKey]: string;
+} = {
+  [projectKeys.NEURO_Q]: "NeuroQ",
+  [projectKeys.LIFE_SEASONS]: "LifeSeasons",
+  [projectKeys.SUPPLEMENTS]: "Supplements",
+  [projectKeys.EMAIL]: "Email Design",
+};
+
+export const projectPaths: {
+  [key in ProjectKey]: string;
+} = {
+  [projectKeys.NEURO_Q]: "NeuroQ",
+  [projectKeys.LIFE_SEASONS]: "LifeSeasons",
+  [projectKeys.SUPPLEMENTS]: "Supplements",
+  [projectKeys.EMAIL]: "Email",
+};
+
 export type ProjectKey = ValueOf<typeof projectKeys>;
 
 export const projectOrder: ProjectKey[] = [
@@ -239,15 +257,6 @@ export const sectionDescriptions: { [key in SectionKey]?: string } = {
   LIFE_SEASONS_VIDEO: Copy.LIFE_SEASONS_VIDEO,
   LIFE_SEASONS_AMAZON: Copy.LIFE_SEASONS_AMAZON,
   LIFE_SEASONS_RETAIL: Copy.LIFE_SEASONS_RETAIL,
-};
-
-export const projectNames: {
-  [key in ProjectKey]: string;
-} = {
-  [projectKeys.NEURO_Q]: "NeuroQ",
-  [projectKeys.LIFE_SEASONS]: "LifeSeasons",
-  [projectKeys.SUPPLEMENTS]: "Supplements",
-  [projectKeys.EMAIL]: "Email Design",
 };
 
 export const projectHeaderInfos: {

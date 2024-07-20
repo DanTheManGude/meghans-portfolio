@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 
-import { ProjectKey, projectNames, projectOrder } from "@/constants";
+import { ProjectKey, projectPaths, projectOrder } from "@/constants";
 import { useMemo } from "react";
 
 export default function NextProjectButton({
@@ -24,7 +24,7 @@ export default function NextProjectButton({
       color="secondary"
       sx={{ width: { xs: "60%", md: "25%" }, marginTop: 2 }}
     >
-      <Link href={`/${projectNames[projectOrder[nextProjectIndex]]}`}>
+      <Link href={`/${projectPaths[projectOrder[nextProjectIndex]]}`}>
         <Typography fontSize={"18px"} color="secondary" fontWeight={600}>
           {`See next project`}
         </Typography>

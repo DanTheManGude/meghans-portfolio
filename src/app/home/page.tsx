@@ -8,7 +8,7 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import { projectNames, projectOrder } from "@/constants";
+import { projectNames, projectOrder, projectPaths } from "@/constants";
 
 const titleText1 = "I'm Meghan Butera,";
 const titleText2 = "designer and creative based in New York.";
@@ -81,7 +81,7 @@ export default function Page() {
                   md={6}
                   style={{ display: "flex", justifyContent: "center" }}
                 >
-                  <Link href={`/${projectNames[projectKey]}`}>
+                  <Link href={`/${projectPaths[projectKey]}`}>
                     <Box
                       sx={{
                         width: "100%",
@@ -113,19 +113,7 @@ export default function Page() {
                           top: "0",
                           backgroundColor: "rgba(0,0,0,.5)",
                         }}
-                      >
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            position: "absolute",
-                            width: "100%",
-                            top: "50%",
-                          }}
-                          color="primary"
-                        >
-                          {projectNames[projectKey]}
-                        </Typography>
-                      </Box>
+                      />
                     </Box>
                   </Link>
                 </Grid>
