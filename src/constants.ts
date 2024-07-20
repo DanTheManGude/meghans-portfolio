@@ -245,7 +245,7 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
       key: sectionKeys.EMAIL_LIFE_SEASONS,
       length: 3,
       type: sectionTypes.IMAGE,
-      width: 4,
+      width: 3,
       tileInfos: [
         { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
         { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
