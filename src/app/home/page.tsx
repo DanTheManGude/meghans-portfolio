@@ -1,12 +1,9 @@
-import { PropsWithChildren } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
 
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
 import {
@@ -16,34 +13,7 @@ import {
   projectPaths,
   projectThumbnailColors,
 } from "@/constants";
-
-const titleText1 = "I'm Meghan Butera,";
-const titleText2 = "designer and creative based in New York.";
-const subTitleText = "Specializing in branding, packaging, and digital design.";
-
-const Title = (props: PropsWithChildren) => (
-  <Typography
-    sx={{
-      fontSize: { xs: 23, md: 45 },
-    }}
-    fontWeight={600}
-    textAlign="center"
-  >
-    {props.children}
-  </Typography>
-);
-
-const Subtitle = (props: PropsWithChildren) => (
-  <Typography
-    sx={{
-      fontSize: { xs: 14, md: 22 },
-      paddingTop: 1,
-    }}
-    textAlign="center"
-  >
-    {props.children}
-  </Typography>
-);
+import MainTitle from "@/components/MainTitle";
 
 export default function Page() {
   return (
@@ -64,11 +34,7 @@ export default function Page() {
         justifyContent="center"
       >
         <Stack alignItems="center">
-          <Stack sx={{ width: "100%" }}>
-            <Title>{titleText1}</Title>
-            <Title>{titleText2}</Title>
-            <Subtitle>{subTitleText}</Subtitle>
-          </Stack>
+          <MainTitle />
           <Grid
             width={{ xs: "100%", md: "95%", mx: "auto" }}
             container
