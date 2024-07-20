@@ -84,11 +84,23 @@ export const sectionTypes = {
 export type SectionKey = ValueOf<typeof sectionKeys>;
 export type SectionType = ValueOf<typeof sectionTypes>;
 
+export type TileInfo = {
+  workFileExt: string;
+  designatedThumbnail: boolean;
+  thumbnailExt?: string;
+};
+
 export type SectionInfo = {
   key: SectionKey;
   length: number;
   type: SectionType;
   width: number;
+  tileInfos?: TileInfo[];
+};
+
+export const defaultTileInfo: TileInfo = {
+  workFileExt: "jpg",
+  designatedThumbnail: false,
 };
 
 export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
@@ -203,21 +215,42 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
   [projectKeys.EMAIL]: [
     {
       key: sectionKeys.EMAIL_CANVAS_PEOPLE,
-      length: 4,
+      length: 8,
       type: sectionTypes.IMAGE,
       width: 3,
+      tileInfos: [
+        { workFileExt: "gif", designatedThumbnail: true },
+        { workFileExt: "gif", designatedThumbnail: true },
+        { workFileExt: "gif", designatedThumbnail: true },
+        { workFileExt: "gif", designatedThumbnail: true },
+        { workFileExt: "jpg", designatedThumbnail: true },
+        { workFileExt: "jpg", designatedThumbnail: true },
+        { workFileExt: "jpg", designatedThumbnail: true },
+        { workFileExt: "jpg", designatedThumbnail: true },
+      ],
     },
     {
       key: sectionKeys.EMAIL_NEURO_Q,
       length: 4,
       type: sectionTypes.IMAGE,
       width: 3,
+      tileInfos: [
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+      ],
     },
     {
       key: sectionKeys.EMAIL_LIFE_SEASONS,
       length: 3,
       type: sectionTypes.IMAGE,
       width: 4,
+      tileInfos: [
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+      ],
     },
   ],
 };
@@ -363,7 +396,7 @@ export const projectHeaderBlockSectionBodyTexts: {
   },
 };
 
-export type TileInfo = { sectionKey: SectionKey; index: number };
+export type TileIdentifier = { sectionKey: SectionKey; index: number };
 
 export const videoSources: { [key in SectionKey]?: string[] } = {
   [sectionKeys.NEURO_Q_VIDEO]: [
