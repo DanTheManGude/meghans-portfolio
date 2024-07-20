@@ -410,5 +410,6 @@ export const accentColor = "#e3e5f3";
 
 export const logoPath = "/images/logo.png";
 
-export const emailUrl = "mailto:gudedesigns@gmail.com";
+export const emailName = "meghanebutera@gmail.com";
+export const emailUrl = `mailto:${emailName}`;
 export const linkedinUrl = "https://www.linkedin.com/in/meghangude/";
