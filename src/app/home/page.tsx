@@ -74,8 +74,8 @@ export default function Page() {
                       >
                         <Image
                           priority={projectKey === projectKeys.NEURO_Q}
-                          src={`/images/projectThumbnails/${projectKey}.jpg`}
-                          alt={`Project ${projectNames[projectKey]} thumbnail`}
+                          src={`/images/projectPosters/${projectKey}.jpg`}
+                          alt={`Project ${projectNames[projectKey]} poster`}
                           width={0}
                           height={0}
                           sizes="100vw"
