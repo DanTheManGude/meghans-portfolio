@@ -138,7 +138,7 @@ export default function Footer() {
         sx={{
           display: { xs: "flex", md: "none" },
           paddingTop: "20px",
-          paddingBottom: "20px",
+          paddingBottom: "40px",
         }}
       >
         <Typography
