@@ -262,19 +262,22 @@ export const sectionDescriptions: { [key in SectionKey]?: string } = {
 export const projectHeaderInfos: {
   [key in ProjectKey]: {
     color: string;
+    mobileColorOnly?: boolean;
     logoImage: boolean;
   };
 } = {
-  [projectKeys.NEURO_Q]: {
-    color: "#3070b4",
-    logoImage: true,
+  [projectKeys.NEURO_Q]: { color: "#3070b4", logoImage: true },
+  [projectKeys.LIFE_SEASONS]: { color: "#99c55f", logoImage: true },
+  [projectKeys.SUPPLEMENTS]: {
+    color: "#7f5e78",
+    logoImage: false,
+    mobileColorOnly: true,
   },
-  [projectKeys.LIFE_SEASONS]: {
-    color: "#99c55f",
-    logoImage: true,
+  [projectKeys.EMAIL]: {
+    color: "#ea9d76",
+    logoImage: false,
+    mobileColorOnly: true,
   },
-  [projectKeys.SUPPLEMENTS]: { color: "#7f5e78", logoImage: false },
-  [projectKeys.EMAIL]: { color: "#ea9d76", logoImage: false },
 };
 
 export const projectThumbnailColors: {
