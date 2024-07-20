@@ -2,7 +2,7 @@
 User-agent: *
 Disallow: /images/headers/
 Disallow: /images/projectLogos/
-Disallow: /images/projectThumbnails/
+Disallow: /images/projectPosters/
 Disallow: /images/videoPosters/
 Disallow: /videos/
 Allow: /
