@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Stack from "@mui/material/Stack";
-import Box, { BoxProps } from "@mui/material/Box";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import {
@@ -16,23 +16,16 @@ export default function ProjectHeader({
 }: {
   projectKey: ProjectKey;
 }) {
-  var parentBoxStyles: BoxProps["sx"] = {
-    width: "100%",
-    backgroundColor: projectHeaderInfos[projectKey].color,
-  };
-
-  if (projectHeaderInfos[projectKey].backgroundImage) {
-    parentBoxStyles = {
-      ...parentBoxStyles,
-      backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      width: "100%",
-    };
-  }
-
   return (
-    <Box sx={parentBoxStyles}>
+    <Box
+      sx={{
+        width: "100%",
+        backgroundColor: projectHeaderInfos[projectKey].color,
+        backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <Stack alignItems={"center"} spacing={2} paddingTop={5} paddingBottom={8}>
         {projectHeaderInfos[projectKey].logoImage ? (
           <>
