@@ -75,7 +75,8 @@ export default function ProjectHeader({
         ) : (
           <Typography
             variant="body2"
-            fontSize={{ md: 50, xs: 28 }}
+            fontWeight={600}
+            fontSize={{ md: 60, xs: 34 }}
             color={"primary"}
             textAlign={"center"}
           >
