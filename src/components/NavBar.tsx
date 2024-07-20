@@ -36,7 +36,7 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            <Image src={logoPath} alt="logo" width={80} height={80} />
+            <Image priority src={logoPath} alt="logo" width={80} height={80} />
           </Box>
 
           <Box
@@ -48,7 +48,7 @@ function ResponsiveAppBar() {
             }}
             onClick={() => router.push("/")}
           >
-            <Image src={logoPath} alt="logo" width={60} height={60} />
+            <Image priority src={logoPath} alt="logo" width={60} height={60} />
           </Box>
 
           <Stack
