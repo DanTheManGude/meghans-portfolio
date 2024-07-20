@@ -37,8 +37,13 @@ const RenderedEmailAndLinkedinLinks = (
         />
       </IconButton>
     </Link>
-    <Link href={linkedinUrl} rel="noopener noreferrer" target="_blank">
-      <IconButton size="large" color="primary">
+    <Link
+      href={linkedinUrl}
+      rel="noopener noreferrer"
+      target="_blank"
+      aria-label="linkedin url"
+    >
+      <IconButton size="large" color="primary" aria-label="linkedin url">
         <LinkedInIcon fontSize="large" />
       </IconButton>
     </Link>
@@ -83,7 +88,7 @@ export default function Footer() {
               </Typography>
             </Box>
 
-            <Stack direction="row">
+            <Stack direction="row" spacing={2}>
               {pageKeys.map((pageKey) => (
                 <Button
                   key={pageKey}
@@ -157,7 +162,7 @@ export default function Footer() {
         >
           {TAGLINE}
         </Typography>
-        <Stack direction={"row"}>
+        <Stack direction={"row"} spacing={2}>
           {pageKeys.map((pageKey) => (
             <Button
               key={pageKey}
