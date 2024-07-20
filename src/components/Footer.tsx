@@ -17,7 +17,7 @@ import {
 } from "@/constants";
 
 const TITLE = `Meghan Butera`;
-const TAGLINE = `Graphic designer specializing in branding, packaging, and digital
+const TAGLINE = `Graphic Designer specializing in branding, packaging, and digital
 design.`;
 const EMAIL_BUTTON_TEXT = `Say Hello`;
 const emailIconImagePath = "/images/mail-icon.png";
