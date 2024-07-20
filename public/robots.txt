@@ -4,5 +4,6 @@ Disallow: /images/headers/
 Disallow: /images/projectLogos/
 Disallow: /images/projectPosters/
 Disallow: /images/videoPosters/
+Disallow: /images/worksThumbnails/
 Disallow: /videos/
 Allow: /
