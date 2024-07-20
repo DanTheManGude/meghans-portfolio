@@ -12,14 +12,13 @@ import Stack from "@mui/material/Stack";
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { pageKeys, pageNames, pagePaths, logoPath } from "@/constants";
 import SideNav from "./SideNav";
 
 function ResponsiveAppBar() {
   const router = useRouter();
-  const pathname = usePathname();
 
   return (
     <AppBar
@@ -67,10 +66,6 @@ function ResponsiveAppBar() {
                   <Typography
                     color="secondary"
                     sx={{
-                      textDecoration:
-                        pathname === `/${pagePaths[pageKey]}`
-                          ? "underline"
-                          : "none",
                       textTransform: "none",
                       fontSize: 20,
                     }}
@@ -83,7 +78,7 @@ function ResponsiveAppBar() {
           </Stack>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <SideNav pathname={pathname} />
+            <SideNav />
           </Box>
         </Toolbar>
       </Container>

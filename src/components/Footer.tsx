@@ -1,5 +1,3 @@
-"use client";
-
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
@@ -9,7 +7,6 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import {
   emailUrl,
@@ -25,8 +22,6 @@ design.`;
 const EMAIL_BUTTON = `Say Hello`;
 
 export default function Footer() {
-  const pathname = usePathname();
-
   return (
     <Box
       sx={{
@@ -76,10 +71,6 @@ export default function Footer() {
                       color="primary"
                       fontWeight={600}
                       sx={{
-                        textDecoration:
-                          pathname === `/${pagePaths[pageKey]}`
-                            ? "underline"
-                            : "none",
                         textTransform: "none",
                         fontSize: 20,
                       }}
@@ -163,10 +154,6 @@ export default function Footer() {
                   color="primary"
                   fontWeight={600}
                   sx={{
-                    textDecoration:
-                      pathname === `/${pagePaths[pageKey]}`
-                        ? "underline"
-                        : "none",
                     textTransform: "none",
                     fontSize: 20,
                   }}

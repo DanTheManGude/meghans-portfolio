@@ -19,7 +19,7 @@ import {
   logoPath,
 } from "@/constants";
 
-export default function SideNav({ pathname }: { pathname: string }) {
+export default function SideNav() {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const openDrawer = () => setIsOpenDrawer(true);
   const closeDrawer = () => setIsOpenDrawer(false);
@@ -67,12 +67,6 @@ export default function SideNav({ pathname }: { pathname: string }) {
                 color="secondary"
                 fontSize="28px"
                 fontWeight={600}
-                sx={{
-                  textDecoration:
-                    pathname === `/${pagePaths[pageKey]}`
-                      ? "underline"
-                      : "none",
-                }}
                 onClick={closeDrawer}
               >
                 {pageNames[pageKey]}
