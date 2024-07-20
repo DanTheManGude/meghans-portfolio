@@ -107,7 +107,7 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
     },
     {
       key: sectionKeys.NEURO_Q_LITERATURE,
-      length: 3,
+      length: 6,
       type: sectionTypes.IMAGE,
       width: 4,
     },
