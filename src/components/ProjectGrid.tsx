@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 import {
   ProjectKey,
-  TileInfo,
+  TileIdentifier,
   SectionInfo,
   sectionTypes,
   videoSources,
@@ -18,7 +18,7 @@ export default function ProjectGrid({
 }: {
   projectKey: ProjectKey;
   sectionInfo: SectionInfo;
-  openDialog: (targetTile: TileInfo) => void;
+  openDialog: (targetTile: TileIdentifier) => void;
 }) {
   return (
     <Grid

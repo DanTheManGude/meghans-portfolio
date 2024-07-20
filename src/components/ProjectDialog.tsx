@@ -17,7 +17,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import {
   ProjectKey,
   SectionInfo,
-  TileInfo,
+  TileIdentifier,
   projectSections,
   sectionNames,
   sectionTypes,
@@ -32,7 +32,7 @@ export default function ProjectDialog({
   projectKey: ProjectKey;
   closeDialog: () => void;
   isDialogOpen: boolean;
-  openingTargetTile?: TileInfo;
+  openingTargetTile?: TileIdentifier;
 }) {
   const projectImageSections: SectionInfo[] = useMemo(
     () =>
@@ -42,7 +42,7 @@ export default function ProjectDialog({
     [projectKey]
   );
 
-  const [targetTile, setTargetTile] = useState<TileInfo>({
+  const [targetTile, setTargetTile] = useState<TileIdentifier>({
     sectionKey: projectImageSections[0]?.key,
     index: 0,
   });
@@ -53,7 +53,7 @@ export default function ProjectDialog({
     }
   }, [openingTargetTile]);
 
-  const getImageUrl = (tile: TileInfo) =>
+  const getImageUrl = (tile: TileIdentifier) =>
     `/images/works/${projectKey}/${tile.sectionKey}/${tile.index}.jpg`;
 
   const onLeftMove = () =>

@@ -5,7 +5,7 @@ import { useState } from "react";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 
-import { ProjectKey, TileInfo, projectSections } from "@/constants";
+import { ProjectKey, TileIdentifier, projectSections } from "@/constants";
 import ProjectSection from "@/components/ProjectSection";
 import ProjectDialog from "@/components/ProjectDialog";
 import NextProjectButton from "@/components/NextProjectButton";
@@ -17,11 +17,11 @@ export default function ProjectPage({
 }: {
   projectKey: ProjectKey;
 }) {
-  const [openingTargetTile, setOpeningTargetTile] = useState<TileInfo>();
+  const [openingTargetTile, setOpeningTargetTile] = useState<TileIdentifier>();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const closeDialog = () => setIsDialogOpen(false);
 
-  const openDialog = (targetTile: TileInfo) => {
+  const openDialog = (targetTile: TileIdentifier) => {
     setOpeningTargetTile(targetTile);
     setIsDialogOpen(true);
   };

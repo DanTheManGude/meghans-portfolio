@@ -5,7 +5,7 @@ import {
   ProjectKey,
   SectionInfo,
   SectionKey,
-  TileInfo,
+  TileIdentifier,
   sectionDescriptions,
   sectionNames,
 } from "@/constants";
@@ -20,7 +20,7 @@ export default function ProjectSection({
 }: {
   projectKey: ProjectKey;
   sectionInfo: SectionInfo;
-  openDialog: (targetTile: TileInfo) => void;
+  openDialog: (targetTile: TileIdentifier) => void;
 }) {
   return (
     <Stack width={"100%"} alignItems={"left"} paddingTop={4}>
