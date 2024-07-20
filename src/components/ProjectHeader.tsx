@@ -16,7 +16,10 @@ export default function ProjectHeader({
 }: {
   projectKey: ProjectKey;
 }) {
-  var parentBoxStyles: BoxProps["sx"] = { width: "100%" };
+  var parentBoxStyles: BoxProps["sx"] = {
+    width: "100%",
+    backgroundColor: projectHeaderInfos[projectKey].color,
+  };
 
   if (projectHeaderInfos[projectKey].backgroundImage) {
     parentBoxStyles = {
@@ -26,12 +29,6 @@ export default function ProjectHeader({
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       width: "100%",
-    };
-  }
-  if (projectHeaderInfos[projectKey].color) {
-    parentBoxStyles = {
-      ...parentBoxStyles,
-      backgroundColor: projectHeaderInfos[projectKey].color,
     };
   }
 

@@ -261,13 +261,17 @@ export const sectionDescriptions: { [key in SectionKey]?: string } = {
 
 export const projectHeaderInfos: {
   [key in ProjectKey]: {
-    color?: string;
+    color: string;
     backgroundImage?: boolean;
     logoImage: boolean;
   };
 } = {
-  [projectKeys.NEURO_Q]: { backgroundImage: true, logoImage: true },
-  [projectKeys.LIFE_SEASONS]: { color: "#99c55f", logoImage: true },
+  [projectKeys.NEURO_Q]: {
+    backgroundImage: true,
+    color: "#99c55f",
+    logoImage: true,
+  },
+  [projectKeys.LIFE_SEASONS]: { color: "#3070b4", logoImage: true },
   [projectKeys.SUPPLEMENTS]: { color: "#7f5e78", logoImage: false },
   [projectKeys.EMAIL]: { color: "#ea9d76", logoImage: false },
 };
