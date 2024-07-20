@@ -20,6 +20,7 @@ export default function ProjectHeader({
     backgroundImage: `url(/images/headers/${projectKey}.jpg)`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPosition: "center",
   };
 
   return (
