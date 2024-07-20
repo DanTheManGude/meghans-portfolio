@@ -24,7 +24,6 @@ export default function ProjectImageTile({
     tileInfo.thumbnailExt ?? tileInfo.workFileExt
   }`;
 
-  console.log(thumbnailSource);
   return (
     <>
       <Image

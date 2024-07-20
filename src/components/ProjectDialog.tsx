@@ -18,6 +18,7 @@ import {
   ProjectKey,
   SectionInfo,
   TileIdentifier,
+  defaultTileInfo,
   projectSections,
   sectionNames,
   sectionTypes,
@@ -54,7 +55,11 @@ export default function ProjectDialog({
   }, [openingTargetTile]);
 
   const getImageUrl = (tile: TileIdentifier) =>
-    `/images/works/${projectKey}/${tile.sectionKey}/${tile.index}.jpg`;
+    `/images/works/${projectKey}/${tile.sectionKey}/${tile.index}.${
+      projectImageSections.find(
+        (sectionInfo) => sectionInfo.key === tile.sectionKey
+      )?.tileInfos?.[tile.index].workFileExt ?? defaultTileInfo.workFileExt
+    }`;
 
   const onLeftMove = () =>
     setTargetTile((existingTile) => {

@@ -396,7 +396,10 @@ export const projectHeaderBlockSectionBodyTexts: {
   },
 };
 
-export type TileIdentifier = { sectionKey: SectionKey; index: number };
+export type TileIdentifier = {
+  sectionKey: SectionKey;
+  index: number;
+};
 
 export const videoSources: { [key in SectionKey]?: string[] } = {
   [sectionKeys.NEURO_Q_VIDEO]: [

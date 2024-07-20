@@ -8,6 +8,7 @@ import {
   sectionTypes,
   videoSources,
   defaultTileInfo,
+  TileInfo,
 } from "@/constants";
 import ProjectImageTile from "./ProjectImageTile";
 import VideoPlayer from "./VideoPlayer";
