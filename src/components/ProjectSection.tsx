@@ -11,7 +11,6 @@ import {
 } from "@/constants";
 
 import ProjectGrid from "./ProjectGrid";
-import SectionTitle from "./SectionTitle";
 
 export default function ProjectSection({
   projectKey,
@@ -24,7 +23,9 @@ export default function ProjectSection({
 }) {
   return (
     <Stack width={"100%"} alignItems={"left"} paddingTop={4}>
-      <SectionTitle>{sectionNames[sectionInfo.key]}</SectionTitle>
+      <Typography fontWeight={600} sx={{ fontSize: { xs: 18, md: 26 } }}>
+        {sectionNames[sectionInfo.key]}
+      </Typography>
       <Typography variant="body2" sx={{ width: { md: "75%" } }}>
         {sectionDescriptions[sectionInfo.key]}
       </Typography>
