@@ -11,6 +11,9 @@ import "./globals.css";
 const seoKeywords = [
   "graphic design",
   "graphic designer",
+  "hire graphic designer",
+  "associate creative director",
+  "open to work",
   "freelance graphic design",
   "freelance graphic designer",
   "freelance graphic design work",
@@ -25,6 +28,7 @@ const seoKeywords = [
   "social media ads",
   "marketing material",
   "amazon content",
+  "video editing",
 ];
 
 const title = "Meghan's Portfolio";
