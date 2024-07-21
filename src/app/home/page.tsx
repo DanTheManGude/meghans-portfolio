@@ -63,7 +63,7 @@ export default function Page() {
             >
               {titleText2}
             </MultiLineTextFlow>
-            <Typography
+            <MultiLineTextFlow
               sx={{
                 fontSize: { xs: 14, md: 22 },
                 paddingTop: 1,
@@ -71,7 +71,7 @@ export default function Page() {
               textAlign="center"
             >
               {subTitleText}
-            </Typography>
+            </MultiLineTextFlow>
           </Stack>{" "}
           <Grid
             width={{ xs: "100%", md: "95%", mx: "auto" }}
