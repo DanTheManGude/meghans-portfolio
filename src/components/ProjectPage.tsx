@@ -6,11 +6,11 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 
 import { ProjectKey, TileIdentifier, projectSections } from "@/constants";
-import ProjectSection from "@/components/ProjectSection";
-import ProjectDialog from "@/components/ProjectDialog";
-import NextProjectButton from "@/components/NextProjectButton";
-import ProjectHeaderBlockSection from "@/components/ProjectHeaderBlockSection";
-import ProjectHeader from "@/components/ProjectHeader";
+import ProjectSection from "@/components/projectParts/ProjectSection";
+import ProjectDialog from "@/components/projectParts/ProjectDialog";
+import NextProjectButton from "@/components/projectParts/NextProjectButton";
+import ProjectHeaderBlockSection from "@/components/projectParts/ProjectHeaderBlockSection";
+import ProjectHeader from "@/components/projectParts/ProjectHeader";
 
 export default function ProjectPage({
   projectKey,

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, PropsWithChildren } from "react";
 import Typography, { TypographyProps } from "@mui/material/Typography";
 
