@@ -8,6 +8,7 @@ import {
   projectHeaderBlockSectionOrder,
   projectHeaderBlockSectionTitles,
 } from "@/constants";
+import MultiLineTextFlow from "../MultiLineTextFlow";
 
 export default function ProjectHeaderBlockSection({
   projectKey,
@@ -43,7 +44,7 @@ export default function ProjectHeaderBlockSection({
             >
               {projectHeaderBlockSectionTitles[projectHeaderBlockSectionKey]}
             </Typography>
-            <Typography
+            <MultiLineTextFlow
               sx={{ fontSize: { xs: 14, md: 17 } }}
               textAlign={"center"}
             >
@@ -52,7 +53,7 @@ export default function ProjectHeaderBlockSection({
                   projectHeaderBlockSectionKey
                 ]
               }
-            </Typography>
+            </MultiLineTextFlow>
           </Stack>
         </Grid>
       ))}
