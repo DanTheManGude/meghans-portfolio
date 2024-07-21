@@ -403,14 +403,14 @@ export type TileIdentifier = {
 
 export const videoSources: { [key in SectionKey]?: string[] } = {
   [sectionKeys.NEURO_Q_VIDEO]: [
-    "https://videos.gudedesigns.com/hubfs/portfolio/NQ-blog-reduce-inflammation.mp4",
-    "https://videos.gudedesigns.com/hubfs/portfolio/NQ-blog-video-hyperaphantasia.mp4",
-    "https://videos.gudedesigns.com/hubfs/portfolio/NQ-blog-video-pqq.mp4",
+    "https://videos.meghanbuteradesigns.com/hubfs/portfolio/NQ-blog-reduce-inflammation.mp4",
+    "https://videos.meghanbuteradesigns.com/hubfs/portfolio/NQ-blog-video-hyperaphantasia.mp4",
+    "https://videos.meghanbuteradesigns.com/hubfs/portfolio/NQ-blog-video-pqq.mp4",
   ],
   [sectionKeys.LIFE_SEASONS_VIDEO]: [
-    "https://videos.gudedesigns.com/hubfs/portfolio/LS_breathe-x_amazon_video.mp4",
-    "https://videos.gudedesigns.com/hubfs/portfolio/LS_circulari-T_amazon_video.mp4",
-    "https://videos.gudedesigns.com/hubfs/portfolio/LS_visibili-T_amazon_video.mp4",
+    "https://videos.meghanbuteradesigns.com/hubfs/portfolio/LS_breathe-x_amazon_video.mp4",
+    "https://videos.meghanbuteradesigns.com/hubfs/portfolio/LS_circulari-T_amazon_video.mp4",
+    "https://videos.meghanbuteradesigns.com/hubfs/portfolio/LS_visibili-T_amazon_video.mp4",
   ],
 };
 
