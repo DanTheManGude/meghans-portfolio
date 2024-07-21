@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 
@@ -27,15 +27,16 @@ const seoKeywords = [
   "amazon content",
 ];
 
-const title = "Meghan's Portfolio"
-const description = "Graphic Design Portfolio of product and package design, email design, social media ads, marketing material, Amazon content and more.";
+const title = "Meghan's Portfolio";
+const description =
+  "Graphic Design Portfolio of product and package design, email design, social media ads, marketing material, Amazon content and more.";
 
 export const metadata: Metadata = {
   title,
   description,
   openGraph: {
     type: "website",
-    url: "https://dev.gudedesigns.com",
+    url: "https://meghanbuteradesigns.com",
     title,
     description,
     images: [{ url: "/icon.png" }],
