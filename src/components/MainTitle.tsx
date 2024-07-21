@@ -4,26 +4,13 @@ import { useEffect, useRef } from "react";
 
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-
-import { resizeMultiLineTextFlow } from "@/utils";
+import MultiLineTextFlow from "./MultiLineTextFlow";
 
 const titleText1 = "I'm Meghan Butera,";
 const titleText2 = "designer and creative based in New York.";
 const subTitleText = "Specializing in branding, packaging, and digital design.";
 
 export default function MainTitle() {
-  const multiLineTextFlowRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    addEventListener("resize", (_event) => {
-      resizeMultiLineTextFlow(multiLineTextFlowRef.current);
-    });
-  }, []);
-
-  useEffect(() => {
-    resizeMultiLineTextFlow(multiLineTextFlowRef.current);
-  }, [multiLineTextFlowRef]);
-
   return (
     <Stack sx={{ width: "100%", maxWidth: "100vw" }} alignItems={"center"}>
       <Typography
@@ -35,8 +22,7 @@ export default function MainTitle() {
       >
         {titleText1}
       </Typography>
-      <Typography
-        ref={multiLineTextFlowRef}
+      <MultiLineTextFlow
         sx={{
           fontSize: { xs: 23, md: 45 },
         }}
@@ -46,7 +32,7 @@ export default function MainTitle() {
         whiteSpace={"initial"}
       >
         {titleText2}
-      </Typography>
+      </MultiLineTextFlow>
       <Typography
         sx={{
           fontSize: { xs: 14, md: 22 },
