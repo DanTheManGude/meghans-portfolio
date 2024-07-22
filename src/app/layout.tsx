@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   description,
   openGraph: {
     type: "website",
-    url: "https://meghanbuteradesigns.com",
+    url: "https://www.meghanbuteradesigns.com",
     title,
     description,
     images: [{ url: "/icon.png" }],

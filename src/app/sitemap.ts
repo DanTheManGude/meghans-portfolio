@@ -8,7 +8,7 @@ import {
 } from "@/constants";
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://meghanbuteradesigns.com";
+const BASE_URL = "https://www.meghanbuteradesigns.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return pageKeys
