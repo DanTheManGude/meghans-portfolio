@@ -72,7 +72,7 @@ export default function Page() {
             >
               {subTitleText}
             </MultiLineTextFlow>
-          </Stack>{" "}
+          </Stack>
           <Grid
             width={{ xs: "100%", md: "95%", mx: "auto" }}
             container
