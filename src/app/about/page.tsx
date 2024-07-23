@@ -10,7 +10,7 @@ import Grid from "@mui/material/Grid";
 
 import { emailName, emailUrl, linkedinUrl, resumeInfos } from "@/constants";
 
-const paragraphOne = `I'm a Graphic Designer based in New York, and have a passion for all things design. I offer a wide range of graphic design services including - product and package design, email design, social media ads, marketing material, video editing, Amazon content and more. When I'm not designing I love going to the beach, reading, and cooking new recipes.`;
+const paragraphOne = `I'm a Graphic Designer based in New York, and I have a passion for all things design. I offer a wide range of graphic design services including - product and package design, email design, social media ads, marketing material, video editing, Amazon content, and more. When I'm not designing I love going to the beach, reading, and cooking new recipes.`;
 const paragraphTwo = `Shoot me an email to discuss your project, let's create something together.`;
 
 export default function Page() {
@@ -54,7 +54,7 @@ export default function Page() {
                 <Typography
                   variant="body2"
                   color={"#5967af"}
-                >{`Linkedin`}</Typography>
+                >{`LinkedIn`}</Typography>
               </Link>
             </Box>
             <Stack spacing={2}>

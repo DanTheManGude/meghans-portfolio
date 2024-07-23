@@ -1,7 +1,7 @@
-export const NEURO_Q_DESCRIPTION = `When I was brought on as the Senior Graphic Designer for NeuroQ at LifeSeasons, they were In their beginning stages of branding, advertising and overall creative voice. Over the last two plus years I've worked to bring a new life to the brand to enhance sales and customer journey. Below are some examples.`;
+export const NEURO_Q_DESCRIPTION = `When I was brought on as the Senior Graphic Designer for NeuroQ at LifeSeasons, they were In the beginning stages of branding, advertising, and overall creative voice. Over the last two-plus years I've worked to bring a new life to the brand to enhance sales and customer journey. Below are some examples.`;
 export const LIFE_SEASONS_DESCRIPTION = `I worked on the LifeSeasons team as the Senior Graphic Designer to support their retail and e-commerce efforts. Below are some examples.`;
-export const SUPPLEMENTS_DESCRIPTION = `I have over 7 years' experience working with a variety of different brands to create supplement label and box designs. A lot of these brands were just gettinng started on their business and needed labels, logos, Amazon content and more. Below are a few examples.`;
-export const EMAIL_DESCRIPTION = `Below are a few examples of email designs I've worked on through different jobs to promote product and boost sales.`;
+export const SUPPLEMENTS_DESCRIPTION = `I have over 7 years of experience working with various brands to create supplement label and box designs. Many of these brands were just starting their business and needed labels, logos, Amazon content, and more. Below are a few examples.`;
+export const EMAIL_DESCRIPTION = `Below are a few examples of email designs I've worked on through different jobs to promote products and boost sales.`;
 
 export const NEURO_Q_BRANDING_DESCRIPTION = `I created a brand guide for NeuroQ to hone in on our brand voice. This was used internally and also externally to ensure our guidelines were always being upheld.`;
 export const NEURO_Q_PACKAGING_DESCRIPTION = `As part of the customer experience, we wanted to create an elevated experience for the customer. There was a series of testing done to see which design performed the best and resulted in the best retention.`;
@@ -21,7 +21,7 @@ export const PROJECT_HEADER_BLOCK_SKILLS_USED_TITLE = "Skills Used:";
 export const PROJECT_HEADER_BLOCK_TOOLS_USED_TITLE = "Tools Used:";
 
 export const PROJECT_HEADER_BLOCK_SCOPE_BODY_NEURO_Q =
-  "Enhance customer journey, drive sales and create successful marketing campaigns";
+  "Enhance customer journey, drive sales, and create successful marketing campaigns";
 export const PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_NEURO_Q =
   "Branding • Layout • UX Design • Digital Design • Print and Packaging Design • Video Editing";
 export const PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_NEURO_Q =
@@ -42,7 +42,7 @@ export const PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_SUPPLEMENTS =
   "Photoshop • Illustrator • Dimensions";
 
 export const PROJECT_HEADER_BLOCK_SCOPE_BODY_EMAIL =
-  "Create promotional emails, campaigns, transactionals and more to promote product and boost sales";
+  "Create promotional emails, campaigns, transactionals, and more to promote products and boost sales";
 export const PROJECT_HEADER_BLOCK_SKILLS_USED_BODY_EMAIL =
   "Branding • Digital Design • Print and Packaging Design";
 export const PROJECT_HEADER_BLOCK_TOOLS_USED_BODY_EMAIL =
