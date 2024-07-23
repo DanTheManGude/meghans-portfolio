@@ -23,6 +23,14 @@ export default function NextProjectButton({
       variant="outlined"
       color="secondary"
       sx={{ width: { xs: "60%", md: "25%" }, marginTop: 2 }}
+      onClick={() => {
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "instant",
+          });
+        }, 500);
+      }}
     >
       <Link href={`/${projectPaths[projectOrder[nextProjectIndex]]}`}>
         <Typography fontSize={"18px"} color="secondary" fontWeight={600}>
