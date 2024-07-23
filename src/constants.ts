@@ -177,7 +177,7 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
   [projectKeys.SUPPLEMENTS]: [
     {
       key: sectionKeys.SUPPLEMENTS_WARRIOR_STRONG_WELLNESS,
-      length: 6,
+      length: 9,
       type: sectionTypes.IMAGE,
       width: 4,
     },
