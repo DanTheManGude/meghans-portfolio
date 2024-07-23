@@ -235,7 +235,7 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
       type: sectionTypes.IMAGE,
       width: 3,
       tileInfos: [
-        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "jpg", designatedThumbnail: true, thumbnailExt: "jpg" },
         { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
         { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
         { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
@@ -248,8 +248,8 @@ export const projectSections: { [key in ProjectKey]: SectionInfo[] } = {
       width: 3,
       tileInfos: [
         { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
-        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
-        { workFileExt: "png", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "jpg", designatedThumbnail: true, thumbnailExt: "jpg" },
+        { workFileExt: "jpg", designatedThumbnail: true, thumbnailExt: "jpg" },
       ],
     },
   ],
