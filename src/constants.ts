@@ -423,6 +423,12 @@ export type ResumeInfo = {
 
 export const resumeInfos: ResumeInfo[] = [
   {
+    title: "Digital Design Manager",
+    company: "Drive Medical",
+    dates: "August 2024 - Present",
+    location: "Port Washington, NY",
+  },
+  {
     title: "Senior Graphic Designer",
     company: "LifeSeasons",
     dates: "Nov 2021 - Jul 2024",
